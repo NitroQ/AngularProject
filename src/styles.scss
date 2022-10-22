@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+@use "./scss/abstracts/" as *;
+@use "./scss/components/" as *;
+
+body {
+   overflow-x: hidden !important;
+   background-color: $primary !important;
+   // font-family: "Maven", sans-serif !important;
+   // color: $primary !important;
+   // background-color: $body !important;
+}

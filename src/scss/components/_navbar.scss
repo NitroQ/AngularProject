@@ -1,0 +1,7 @@
+@use "../../scss/abstracts" as *;
+
+.side-nav {
+   background-color: $navbar !important;
+   width: 280px;
+   height: 100vh;
+}
