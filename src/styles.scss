@@ -2,6 +2,10 @@
 @use "./scss/components/" as *;
 @use "./scss/base/" as *;
 
+html {
+   scroll-behavior: smooth;
+}
+
 body {
    overflow-x: hidden !important;
    background-color: $primary !important;
@@ -13,13 +17,8 @@ a {
    color: $text !important;
 }
 
-// .mat-list-base {
-//    padding-top: 0 !important;
-//    overflow-y: hidden !important;
-// }
 .display-area {
-   height: calc(100vh - 98px);
+   // height: calc(100vh - 98px);
    z-index: 4;
-   // margin: 16px;
-   // margin-left: 32px;
+   overflow: auto;
 }
