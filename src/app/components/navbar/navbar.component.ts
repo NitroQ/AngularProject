@@ -23,11 +23,13 @@ export class NavbarComponent implements OnInit {
       number: '3',
       name: 'Consult',
       icon: 'fa-solid fa-calendar',
+      routerLink: '/consult',
     },
     {
       number: '4',
       name: 'Contact',
       icon: 'fa-solid fa-circle-question',
+      routerLink: '/contact',
     },
   ];
 

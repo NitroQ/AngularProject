@@ -20,6 +20,8 @@ const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'explore', component: ExploreComponent },
+  { path: 'consult', component: ConsultComponent },
+  { path: 'contact', component: ContactComponent },
 ];
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HeaderComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent],
