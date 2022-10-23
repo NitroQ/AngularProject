@@ -4,15 +4,17 @@
     <app-navbar></app-navbar>
   </mat-sidenav>
   <mat-sidenav-content>
-    <div class="display-area mt-4 ms-3">
+    <div class="display-area mt-lg-0 mt-4 ms-3">
       <mat-toolbar class="d-flex flex-row gap-2 p-0 mb-5">
         <button mat-icon-button *ngIf="sidenav.mode === 'push'" (click)="sidenav.toggle()">
           <span *ngIf="!sidenav.opened"><i class="fa-solid fa-bars-staggered"></i></span>
           <span *ngIf="sidenav.opened"><i class="fa-solid fa-xmark"></i></span>
         </button>
-        <app-header></app-header>
       </mat-toolbar>
-      <router-outlet></router-outlet>
     </div>
+    <div>
+      <app-header></app-header>
+    </div>
+    <!-- <router-outlet></router-outlet> -->
   </mat-sidenav-content>
 </mat-sidenav-container>
