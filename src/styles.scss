@@ -1,10 +1,37 @@
 @use "./scss/abstracts/" as *;
 @use "./scss/components/" as *;
+@use "./scss/base/" as *;
 
 body {
    overflow-x: hidden !important;
    background-color: $primary !important;
-   // font-family: "Maven", sans-serif !important;
-   // color: $primary !important;
-   // background-color: $body !important;
+   font-family: "Sora", sans-serif !important;
+   color: $text !important;
+}
+
+a {
+   color: $text !important;
+}
+
+main {
+   position: absolute;
+   width: 100%;
+   top: 4rem;
+   z-index: 1;
+}
+
+.display-area {
+   position: absolute;
+   left: 200px;
+   width: calc(100% - 250px);
+}
+
+@media (min-width: 500px) and (max-width: 767.98px) {
+   main {
+      position: absolute;
+      width: 100%;
+      top: 10rem;
+      z-index: 1;
+   }
+
 }
