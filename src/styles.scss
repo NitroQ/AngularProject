@@ -14,9 +14,7 @@ a {
 }
 
 main {
-   // position: absolute;
    width: 100%;
-   // top: 4rem;
    z-index: 1;
 }
 
@@ -25,13 +23,3 @@ main {
    left: 200px;
    width: calc(100% - 250px);
 }
-
-// @media (min-width: 500px) and (max-width: 767.98px) {
-//    main {
-//       position: absolute;
-//       width: 100%;
-//       top: 10rem;
-//       z-index: 1;
-//    }
-
-// }
