@@ -13,13 +13,13 @@ a {
    color: $text !important;
 }
 
-main {
-   width: 100%;
-   z-index: 1;
-}
-
+// .mat-list-base {
+//    padding-top: 0 !important;
+//    overflow-y: hidden !important;
+// }
 .display-area {
-   position: absolute;
-   left: 200px;
-   width: calc(100% - 250px);
+   height: calc(100vh - 98px);
+   z-index: 4;
+   // margin: 16px;
+   // margin-left: 32px;
 }

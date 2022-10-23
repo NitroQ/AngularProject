@@ -11,11 +11,13 @@ export class NavbarComponent implements OnInit {
       number: '1',
       name: 'Home',
       icon: 'fa-solid fa-house',
+      routerLink: '/home',
     },
     {
       number: '2',
       name: 'Explore',
       icon: 'fa-solid fa-compass',
+      routerLink: '/explore',
     },
     {
       number: '3',
@@ -28,7 +30,6 @@ export class NavbarComponent implements OnInit {
       icon: 'fa-solid fa-circle-question',
     },
   ];
-  constructor() {}
 
   ngOnInit(): void {}
 }
