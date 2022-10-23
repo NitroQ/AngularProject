@@ -1,40 +1,28 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 side-nav">
-  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-    <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-    <span class="fs-4">Sidebar</span>
-  </a>
-  <hr />
-  <ul class="nav nav-pills flex-column mb-auto">
-    <li class="nav-item">
-      <a href="#" class="nav-link active" aria-current="page">
-        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-        Home
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-        Dashboard
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-        Orders
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-        Products
-      </a>
-    </li>
-    <li>
-      <a href="#" class="nav-link text-white">
-        <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-        Customers
-      </a>
-    </li>
-  </ul>
-  <hr />
+<div class="d-flex flex-column flex-md-row">
+  <nav class="navbar navbar-expand-md d-flex flex-md-column side px-md-0 px-3">
+    <a href="/" class="d-flex align-items-center justify-content-center mb-3 mb-md-0 nav-logo text-decoration-none py-4">
+      <span class="fs-6">N&K</span>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle Navigation"
+    >
+      <span class="text-white"><i class="fa-solid fa-bars-staggered"></i></span>
+    </button>
+    <div class="collapse navbar-collapse align-items-start w-100" id="navbarSupportedContent">
+      <ul class="navbar-nav w-100 d-flex flex-md-column text-center">
+        <li class="nav-list-item d-flex align-items-center flex-column justify-content-center my-md-4" *ngFor="let item of list">
+          <a href="" class="nav-link text-decoration-none" aria-current="page">
+            <i class="{{ item.icon }}"></i>
+            <p>{{ item.name }}</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </div>
