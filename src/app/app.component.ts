@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,7 @@ export class AppComponent {
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
-  constructor(private observer: BreakpointObserver) {}
+  constructor(private observer: BreakpointObserver, private router: Router) {}
   ngAfterViewInit() {
     this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
       if (res.matches) {
@@ -21,6 +23,11 @@ export class AppComponent {
       } else {
         this.sidenav.mode = 'side';
         this.sidenav.open();
+      }
+    });
+    this.router.events.pipe(filter((event) => event instanceof NavigationEnd)).subscribe(() => {
+      if (this.sidenav.mode === 'push') {
+        this.sidenav.close();
       }
     });
   }
