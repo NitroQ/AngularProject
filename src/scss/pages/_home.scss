@@ -13,8 +13,17 @@
    transform: rotate(-6.58deg) !important;
 }
 
+#text {
+   line-height: 2rem;
+}
+
 @media (min-width: 500px) and (max-width: 767.98px) {
    #fingertips {
       transform: rotate(0deg) !important;
+   }
+
+   #home-3 {
+      width: 451px !important;
+      height: 561px !important;
    }
 }
