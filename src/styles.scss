@@ -1,6 +1,7 @@
 @use "./scss/abstracts/" as *;
 @use "./scss/components/" as *;
 @use "./scss/base/" as *;
+@use "./scss/pages/" as *;
 
 html {
    scroll-behavior: smooth;
@@ -17,8 +18,8 @@ a {
    color: $text !important;
 }
 
-.display-area {
+.header-container {
    // height: calc(100vh - 98px);
    z-index: 4;
-   overflow: auto;
+   overflow-y: auto !important;
 }
