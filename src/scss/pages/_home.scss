@@ -1,0 +1,20 @@
+@use "../../scss/abstracts/" as *;
+
+.SoraBold {
+   font-family: SoraBold, sans-serif;
+}
+
+.RockSalt {
+   font-family: RockSalt;
+}
+
+#fingertips {
+   color: $orange;
+   transform: rotate(-6.58deg) !important;
+}
+
+@media (min-width: 500px) and (max-width: 767.98px) {
+   #fingertips {
+      transform: rotate(0deg) !important;
+   }
+}
