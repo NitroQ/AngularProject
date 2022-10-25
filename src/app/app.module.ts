@@ -9,12 +9,13 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ExploreComponent } from './pages/explore/explore.component';
 import { ConsultComponent } from './pages/consult/consult.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { HomeHeaderComponent } from './components/home-header/home-header.component';
+import { ExploreHeaderComponent } from './components/explore-header/explore-header.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,7 +25,7 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
 ];
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HeaderComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
