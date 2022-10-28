@@ -15,18 +15,28 @@
    .caption {
       #craft-caption {
          bottom: 2.25% !important;
-         left: 5rem;
+         left: 5% !important;
       }
 
       #quality-caption {
-         bottom: 1.25% !important;
-         right: 2.5%;
+         bottom: 3.25% !important;
+         right: 2.5% !important;
       }
-   }
 
-   .second-row-caption {
-      bottom: 27.25%;
-      left: 5%;
+      .second-row-caption {
+         bottom: 27.25% !important;
+         left: 5% !important;
+      }
+
+      #beautify-caption {
+         bottom: 27.25% !important;
+         left: 5% !important;
+      }
+
+      .third-row-caption {
+         top: 21% !important;
+         left: 6% !important;
+      }
    }
 }
 

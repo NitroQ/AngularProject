@@ -1,5 +1,8 @@
 // Media queries
-@media (min-width: 200px) and (max-width: 767.98px) {
+
+
+//small screens to medium screens 
+@media (min-width: 576px) and (max-width: 767.98px) {
    #fingertips {
       transform: rotate(0deg) !important;
    }
@@ -9,15 +12,6 @@
       height: 561px !important;
    }
 
-
-   .second-row-caption {
-      bottom: 0 !important;
-      left: 5% !important;
-   }
-
-}
-
-@media (min-width: 768px) and (max-width: 800px) {
    .col-md-8 {
       width: 64% !important;
    }
@@ -25,40 +19,144 @@
    .culture-text {
       .caption {
          #craft-caption {
-            bottom: 2.25% !important;
-            left: 1rem;
+            bottom: 6.25% !important;
+            left: 3% !important;
          }
 
          #quality-caption {
-            bottom: 1.25% !important;
-            right: 2.5%;
+            bottom: 6.25% !important;
+            right: 58.5% !important;
+         }
+
+         .second-row-caption {
+            bottom: 9.25% !important;
+            left: 5% !important;
+         }
+
+         #beautify-caption {
+            bottom: 10.25% !important;
+            left: 3% !important;
+         }
+
+         .third-row-caption {
+            top: 76%;
+            left: 3%;
+         }
+
+         #nk-caption {
+            top: 52% !important;
+            left: 3% !important;
          }
       }
 
-      .second-row-caption {
-         bottom: -3.75%;
-         left: 5%;
-      }
    }
 }
 
-@media (min-width: 700px) and (max-width: 1077.98px) {
+// medium to large
+@media (min-width: 768px) and (max-width: 991.98px) {
+   .col-md-8 {
+      width: 64% !important;
+   }
+
+   #craft-caption {
+      bottom: 6.25% !important;
+      left: 3% !important;
+   }
+
+   #quality-caption {
+      bottom: 6.25% !important;
+      right: 10% !important;
+   }
+
+   .second-row-caption {
+      bottom: 10% !important;
+      left: 6% !important;
+   }
+
+   #beautify-caption {
+      bottom: 5.25% !important;
+      left: 5% !important;
+   }
+
+   .third-row-caption {
+      top: 25% !important;
+      left: 7% !important;
+   }
+
+   #nk-caption {
+      top: 47% !important;
+      left: 5% !important;
+   }
+
+}
+
+// large to extra large screens
+@media (min-width: 992px) and (max-width: 1399.98px) {
    .culture-text {
       .caption {
          #craft-caption {
-            bottom: 2.25% !important;
-            left: 1rem;
+            bottom: 6.25% !important;
+            left: 3% !important;
          }
 
          #quality-caption {
-            bottom: 1.25% !important;
-            right: 2.5%;
+            bottom: 6.25% !important;
+            right: 4.5% !important;
+         }
+
+         .second-row-caption {
+            bottom: 5.25% !important;
+            left: 5% !important;
+         }
+
+         #beautify-caption {
+            bottom: 5.25% !important;
+            left: 5% !important;
+         }
+
+         .third-row-caption {
+            top: 10% !important;
+            left: 8% !important;
          }
       }
 
-      .second-row-caption {
-         bottom: 2.25%;
-         left: 5%;
+   }
+}
+
+// smaller screens
+@media (max-width: 575.98px) {
+   .culture-text {
+      .caption {
+         #craft-caption {
+            bottom: 6.25% !important;
+            left: 3% !important;
+         }
+
+         #quality-caption {
+            bottom: 6.25% !important;
+            right: 55.5% !important;
+         }
+
+         .second-row-caption {
+            bottom: 9.25% !important;
+            left: 5% !important;
+         }
+
+         #beautify-caption {
+            bottom: 10.25% !important;
+            left: 3% !important;
+         }
+
+         .third-row-caption {
+            top: 76% !important;
+            left: 3% !important;
+         }
+
+         #nk-caption {
+            top: 52% !important;
+            left: 3% !important;
+         }
       }
+
    }
 }
