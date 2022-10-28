@@ -3,13 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home-header',
   templateUrl: './home-header.component.html',
-  styleUrls: ['./home-header.component.scss']
+  styleUrls: ['./home-header.component.scss'],
 })
 export class HomeHeaderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  toAbout() {
+    document.querySelector('#about')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
-
+  toCulture() {
+    document.querySelector('#culture')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }

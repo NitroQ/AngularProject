@@ -5,6 +5,7 @@
 
 html {
    scroll-behavior: smooth;
+   -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -16,6 +17,7 @@ body {
 
 a {
    color: $text !important;
+   cursor: pointer !important;
 }
 
 .header-container {
