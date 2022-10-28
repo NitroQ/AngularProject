@@ -1,0 +1,10 @@
+@use "../../scss/abstracts/" as *;
+
+.card {
+   background-color: transparent !important;
+   border: 5px solid $white !important;
+
+   .card-body {
+      padding: 0;
+   }
+}
