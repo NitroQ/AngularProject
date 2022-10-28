@@ -15,4 +15,7 @@ export class HomeHeaderComponent implements OnInit {
   toCulture() {
     document.querySelector('#culture')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+  toServices() {
+    document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
 }
