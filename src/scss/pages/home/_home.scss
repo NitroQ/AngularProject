@@ -1,0 +1,41 @@
+@use "../../../scss/abstracts/" as *;
+
+// classes
+
+// typograhy
+.SoraBold {
+   font-family: SoraBold, sans-serif;
+}
+
+.RockSalt {
+   font-family: RockSalt;
+}
+
+.culture-text {
+   .caption {
+      #craft-caption {
+         bottom: 2.25% !important;
+         left: 5rem;
+      }
+
+      #quality-caption {
+         bottom: 1.25% !important;
+         right: 2.5%;
+      }
+   }
+
+   .second-row-caption {
+      bottom: 27.25%;
+      left: 5%;
+   }
+}
+
+// ids
+#fingertips {
+   color: $orange;
+   transform: rotate(-6.58deg) !important;
+}
+
+#text {
+   line-height: 2rem;
+}

@@ -1,0 +1,64 @@
+// Media queries
+@media (min-width: 200px) and (max-width: 767.98px) {
+   #fingertips {
+      transform: rotate(0deg) !important;
+   }
+
+   #home-3 {
+      width: 451px !important;
+      height: 561px !important;
+   }
+
+
+   .second-row-caption {
+      bottom: 0 !important;
+      left: 5% !important;
+   }
+
+}
+
+@media (min-width: 768px) and (max-width: 800px) {
+   .col-md-8 {
+      width: 64% !important;
+   }
+
+   .culture-text {
+      .caption {
+         #craft-caption {
+            bottom: 2.25% !important;
+            left: 1rem;
+         }
+
+         #quality-caption {
+            bottom: 1.25% !important;
+            right: 2.5%;
+         }
+      }
+
+      .second-row-caption {
+         bottom: -3.75%;
+         left: 5%;
+      }
+   }
+}
+
+@media (min-width: 700px) and (max-width: 1077.98px) {
+   .culture-text {
+      .caption {
+         #craft-caption {
+            bottom: 2.25% !important;
+            left: 1rem;
+         }
+
+         #quality-caption {
+            bottom: 1.25% !important;
+            right: 2.5%;
+         }
+      }
+
+      .second-row-caption {
+         bottom: 2.25%;
+         left: 5%;
+      }
+   }
+}
