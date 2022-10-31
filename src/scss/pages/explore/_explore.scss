@@ -1,1 +1,36 @@
 @use "../../../scss/abstracts/" as *;
+
+.containers {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-fluid img {
+  transition: all 0.3s ease;
+}
+
+.partner img {
+  width: 300px;
+  height: 300px;
+}
+
+.partner p {
+  //   position: absolute;
+  //   margin-top: 3px;
+  width: 345px;
+  height: 27px;
+  left: 75px;
+  top: 552px;
+
+  font-family: "Sora";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 112%;
+  /* identical to box height, or 27px */
+
+  display: flex;
+  align-items: center;
+
+  color: #ffffff;
+}

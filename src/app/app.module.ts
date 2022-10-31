@@ -16,6 +16,7 @@ import { ConsultComponent } from './pages/consult/consult.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeHeaderComponent } from './components/home-header/home-header.component';
 import { ExploreHeaderComponent } from './components/explore-header/explore-header.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatDividerModule,
     MatIconModule,
+    CarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
