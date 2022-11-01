@@ -78,13 +78,19 @@
             <label for="exampleFormControlInput1" class="form-label SoraBold">Company</label>
             <input class="form-control" type="text" placeholder="Company" aria-label="default input example" />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 form-group">
             <label for="exampleFormControlInput1" class="form-label SoraBold">Consultation Date</label>
-            <input class="form-control" type="text" placeholder="MM/DD/YYYY" aria-label="default input example" />
+            <input type="text" placeholder="MM/DD/YYYY" class="form-control" bsDatepicker [bsConfig]="bsdatePickerConfig" />
           </div>
           <div class="col-md-6">
             <label for="exampleFormControlInput1" class="form-label SoraBold">Time Available</label>
-            <input class="form-control" type="text" placeholder="Time Available" aria-label="default input example" id="datepicker" />
+            <timepicker [showMeridian]="isMeridian" [showSpinners]="showSpinners"></timepicker>
+          </div>
+          <div class="col-md">
+            <div class="d-grid d-md-block">
+              <button class="btn mb-md-3 mb-4 rounded-pill px-md-5 px-4 py-1 text-uppercase" mat-stroked-button type="button">BACK</button>
+              <button class="btn mb-md-3 mb-4 mx-2 rounded-pill px-md-5 px-4 py-1 text-uppercase" mat-stroked-button type="button">BOOK</button>
+            </div>
           </div>
         </div>
       </form>
