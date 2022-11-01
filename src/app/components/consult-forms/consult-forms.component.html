@@ -25,12 +25,22 @@
             <label for="exampleFormControlInput1" class="form-label SoraBold">Budget</label>
             <input class="form-control py-2" type="text" placeholder="Enter Budget" aria-label="default input example" />
           </div>
+
           <div class="col-md">
             <label for="exampleFormControlInput1" class="form-label SoraBold">I am planning to:</label>
-            <div class="d-grid d-md-block">
-              <button class="btn mb-md-3 mb-4 rounded-pill px-md-5 px-4 py-1 text-uppercase" mat-stroked-button type="button">RENOVATE</button>
-              <button class="btn mb-md-3 mb-4 mx-2 rounded-pill px-md-5 px-4 py-1 text-uppercase" mat-stroked-button type="button">REMODEL</button>
-              <button class="btn mb-md-3 mb-4 mx-2 rounded-pill px-md-5 px-4 py-1 text-uppercase" mat-stroked-button type="button">CONSTRUCT</button>
+            <div class="col-md">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                <label class="form-check-label radio-label" for="inlineRadio1">Renovate</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                <label class="form-check-label radio-label" for="inlineRadio2">Remodel</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                <label class="form-check-label radio-label" for="inlineRadio2">Construct</label>
+              </div>
             </div>
           </div>
           <div class="col-12">
@@ -43,7 +53,7 @@
         </div>
       </form>
     </div>
-    <div class="col-lg-6 col">
+    <div class="col-lg-6 col d-lg-block d-none">
       <img src="../../../assets/images/consult-images/form-1.png" alt="N&K Dining Table Set" class="w-100 h-100" />
     </div>
   </div>
@@ -95,7 +105,7 @@
         </div>
       </form>
     </div>
-    <div class="col-lg-6 col">
+    <div class="col-lg-6 col d-lg-block d-none">
       <img src="../../../assets/images/consult-images/form-2.png" alt="N&K Foyer" class="w-100 h-100" />
     </div>
   </div>

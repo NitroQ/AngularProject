@@ -29,4 +29,12 @@
       color: $white !important;
       font-size: 1rem !important;
    }
+
+   .form-check-input[type=radio] {
+      border: 1px solid $white;
+   }
+
+   .radio-label {
+      color: $white !important;
+   }
 }
