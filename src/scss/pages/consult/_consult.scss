@@ -18,6 +18,11 @@
    select {
       background-color: transparent;
       border-radius: 3.53px !important;
+      color: $white !important;
+   }
+
+   input:focus {
+      background-color: $secondary !important;
    }
 
    ::placeholder {
