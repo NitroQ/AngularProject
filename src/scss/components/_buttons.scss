@@ -1,5 +1,9 @@
 @use "../../scss/abstracts/" as *;
 
+button {
+   color: $white !important;
+}
+
 .mat-icon-button {
    border-radius: 10% !important;
 }
@@ -7,7 +11,6 @@
 .mat-stroked-button {
    border: 4.73847px solid #FFFFFF !important;
    transition-duration: 500ms;
-   color: $white !important;
 }
 
 .mat-stroked-button:hover {
