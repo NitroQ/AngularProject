@@ -16,6 +16,7 @@ import { ConsultComponent } from './pages/consult/consult.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HomeHeaderComponent } from './components/home-header/home-header.component';
 import { ExploreHeaderComponent } from './components/explore-header/explore-header.component';
+import { ConsultFormsComponent } from './components/consult-forms/consult-forms.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,7 +26,7 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
 ];
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent, ConsultFormsComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
