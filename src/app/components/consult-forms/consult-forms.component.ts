@@ -8,6 +8,7 @@ import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker/bs-datepicker.confi
   styleUrls: ['./consult-forms.component.scss'],
 })
 export class ConsultFormsComponent implements OnInit {
+  step: any;
   isMeridian = true;
   showSpinners = false;
 
