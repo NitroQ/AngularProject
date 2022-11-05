@@ -17,6 +17,10 @@
           and start your interior journey!
         </p>
       </div>
+
+      <!--  ** During fill up of forms / update values of field inputs -->
+      <!-- **  Store data to session storage -->
+
       <form (ngSubmit)="submit()" [formGroup]="multistep">
         <div *ngIf="step == 1" formGroupName="planDetails">
           <div class="row g-5 my-1 px-5">
@@ -32,7 +36,7 @@
             </div>
             <div class="col-md-6 form-group">
               <label for="exampleInputPassword1">Budget</label>
-              <input type="text" class="form-control" formControlName="budget" id="exampleInputPassword1" placeholder="Last Name" />
+              <input type="text" class="form-control" formControlName="budget" id="exampleInputPassword1" placeholder="Budget" />
             </div>
             <div class="col-md form-group">
               <div class="row">
@@ -90,29 +94,17 @@
         <div class="col-12 my-5">
           <a class="btn rounded-pill px-md-5 px-4 py-1 ms-md-5" mat-stroked-button *ngIf="step != 1" (click)="previous()">BACK</a>
           <button type="submit" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1 ms-md-5" mat-stroked-button *ngIf="step != 2">Next</button>
-          <!-- <button type="submit" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1" mat-stroked-button *ngIf="step != 1" (click)="test()">Submit</button> -->
-          <button type="button" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1" data-bs-toggle="modal" data-bs-target="#exampleModal" mat-stroked-button *ngIf="step == 2">Submit</button>
-        </div>
 
-        <br />
+          <!-- ** After storing values to DB, delete data in session storage -->
+
+          <button type="button" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1" mat-stroked-button *ngIf="step == 2" (click)="btnSuccess()">Submit</button>
+        </div>
         <!-- <pre>{{ multistep.value | json }}</pre> -->
       </form>
     </div>
     <div class="col-lg-6 col d-lg-block d-none">
       <img src="../../../assets/images/consult-images/form-1.png" *ngIf="step != 2" alt="N&K Dining Table Set" class="w-100 h-100" />
       <img src="../../../assets/images/consult-images/form-2.png" *ngIf="step != 1" alt="N&K Foyer" class="w-100 h-100" />
-    </div>
-  </div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">test</div>
     </div>
   </div>
 </div>
