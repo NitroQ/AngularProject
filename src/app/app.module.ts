@@ -24,6 +24,7 @@ import { HomeHeaderComponent } from './components/home-header/home-header.compon
 import { ExploreHeaderComponent } from './components/explore-header/explore-header.component';
 import { ConsultFormsComponent } from './components/consult-forms/consult-forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ContactFormsComponent } from './components/contact-forms/contact-forms.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,7 +34,7 @@ const appRoutes: Routes = [
   { path: 'contact', component: ContactComponent },
 ];
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent, ConsultFormsComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent, ConsultFormsComponent, ContactFormsComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
