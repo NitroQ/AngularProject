@@ -37,28 +37,27 @@ export class ConsultFormsComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-  // get userDetails() {
-  //   return this.multistep.controls['userDetails']['controls'];
-  // }
+  get planDetails() {
+    return this.multistep.controls['planDetails']['controls'];
+  }
 
-  // get contactDetails() {
-  //   return this.multistep.controls['contactDetails']['controls'];
-  // }
+  get dateDetails() {
+    return this.multistep.controls['dateDetails']['controls'];
+  }
 
   submit() {
     // this.submitted = true;
-    // if (this.multistep.controls.userDetails.invalid && this.step == 1) {
-    //   return;
-    // }
-    // if (this.multistep.controls.contactDetails.invalid && this.step == 2) {
-    //   return;
-    // }
-    this.step = this.step + 1;
-    if (this.step == 3) {
-      this.route.navigate(['/consult']);
+    if (this.multistep.controls.planDetails.invalid && this.step == 1) {
+      return;
     }
+    if (this.multistep.controls.dateDetails.invalid && this.step == 2) {
+      return;
+    }
+    this.step = this.step + 1;
+    // if (this.step == 3) {
+    //   this.route.navigate(['home']);
+    // }
   }
-
   previous() {
     this.step = this.step - 1;
   }

@@ -90,12 +90,12 @@
         <div class="col-12 my-5">
           <a class="btn rounded-pill px-md-5 px-4 py-1 ms-md-5" mat-stroked-button *ngIf="step != 1" (click)="previous()">BACK</a>
           <button type="submit" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1 ms-md-5" mat-stroked-button *ngIf="step != 2">Next</button>
-          <!-- <button type="submit" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1" mat-stroked-button *ngIf="step != 1">Submit</button> -->
+          <!-- <button type="submit" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1" mat-stroked-button *ngIf="step != 1" (click)="test()">Submit</button> -->
           <button type="button" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1" data-bs-toggle="modal" data-bs-target="#exampleModal" mat-stroked-button *ngIf="step == 2">Submit</button>
         </div>
 
         <br />
-        <pre>{{ multistep.value | json }}</pre>
+        <!-- <pre>{{ multistep.value | json }}</pre> -->
       </form>
     </div>
     <div class="col-lg-6 col d-lg-block d-none">
@@ -112,7 +112,7 @@
         <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">...</div>
+      <div class="modal-body">test</div>
     </div>
   </div>
 </div>

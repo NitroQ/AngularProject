@@ -36,4 +36,8 @@
    .radio-label {
       color: $white !important;
    }
+
+   .modal {
+      z-index: 1025 !important;
+   }
 }
