@@ -37,7 +37,10 @@
       color: $white !important;
    }
 
-   .modal {
-      z-index: 1025 !important;
-   }
+}
+
+// for popup
+.popup-border {
+   border: 4px solid $white !important;
+   border-radius: 12px !important;
 }
