@@ -2,3 +2,11 @@ $primary: #1A1A1A;
 $secondary: #111111;
 $white: #FFFFFF;
 $orange: #FF5E15;
+
+.white {
+   color: $white !important;
+}
+
+.orange {
+   color: $orange !important;
+}
