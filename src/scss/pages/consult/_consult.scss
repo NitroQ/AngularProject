@@ -14,19 +14,18 @@
       background-color: transparent;
    }
 
-   input,
-   select {
-      background-color: transparent;
+   input {
+      // background-color: transparent;
       border-radius: 3.53px !important;
-      color: $white !important;
+      // color: $white !important;
    }
 
-   input:focus {
+   input[type=text]:focus {
       background-color: $secondary !important;
    }
 
    ::placeholder {
-      color: $white !important;
+      // color: $white !important;
       font-size: 1rem !important;
    }
 

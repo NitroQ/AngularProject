@@ -8,6 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatStepperModule } from '@angular/material/stepper';
 // ngx-bootstrap UI
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
@@ -22,6 +23,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { HomeHeaderComponent } from './components/home-header/home-header.component';
 import { ExploreHeaderComponent } from './components/explore-header/explore-header.component';
 import { ConsultFormsComponent } from './components/consult-forms/consult-forms.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -44,6 +46,7 @@ const appRoutes: Routes = [
     MatIconModule,
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
