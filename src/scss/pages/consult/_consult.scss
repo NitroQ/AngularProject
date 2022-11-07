@@ -3,40 +3,6 @@
 .form-container {
    background-color: $secondary;
    border-radius: 10px;
-
-   label {
-      color: $orange !important;
-   }
-
-   textarea {
-      @extend input;
-      resize: none !important;
-      background-color: transparent;
-   }
-
-   input {
-      // background-color: transparent;
-      border-radius: 3.53px !important;
-      // color: $white !important;
-   }
-
-   input[type=text]:focus {
-      background-color: $secondary !important;
-   }
-
-   ::placeholder {
-      // color: $white !important;
-      font-size: 1rem !important;
-   }
-
-   .form-check-input[type=radio] {
-      border: 1px solid $white;
-   }
-
-   .radio-label {
-      color: $white !important;
-   }
-
 }
 
 // for popup
