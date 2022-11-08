@@ -46,6 +46,10 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatDividerModule,
     MatIconModule,
+    BsDatepickerModule.forRoot(),
+    TimepickerModule.forRoot(),
+    ReactiveFormsModule,
+    CarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent],

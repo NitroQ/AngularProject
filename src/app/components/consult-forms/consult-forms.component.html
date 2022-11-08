@@ -93,11 +93,11 @@
         </div>
         <div class="col-12 my-5">
           <a class="btn rounded-pill px-md-5 px-4 py-1 ms-md-5" mat-stroked-button *ngIf="step != 1" (click)="previous()">BACK</a>
-          <button type="submit" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1 ms-md-5" mat-stroked-button *ngIf="step != 2">Next</button>
+          <button type="submit" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1 ms-md-5 text-uppercase" mat-stroked-button *ngIf="step != 2">NEXT</button>
 
           <!-- ** After storing values to DB, delete data in session storage -->
 
-          <button type="button" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1" mat-stroked-button *ngIf="step == 2" (click)="btnSuccess()">Submit</button>
+          <button type="button" class="btn rounded-pill mx-md-3 px-md-5 px-4 py-1 text-uppercase" mat-stroked-button *ngIf="step == 2" (click)="btnSuccess()">BOOK</button>
         </div>
         <!-- <pre>{{ multistep.value | json }}</pre> -->
       </form>

@@ -17,6 +17,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies":[
+              "sweetalert2"
+            ],
             "outputPath": "dist/nibs-nobs",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -31,8 +34,7 @@
              
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
-              "./node_modules/sweetalert2/src/sweetalert2.scss"
-            ,
+              "./node_modules/sweetalert2/src/sweetalert2.scss",
               "src/styles.scss"
             ],
             "scripts": ["./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
