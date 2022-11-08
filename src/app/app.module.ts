@@ -25,6 +25,7 @@ import { ExploreHeaderComponent } from './components/explore-header/explore-head
 import { ConsultFormsComponent } from './components/consult-forms/consult-forms.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactFormsComponent } from './components/contact-forms/contact-forms.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -45,9 +46,6 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatDividerModule,
     MatIconModule,
-    BsDatepickerModule.forRoot(),
-    TimepickerModule.forRoot(),
-    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

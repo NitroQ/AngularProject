@@ -2,26 +2,40 @@
 @use "./scss/components/" as *;
 @use "./scss/base/" as *;
 @use "./scss/pages/" as *;
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
 html {
-   scroll-behavior: smooth;
-   -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  //to hide scroll bar
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+//this is to hide the scroll bard in pages
+::-webkit-scrollbar {
+  display: none;
 }
 
 body {
-   overflow-x: hidden !important;
-   background-color: $primary !important;
-   font-family: Sora, sans-serif !important;
-   color: $white !important;
+  overflow-x: hidden !important;
+  background-color: $primary !important;
+  font-family: Sora, sans-serif !important;
+  color: $white !important;
 }
 
 a {
-   color: $white !important;
-   cursor: pointer !important;
+  color: $white !important;
+  cursor: pointer !important;
 }
 
 .header-container {
-   // height: calc(100vh - 98px);
-   z-index: 4;
-   overflow-y: auto !important;
+  // height: calc(100vh - 98px);
+  z-index: 4;
+  overflow-y: auto !important;
+}
+
+#size {
+  color: $orange;
 }

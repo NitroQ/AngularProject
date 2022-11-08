@@ -20,7 +20,7 @@ export class ContactFormsComponent implements OnInit {
       background: `#1a1a1a`,
       width: '40%',
       buttonsStyling: false,
-      confirmButtonText: 'Okay',
+      confirmButtonText: 'OK',
       reverseButtons: true,
       customClass: {
         title: 'SoraBold orange',

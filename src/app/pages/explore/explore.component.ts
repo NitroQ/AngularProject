@@ -1,15 +1,44 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-explore',
   templateUrl: './explore.component.html',
-  styleUrls: ['./explore.component.scss']
+  styleUrls: ['./explore.component.scss'],
 })
 export class ExploreComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  url: string = '../assets/images/home-images/home-1.png';
+  imageChange(event: any) {
+    this.url = event.target.src;
   }
 
+  customOptions: OwlOptions = {
+    loop: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1,
+      },
+      400: {
+        items: 2,
+      },
+      740: {
+        items: 3,
+      },
+      940: {
+        items: 4,
+      },
+    },
+    nav: false,
+  };
 }
