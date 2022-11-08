@@ -35,11 +35,14 @@
             </div>
             <div class="col-md-6">
               <label class="form-label">Subject of Concern</label>
-              <select class="form-select form-select-lg" aria-label="Default select example">
+              <select class="form-select form-select-lg">
                 <option value="null">Select a Subject</option>
-                <option value="One">One</option>
+                <!-- <option value="One">One</option>
                 <option value="Two">Two</option>
-                <option value="Three">Three</option>
+                <option value="Three">Three</option> -->
+                <option [value]="option.id" *ngFor="let option of options">
+                  {{option.name}}
+                </option>
               </select>
             </div>
             <div class="col-12">
@@ -47,7 +50,7 @@
               <textarea class="form-control" placeholder="Write your message here" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
             <div class="col-12">
-              <button type="button" class="btn rounded-pill mt-3 px-md-5 px-4 py-1" mat-stroked-button (click)="btnSubmit()">Submit Message</button>
+              <button type="button" class="btn rounded-pill mt-3 px-md-5 px-4 py-1 text-uppercase" mat-stroked-button (click)="btnSubmit()">SUBMIT MESSAGE</button>
             </div>
           </div>
         </form>

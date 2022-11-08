@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { ContactOptions } from 'src/app/models/contact.model';
 
 @Component({
   selector: 'app-contact-forms',
@@ -30,5 +31,19 @@ export class ContactFormsComponent implements OnInit {
       },
     });
   }
+  options: ContactOptions[] = [
+    {
+      id: 1,
+      name: 'ConcernOne',
+    },
+    {
+      id: 2,
+      name: 'ConcernTwo',
+    },
+    {
+      id: 3,
+      name: 'ConcernThree'
+    }
+  ]
 }
 
