@@ -16,7 +16,7 @@ export class AppComponent {
 
   constructor(private observer: BreakpointObserver, private router: Router) {}
   ngAfterViewInit() {
-    this.observer.observe(['(max-width: 800px)']).subscribe((res) => {
+    this.observer.observe(['(max-width: 991.8px)']).subscribe((res) => {
       if (res.matches) {
         this.sidenav.mode = 'push';
         this.sidenav.close();
