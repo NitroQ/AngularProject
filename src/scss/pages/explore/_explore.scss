@@ -9,11 +9,14 @@
   transition: all 0.3s ease;
 }
 
+.partner {
+  padding: 0 4%;
+}
 .partner img {
   width: 300px;
   height: 300px;
+  padding: -3%;
 }
-
 .partner p {
   //   position: absolute;
   //   margin-top: 3px;
@@ -33,4 +36,29 @@
   align-items: center;
 
   color: #ffffff;
+}
+
+#textbrowser {
+  font-size: 2em;
+}
+.partner .owl-prev,
+.partner .owl-next {
+  text-align: center;
+  position: absolute;
+  top: 29%;
+  font-size: 2rem !important;
+  background-color: $orange !important;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-weight: 800;
+  border-radius: 100% !important;
+}
+
+.partner .owl-prev {
+  left: -70px;
+}
+
+.partner .owl-next {
+  right: -70px;
 }

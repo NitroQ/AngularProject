@@ -24,7 +24,8 @@ export class ExploreComponent implements OnInit {
     pullDrag: true,
     dots: false,
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ['🠔', '➝'],
+    merge: true,
     responsive: {
       0: {
         items: 1,
@@ -37,8 +38,8 @@ export class ExploreComponent implements OnInit {
       },
       940: {
         items: 4,
+        nav: true,
       },
     },
-    nav: false,
   };
 }
