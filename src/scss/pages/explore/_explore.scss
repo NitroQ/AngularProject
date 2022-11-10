@@ -9,6 +9,40 @@
   transition: all 0.3s ease;
 }
 
+.img_container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.img_container img {
+  width: 600px;
+  height: 400px;
+}
+
+.button button:hover {
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.button {
+  background: transparent;
+  // border: none;
+  margin: 87px;
+  font-size: 50px;
+  // outline: none;
+  color: $orange !important;
+
+  position: absolute;
+  top: -16%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+  // color: $orange !important;
+  // font-size: 70px;
+  border-color: transparent;
+}
+
 .partner {
   padding: 0 4%;
 }
