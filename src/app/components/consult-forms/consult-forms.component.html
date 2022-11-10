@@ -28,10 +28,9 @@
               <label for="exampleInputEmail1">Type of Property</label>
               <select class="form-select form-control py-2" formControlName="propertyType" aria-label="Default select example">
                 <option value="null">Select Type</option>
-                <option value="Apartment">Apartment</option>
-                <option value="Townhouse">Townhouse</option>
-                <option value="Mansion">Mansion</option>
-                <option value="Condo">Condo</option>
+                <option [value]="properties.id" *ngFor="let properties of propertyType">
+                  {{ properties.name }}
+                </option>
               </select>
             </div>
             <div class="col-md-6 form-group">

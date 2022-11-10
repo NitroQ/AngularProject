@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker/bs-datepicker.config';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { PropertyTypeOptions } from 'src/app/models/consult.models';
 
 @Component({
   selector: 'app-consult-forms',
@@ -81,4 +82,23 @@ export class ConsultFormsComponent implements OnInit {
       },
     });
   }
+
+  propertyType: PropertyTypeOptions[] = [
+    {
+      id: 1,
+      name: 'Apartment',
+    },
+    {
+      id: 2,
+      name: 'Townhouse',
+    },
+    {
+      id: 3,
+      name: 'Mansion',
+    },
+    {
+      id: 4,
+      name: 'Condo',
+    },
+  ];
 }
