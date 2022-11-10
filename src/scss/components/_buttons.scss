@@ -9,6 +9,7 @@ button {
 }
 
 .mat-stroked-button,
+
 .btn {
    background-color: transparent !important;
    border: 4.73847px solid $white !important;
@@ -23,3 +24,30 @@ button {
    color: $orange !important;
    border: 4.73847px solid $orange !important;
 }
+
+.btn-explore{
+   background-color: transparent !important;
+   border:1px solid #BCBCBC !important;
+   width: 50px !important;
+   height: 50px !important;
+}
+
+.btn-explore:hover{
+   background-color: #FF5E15 !important;
+   border:1px solid #FF5E15 !important;
+   width: 50px !important;
+   height: 50px !important;
+}
+
+.btn-navigate{
+   background-color: transparent !important;
+   border:none solid $white !important;
+   width: 50px !important;
+}
+
+.btn-navigate:hover{
+   background-color: transparent !important;
+   border:none solid $white !important;
+   width: 50px !important;
+}
+

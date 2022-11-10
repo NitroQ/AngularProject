@@ -26,6 +26,7 @@ import { ConsultFormsComponent } from './components/consult-forms/consult-forms.
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactFormsComponent } from './components/contact-forms/contact-forms.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ExplorekitchenComponent } from './pages/explorekitchen/explorekitchen.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,9 +34,11 @@ const appRoutes: Routes = [
   { path: 'explore', component: ExploreComponent },
   { path: 'consult', component: ConsultComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'explorekitchen', component: ExplorekitchenComponent}
 ];
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent, ConsultFormsComponent, ContactFormsComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent, ConsultFormsComponent, ContactFormsComponent, ExplorekitchenComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),
