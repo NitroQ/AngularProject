@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row g-0 h-100 p-0" >
+  <div class="row g-0 h-100 p-0">
     <div class="col-md-8 col d-md-block mx-auto">
       <header class="p-2 ms-lg-4 ms-0 my-5">
         <div class="container-fluid">
@@ -37,11 +37,8 @@
               <label class="form-label">Subject of Concern</label>
               <select class="form-select form-select-lg">
                 <option value="null">Select a Subject</option>
-                <!-- <option value="One">One</option>
-                <option value="Two">Two</option>
-                <option value="Three">Three</option> -->
                 <option [value]="option.id" *ngFor="let option of options">
-                  {{option.name}}
+                  {{ option.name }}
                 </option>
               </select>
             </div>
@@ -55,11 +52,9 @@
           </div>
         </form>
       </div>
-      
     </div>
     <div class="col-md-4 col d-lg-block d-none">
       <img src="../../../assets/images/contact-images/form-img.png" alt="N&K Office" />
     </div>
   </div>
 </div>
-

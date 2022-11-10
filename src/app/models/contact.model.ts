@@ -1,5 +1,4 @@
-export class ContactOptions{
-    id!: number;
-    name!: string;
-    
+export class ContactOptions {
+  id!: number;
+  name!: string;
 }
