@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="row g-0 h-100 p-0">
+    <div class="col-md-8 col d-md-block mx-auto">
+      <header class="p-2 ms-lg-4 ms-0 my-5">
+        <div class="container-fluid">
+          <div class="d-flex flex-wrap align-items-center justify-content-start">
+            <a routerLink="/" class="d-lg-block d-none d-flex align-items-center me-5 mb-2 mb-lg-0 text-white text-decoration-none">
+              <img src="../../../assets/images/nk-logo.png" alt="N&K logo" />
+            </a>
+          </div>
+        </div>
+      </header>
+      <div class="p-5">
+        <div class="d-flex flex-column text-md-start text-center">
+          <h1 class="display-4 text-uppercase SoraBold">CONTACT US</h1>
+          <p class="fs-3">
+            We would love to hear about a project you have in
+            <br />
+            mind or discuss the possibility of working together.
+          </p>
+        </div>
+        <form>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-control" placeholder="Enter your Name" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Organization/Company</label>
+              <input type="text" class="form-control" placeholder="Indicate 'None' if NO AFFILIATIONS" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email</label>
+              <input type="text" class="form-control" placeholder="Email Address" />
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Subject of Concern</label>
+              <select class="form-select form-select-lg">
+                <option value="null">Select a Subject</option>
+                <option [value]="option.id" *ngFor="let option of options">
+                  {{ option.name }}
+                </option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" placeholder="Write your message here" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+            <div class="col-12">
+              <button type="button" class="btn rounded-pill mt-3 px-md-5 px-4 py-1 text-uppercase" mat-stroked-button (click)="btnSubmit()">SUBMIT MESSAGE</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4 col d-lg-block d-none">
+      <img src="../../../assets/images/contact-images/form-img.png" alt="N&K Office" />
+    </div>
+  </div>
+</div>

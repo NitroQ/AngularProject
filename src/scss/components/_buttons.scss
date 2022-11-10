@@ -1,12 +1,22 @@
 @use "../../scss/abstracts/" as *;
 
+button {
+   color: $white !important;
+}
+
 .mat-icon-button {
    border-radius: 10% !important;
 }
 
-.mat-stroked-button {
-   border: 4.73847px solid #FFFFFF !important;
+.mat-stroked-button,
+.btn {
+   background-color: transparent !important;
+   border: 4.73847px solid $white !important;
    transition-duration: 500ms;
+}
+
+.btn:focus {
+   box-shadow: none !important;
 }
 
 .mat-stroked-button:hover {

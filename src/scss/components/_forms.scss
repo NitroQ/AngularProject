@@ -1,0 +1,46 @@
+ @use "../../scss/abstracts/" as *;
+
+ .form-control,
+ .form-select {
+    background-color: $primary !important;
+    font-family: Inter, sans-serif !important;
+ }
+
+ label {
+    color: $orange !important;
+ }
+
+ textarea {
+    @extend input;
+    resize: none !important;
+    background-color: transparent;
+ }
+
+ textarea:focus {
+    background-color: $white !important;
+ }
+
+ input,
+ select {
+    border-radius: 3.53px !important;
+    border: 3px solid $white !important;
+ }
+
+ input[type=text]:focus {
+    background-color: $white !important;
+ }
+
+ ::placeholder,
+ select {
+    color: $white !important;
+    font-size: .9rem !important;
+    font-weight: 400 !important;
+ }
+
+ .form-check-input[type=radio] {
+    border: 1px solid $white;
+ }
+
+ .radio-label {
+    color: $white !important;
+ }
