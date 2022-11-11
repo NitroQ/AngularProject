@@ -5,11 +5,11 @@ import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  selector: 'app-user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.scss'],
 })
-export class AppComponent {
+export class UserComponent {
   title = 'Nibs-Knobs';
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
@@ -31,4 +31,30 @@ export class AppComponent {
       }
     });
   }
+  list = [
+    {
+      number: '1',
+      name: 'Home',
+      icon: 'fa-solid fa-house',
+      routerLink: '/home',
+    },
+    {
+      number: '2',
+      name: 'Explore',
+      icon: 'fa-solid fa-compass',
+      routerLink: '/explore',
+    },
+    {
+      number: '3',
+      name: 'Consult',
+      icon: 'fa-solid fa-calendar',
+      routerLink: '/consult',
+    },
+    {
+      number: '4',
+      name: 'Contact',
+      icon: 'fa-solid fa-circle-question',
+      routerLink: '/contact',
+    },
+  ];
 }
