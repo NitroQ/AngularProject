@@ -21,6 +21,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 const userRoutes: Routes = [
   {
     path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
+  },
+  {
+    path: '',
     component: UserComponent,
     children: [
       {
