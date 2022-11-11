@@ -26,6 +26,12 @@ import { ConsultFormsComponent } from './components/consult-forms/consult-forms.
 import { ReactiveFormsModule } from '@angular/forms';
 import { ContactFormsComponent } from './components/contact-forms/contact-forms.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { ExplorekitchenComponent } from './pages/explorekitchen/explorekitchen.component';
+import { ExplorebedroomComponent } from './pages/explorebedroom/explorebedroom.component';
+import { ExplorelivingroomComponent } from './pages/explorelivingroom/explorelivingroom.component';
+import { ExplorebathroomComponent } from './pages/explorebathroom/explorebathroom.component';
+import { ExplorespacesavingComponent } from './pages/explorespacesaving/explorespacesaving.component';
+import { ExplorehomeoffComponent } from './pages/explorehomeoff/explorehomeoff.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -33,9 +39,16 @@ const appRoutes: Routes = [
   { path: 'explore', component: ExploreComponent },
   { path: 'consult', component: ConsultComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'explorekitchen', component: ExplorekitchenComponent},
+  { path: 'explorebedroom', component: ExplorebedroomComponent},
+  { path: 'explorelv', component: ExplorelivingroomComponent},
+  { path: 'explorebathroom', component: ExplorebathroomComponent},
+  { path: 'exploressaving', component: ExplorespacesavingComponent},
+  { path: 'explorehomeoff', component: ExplorehomeoffComponent}
 ];
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent, ConsultFormsComponent, ContactFormsComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent, ConsultFormsComponent, ContactFormsComponent, ExplorekitchenComponent, ExplorebedroomComponent, ExplorelivingroomComponent, ExplorebathroomComponent, ExplorespacesavingComponent, ExplorehomeoffComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { enableTracing: true }),

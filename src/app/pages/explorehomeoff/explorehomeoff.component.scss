@@ -1,0 +1,22 @@
+#img_container {
+    position:relative;
+    display:inline-block;
+    text-align:center;
+}
+
+.button  {
+    position:absolute;
+    top: 13px;
+    right:15px;
+    height:30px;
+}
+
+.heart {
+    color:#FF5E15;
+}
+
+img {
+    width: 600px; /* You can set the dimensions to whatever you want */
+    height: 375px;
+    object-fit: cover;
+}

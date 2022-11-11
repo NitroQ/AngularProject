@@ -9,48 +9,50 @@
   transition: all 0.3s ease;
 }
 
-.img_container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
+// .img_container img {
+//   position: relative;
+//   width: 100%;
+//   max-width: 400px;
+// }
+
+// .img_container img {
+//   width: 600px;
+//   height: 400px;
+// }
+
+#img_container {
+  position:relative;
+  display:inline-block;
+  text-align:center;
+  // width: 350px;
+  // height: 250px;
 }
 
-.img_container img {
-  width: 600px;
-  height: 400px;
-}
-
-.button button:hover {
+.button  {
+  position:absolute;
+  top: 18px;
+  right:5px;
+  height:50px;
   cursor: pointer;
-  color: #ffffff;
 }
 
-.button {
-  background: transparent;
-  // border: none;
-  margin: 87px;
-  font-size: 50px;
-  // outline: none;
-  color: $orange !important;
+.button:hover{
+  color: red;
+}
 
-  position: absolute;
-  top: -16%;
-  left: 52%;
-  transform: translate(-50%, -50%);
-  background-color: transparent;
-  // color: $orange !important;
-  // font-size: 70px;
-  border-color: transparent;
+.heart {
+  color: $orange;
 }
 
 .partner {
   padding: 0 4%;
 }
-.partner img {
-  width: 300px;
-  height: 300px;
-  padding: -3%;
-}
+
+// .imgcontainer img {
+//   width: 350px; /* You can set the dimensions to whatever you want */
+//   height: 250px;
+//   object-fit: cover;
+// }
 .partner p {
   //   position: absolute;
   //   margin-top: 3px;
