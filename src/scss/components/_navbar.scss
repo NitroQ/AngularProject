@@ -3,15 +3,29 @@
 .navbar {
    background-color: $secondary !important;
 
-   a {
-      color: $white !important;
+   .dropdown-menu {
+      background-color: $secondary !important;
+
+      .dropdown-item a {
+         color: $white !important;
+      }
    }
+
+   .dropdown-item:focus,
+   .dropdown-item:hover {
+      background-color: $orange !important;
+      transition-duration: 300ms;
+   }
+}
+
+a {
+   color: $white !important;
 }
 
 .fixed {
    position: fixed;
    width: 100%;
-   transition: 200ms linear;
+   transition: 400ms linear;
    top: 0;
    z-index: 1 !important;
 }
