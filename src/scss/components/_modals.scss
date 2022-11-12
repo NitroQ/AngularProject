@@ -1,6 +1,12 @@
 @use "../../scss/abstracts/" as *;
+
 // for popup
 .popup-border {
-    border: 4px solid $white !important;
     border-radius: 12px !important;
- }
+}
+
+.btn-modal {
+    border: 4.37461px solid #343434;
+    background-color: transparent !important;
+    color: #343434 !important;
+}
