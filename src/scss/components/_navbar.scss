@@ -23,11 +23,11 @@ a {
 }
 
 .fixed {
-   position: fixed;
+   position: sticky;
    width: 100%;
    transition: 400ms linear;
    top: 0;
-   z-index: 1 !important;
+   z-index: 1000;
 }
 
 .nofixed {
