@@ -1,5 +1,9 @@
  @use "../../scss/abstracts/" as *;
 
+ .form-container {
+    background-color: $secondary !important;
+ }
+
  .form-control,
  .form-select {
     background-color: $primary !important;
