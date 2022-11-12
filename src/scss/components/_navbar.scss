@@ -1,15 +1,23 @@
-@use "../../scss/abstracts" as *;
+@use "../../scss/abstracts/" as *;
 
-mat-sidenav {
-   width: 100px;
+.navbar {
    background-color: $secondary !important;
-   color: $white !important;
+
+   a {
+      color: $white !important;
+   }
 }
 
-mat-sidenav-container {
-   height: 100vh !important;
+.fixed {
+   position: fixed;
+   width: 100%;
+   transition: 200ms linear;
+   top: 0;
+   z-index: 1 !important;
 }
 
-.side-nav-link:hover {
-   color: $orange !important;
+.nofixed {
+   position: static;
+   transition: 200ms linear;
+   top: -50px;
 }

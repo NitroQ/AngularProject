@@ -14,14 +14,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { AdminComponent } from './admin/admin.component';
-import { UserComponent } from './user/user.component';
-import { AdminRoutingModule } from './admin/admin.routing.component';
-import { UserRoutingModule } from './user/user.routing.module';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { PublicModule } from './public/public.module';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, AdminComponent, UserComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -35,8 +33,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     TimepickerModule.forRoot(),
     ReactiveFormsModule,
     CarouselModule,
-    AdminRoutingModule,
-    UserRoutingModule,
+    PublicModule,
+    RouterModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

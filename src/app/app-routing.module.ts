@@ -1,17 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './admin/pages/login/login.component';
-import { AuthComponent } from './auth/auth.component';
+import { ConsultComponent } from './public/components/consult/consult.component';
+import { ContactComponent } from './public/components/contact/contact.component';
+import { ExploreComponent } from './public/components/explore/explore.component';
+import { HomeComponent } from './public/components/home/home.component';
+import { PublicComponent } from './public/public.component';
 
 const routes: Routes = [
   {
-    path: 'auth',
-    component: AuthComponent,
+    path: '',
+    redirectTo: 'public/home',
+    pathMatch: 'full',
+  },
+  {
+    path: 'public',
+    component: PublicComponent,
     children: [
-      {
-        path: 'login',
-        component: LoginComponent,
-      },
+      { path: 'home', component: HomeComponent },
+      { path: 'explore', component: ExploreComponent },
+      { path: 'consult', component: ConsultComponent },
+      { path: 'contact', component: ContactComponent },
     ],
   },
 ];
