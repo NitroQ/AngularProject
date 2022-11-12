@@ -72,18 +72,17 @@
             <label for="exampleFormControlInput1" class="form-label SoraBold">Consultation Date</label>
             <input type="date" name="consultDate" id="inputConsultDate" />
           </div>
-          <div class="col-md-4 mb-3">
+          <div class="col-md-6 mb-3">
             <div class="row">
               <div class="col">
-                <label for="exampleFormControlInput1" class="form-label SoraBold">Consultation Date</label>
+                <label for="exampleFormControlInput1" class="form-label SoraBold">Time Available</label>
               </div>
             </div>
             <div class="d-inline-block"><input type="time" name="timeAvailable" id="inputTimeAvailable" /></div>
           </div>
         </form>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end my-5">
-          <button class="btn btn-primary me-md-2" type="button">Button</button>
-          <button class="btn btn-primary" type="button">Button</button>
+          <button class="btn fs-6 mb-4 rounded-pill px-md-5 px-4 py-2 text-uppercase mx-md-0 d-flex align-items-center me-md-2" type="button" (click)="btnBook()">BOOK CONSULTANCY</button>
         </div>
       </div>
     </div>
