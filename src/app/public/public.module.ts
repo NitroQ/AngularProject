@@ -8,8 +8,9 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ExploreGalleryComponent } from './components/explore-gallery/explore-gallery.component';
 import { ExploreComponent } from './components/explore/explore.component';
+import { ExploreModule } from './explore/explore.module';
 @NgModule({
   declarations: [PublicComponent, HomeComponent, ConsultComponent, ContactComponent, ExploreGalleryComponent, ExploreComponent],
-  imports: [CommonModule, RouterModule, SharedModule],
+  imports: [CommonModule, RouterModule, SharedModule, ExploreModule],
 })
 export class PublicModule {}
