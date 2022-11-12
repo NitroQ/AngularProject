@@ -4,11 +4,6 @@ button {
    color: $white !important;
 }
 
-.mat-icon-button {
-   border-radius: 10% !important;
-}
-
-.mat-stroked-button,
 .btn {
    background-color: transparent !important;
    border: 4.73847px solid $white !important;
@@ -19,7 +14,7 @@ button {
    box-shadow: none !important;
 }
 
-.mat-stroked-button:hover {
+.btn:hover {
    color: $orange !important;
    border: 4.73847px solid $orange !important;
 }
