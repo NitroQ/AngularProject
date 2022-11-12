@@ -134,7 +134,7 @@
 
          #quality-caption {
             bottom: 6.25% !important;
-            right: 51.5% !important;
+            right: 54.5% !important;
          }
 
          .second-row-caption {
@@ -153,10 +153,15 @@
          }
 
          #nk-caption {
-            top: 41% !important;
+            top: 10% !important;
             left: 3% !important;
          }
       }
+   }
+
+   .img-responsive {
+      max-width: 100% !important;
+      height: auto !important;
 
    }
 }
