@@ -10,7 +10,6 @@
   </div>
 </div>
 <!-- about us section -->
-<div id="about"></div>
 <section class="container-fluid px-lg-5 px-3 my-5">
   <div class="row m-0">
     <div class="col col-lg-4 w-lg-50">
@@ -21,22 +20,21 @@
           solution for the people with the same issue. This website offers a variety of interior designs for many types of set up for your home from tradition to latest design with
           efficiency, space-saving and aesthetic looking interior design etc.
         </p>
-        <a class="btn fs-6 mb-4 rounded-pill px-md-5 px-4 py-1 text-uppercase mx-md-0 d-flex align-items-center" routerLink="/home">check our services</a>
+        <a class="btn fs-6 mb-4 rounded-pill px-md-5 px-4 py-1 text-uppercase mx-md-0 d-flex align-items-center" (click)="toServices()">check our services</a>
       </div>
     </div>
-    <div class="col-md-auto col-12 my-xxl-0 my-lg-5 my-2">
-      <div class="d-flex flex-column flex-md-grow-1 flex-grow-0 gap-3 justify-content-md-center mx-auto d-block">
-        <img class="img-fluid" src="../../../assets/images/home-images/home-1.png" alt="N&K chairs" />
-        <img class="img-fluid" src="../../../assets/images/home-images/home-2.png" alt="N&K Sofa Set" />
-      </div>
+    <div class="col-md-auto col-12 d-flex flex-column gap-3 ms-md-5 d-block">
+      <!-- <div class="d-flex flex-column flex-md-grow-1 flex-grow-0 gap-3 justify-content-md-center mx-auto d-block"> -->
+      <img src="../../../assets/images/home-images/home-1.png" alt="N&K chairs" />
+      <img src="../../../assets/images/home-images/home-2.png" alt="N&K Sofa Set" />
+      <!-- </div> -->
     </div>
-    <div class="col col-lg-3 my-xxl-0 my-lg-5 my-md-5 my-2">
-      <img id="home-3" src="../../../assets/images/home-images/home-3.png" alt="" />
+    <div class="col-md-auto col-lg-3 col-sm-1 mt-md-0 mt-4 gap-5">
+      <img class="img-responsive" id="home-3" src="../../../assets/images/home-images/home-3.png" alt="" />
     </div>
   </div>
 </section>
 <!-- N&K Culture -->
-<div id="culture"></div>
 <section class="container-fluid px-lg-5 my-lg-5 my-3">
   <h1 class="display-5 text-lg-start text-center SoraBold">The Nibs &amp; Knobs Culture</h1>
   <!-- first row -->
