@@ -1,0 +1,43 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "propertyType": "Apartment",
+      "budget": 231312,
+      "plan": "Remodel",
+      "clientName": "Frank Vincent Tolores Gesmundo",
+      "email": "frankvgesmundo@gmail.com",
+      "mobile": "+639464548038",
+      "company": "Junior Philippine Computer Society - NU Manila Chapter",
+      "consultationDate": "2022-11-29",
+      "timeAppointment": "23:52"
+    },
+    {
+      "id": 3,
+      "propertyType": "Townhouse",
+      "budget": 2131231,
+      "plan": "Construct",
+      "clientName": "Frank Vincent T Gesmundo",
+      "email": "gesmundoft@students.national-u.edu.ph",
+      "mobile": "9193397914",
+      "company": "Junior Philippine Computer Society - NU Manila Chapter",
+      "consultationDate": "2022-11-30",
+      "timeAppointment": "23:54"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
