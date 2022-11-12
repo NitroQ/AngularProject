@@ -1,1 +1,170 @@
-<p>consult works!</p>
+<div class="container mx-lg-5 my-lg-5">
+  <div class="row text-md-start text-center">
+    <div class="col-lg col-sm mt-4">
+      <h1 class="display-3 text-uppercase SoraBold">
+        BOOK A <br />
+        CONSULTATION
+      </h1>
+      <p class="fs-5">We'll never share your information with anyone else</p>
+    </div>
+  </div>
+</div>
+<div class="container-fluid my-5">
+  <div class="form-container p-5">
+    <div class="row p-0 g-5">
+      <div class="col-lg-6">
+        <form class="row g-3">
+          <div class="col-md-5 mb-3">
+            <label for="inputPropertyType" class="form-label">Type of Property</label>
+            <select id="inputPropertyType" class="form-select">
+              <option selected>Choose...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="Budget" class="form-label">Budget</label>
+            <input type="text" class="form-control" placeholder="Budget" />
+          </div>
+          <div class="col-12 form-group mb-3">
+            <div class="row">
+              <div class="col">
+                <label for="exampleFormControlInput1" class="form-label SoraBold">I am planning to:</label>
+              </div>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Renovate" />
+              <label class="form-check-label" for="inlineRadio1">Renovate</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Remodel" />
+              <label class="form-check-label" for="inlineRadio1">Remodel</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Construct" />
+              <label class="form-check-label" for="inlineRadio1">Construct</label>
+            </div>
+          </div>
+          <div class="col-12 mb-3">
+            <label for="exampleFormControlInput1" class="form-label SoraBold">Note for Designer</label>
+            <textarea class="form-control" placeholder="Know the designer what to expect" rows="5"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6">
+        <form class="row g-3">
+          <div class="col-12 mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Enter your name" />
+          </div>
+          <div class="col-12 mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" placeholder="Email Address" />
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" placeholder="Phone Number" />
+          </div>
+          <div class="col-md-5 mb-3">
+            <label for="company" class="form-label">Company</label>
+            <input type="text" class="form-control" placeholder="Company" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label SoraBold">Consultation Date</label>
+            <input type="date" name="consultDate" id="inputConsultDate" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="row">
+              <div class="col">
+                <label for="exampleFormControlInput1" class="form-label SoraBold">Consultation Date</label>
+              </div>
+            </div>
+            <div class="d-inline-block"><input type="time" name="timeAvailable" id="inputTimeAvailable" /></div>
+          </div>
+        </form>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end my-5">
+          <button class="btn btn-primary me-md-2" type="button">Button</button>
+          <button class="btn btn-primary" type="button">Button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div class="container-fluid my-5">
+  <div class="form-container h-50 my-5">
+    <div class="d-flex flex-column text-md-start text-center">
+      <h1 class="display-5 text-uppercase SoraBold">ABOUT YOUR PLANS</h1>
+      <p class="fs-5">
+        The details that you enter here helps us understand
+        <br />
+        more about your dream home property.
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col mt-3 p-5">
+        <div class="row g-5 my-1 px-5">
+          <div class="col-md-6 form-group">
+            <label for="exampleInputEmail1">Type of Property</label>
+            <select class="form-select form-control py-2" aria-label="Default select example">
+              <option value="null">Select Type</option>
+            </select>
+          </div>
+          <div class="col-md-6 form-group">
+            <label for="exampleInputPassword1">Budget</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Budget" />
+          </div>
+          <div class="col-md form-group">
+            <div class="row">
+              <div class="col">
+                <label for="exampleFormControlInput1" class="form-label SoraBold">I am planning to:</label>
+              </div>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Renovate" />
+              <label class="form-check-label" for="inlineRadio1">Renovate</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Remodel" />
+              <label class="form-check-label" for="inlineRadio1">Remodel</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="Construct" />
+              <label class="form-check-label" for="inlineRadio1">Construct</label>
+            </div>
+          </div>
+          <div class="col-12 form-group">
+            <label for="exampleFormControlInput1" class="form-label SoraBold">Note for Designer</label>
+            <textarea class="form-control" placeholder="Know the designer what to expect" rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="row g-5 my-1 px-5">
+          <div class="col-12">
+            <label class="form-label SoraBold">Name</label>
+            <input class="form-control" type="text" placeholder="Name" aria-label="default input example" />
+          </div>
+          <div class="col-12">
+            <label for="exampleFormControlInput1" class="form-label SoraBold">Email</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" />
+          </div>
+          <div class="col-md-6">
+            <label for="exampleFormControlInput1" class="form-label SoraBold">Phone Number</label>
+            <input class="form-control" type="text" placeholder="Phone Number" aria-label="default input example" />
+          </div>
+          <div class="col-md-6">
+            <label for="exampleFormControlInput1" class="form-label SoraBold">Company</label>
+            <input class="form-control" type="text" placeholder="Company" aria-label="default input example" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label SoraBold">Consultation Date</label>
+            <input type="date" placeholder="MM/DD/YYYY" class="form-control" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label SoraBold">Time Available</label>
+            <input type="time" class="form-control" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
