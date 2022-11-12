@@ -18,3 +18,18 @@ button {
    color: $orange !important;
    border: 4.73847px solid $orange !important;
 }
+
+// explore page pagination
+.btn-explore {
+   background-color: transparent !important;
+   border: 1px solid #BCBCBC !important;
+   width: 50px !important;
+   height: 50px !important;
+}
+
+.btn-explore:hover {
+   background-color: #FF5E15 !important;
+   border: 1px solid #FF5E15 !important;
+   width: 50px !important;
+   height: 50px !important;
+}

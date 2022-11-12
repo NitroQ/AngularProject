@@ -30,8 +30,8 @@
 <div class="container my-5 gallery">
   <owl-carousel-o [options]="designList">
     <ng-template carouselSlide *ngFor="let kitchenDesign of kitchenDesigns">
-      <div class="design-card border-0 mx-md-0 mx-auto d-block">
-        <img src="{{ kitchenDesign.imgUrl }}" class="card-img-top" />
+      <div class="gallery-card border-0 mx-md-0 mx-auto d-block">
+        <img src="{{ kitchenDesign.imgUrl }}" class="card-img-top img-fluid" />
         <div class="card-body mt-3">
           <h5 class="card-title">{{ kitchenDesign.designName }}</h5>
           <p class="card-text fs-6">{{ kitchenDesign.prodSize }}</p>
@@ -62,7 +62,7 @@
 <div class="container my-5 gallery">
   <owl-carousel-o [options]="designList">
     <ng-template carouselSlide *ngFor="let bedroomDesign of bedroomDesigns">
-      <div class="design-card border-0 mx-md-0 mx-auto d-block">
+      <div class="gallery-card border-0 mx-md-0 mx-auto d-block">
         <img src="{{ bedroomDesign.imgUrl }}" class="card-img-top" />
         <div class="card-body mt-3">
           <h5 class="card-title">{{ bedroomDesign.designName }}</h5>
@@ -93,7 +93,7 @@
 <div class="container my-5 gallery">
   <owl-carousel-o [options]="designList">
     <ng-template carouselSlide *ngFor="let livingRoomDesign of livingRoomDesigns">
-      <div class="design-card border-0 mx-md-0 mx-auto d-block">
+      <div class="gallery-card border-0 mx-md-0 mx-auto d-block">
         <img src="{{ livingRoomDesign.imgUrl }}" class="card-img-top" />
         <div class="card-body mt-3">
           <h5 class="card-title">{{ livingRoomDesign.designName }}</h5>
@@ -125,7 +125,7 @@
 <div class="container my-5 gallery">
   <owl-carousel-o [options]="designList">
     <ng-template carouselSlide *ngFor="let bathroomDesign of bathroomDesigns">
-      <div class="design-card border-0 mx-md-0 mx-auto d-block">
+      <div class="gallery-card border-0 mx-md-0 mx-auto d-block">
         <img src="{{ bathroomDesign.imgUrl }}" class="card-img-top" />
         <div class="card-body mt-3">
           <h5 class="card-title">{{ bathroomDesign.designName }}</h5>
@@ -156,7 +156,7 @@
 <div class="container my-5 gallery">
   <owl-carousel-o [options]="designList">
     <ng-template carouselSlide *ngFor="let saveSpacingDesign of spaceSavingDesigns">
-      <div class="design-card border-0 mx-md-0 mx-auto d-block">
+      <div class="gallery-card border-0 mx-md-0 mx-auto d-block">
         <img src="{{ saveSpacingDesign.imgUrl }}" class="card-img-top" />
         <div class="card-body mt-3">
           <h5 class="card-title">{{ saveSpacingDesign.designName }}</h5>
@@ -188,7 +188,7 @@
 <div class="container my-5 gallery">
   <owl-carousel-o [options]="designList">
     <ng-template carouselSlide *ngFor="let homeOfficeDesign of homeOfficeDesigns">
-      <div class="design-card border-0 mx-md-0 mx-auto d-block">
+      <div class="gallery-card border-0 mx-md-0 mx-auto d-block">
         <img src="{{ homeOfficeDesign.imgUrl }}" class="card-img-top" />
         <div class="card-body mt-3">
           <h5 class="card-title">{{ homeOfficeDesign.designName }}</h5>
