@@ -29,12 +29,12 @@
 <!-- kitchen design owl carousel -->
 <div class="container my-5 gallery">
   <owl-carousel-o [options]="designList">
-    <ng-template carouselSlide *ngFor="let kitchenDesign of kitchenDesigns">
+    <ng-template carouselSlide *ngFor="let row of kitchenDesigns">
       <div class="design-card border-0 mx-md-0 mx-auto d-block">
-        <img src="{{ kitchenDesign.imgUrl }}" class="card-img-top" />
+        <img [src]="row.image" class="card-img-top" />
         <div class="card-body mt-3">
-          <h5 class="card-title">{{ kitchenDesign.designName }}</h5>
-          <p class="card-text fs-6">{{ kitchenDesign.prodSize }}</p>
+          <h5 class="card-title">{{ row.description }}</h5>
+          <p class="card-text fs-6">{{ row.dimensions }}</p>
         </div>
       </div>
     </ng-template>

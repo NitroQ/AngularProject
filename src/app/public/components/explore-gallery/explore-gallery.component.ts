@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { ApiService } from '../../../book.service';
 @Component({
   selector: 'app-explore-gallery',
   templateUrl: './explore-gallery.component.html',
@@ -7,13 +9,35 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class ExploreGalleryComponent implements OnInit {
   // ** array for the loop of Kitchen Designs
-  kitchenDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/explore_main-images/Kitchen Designs/wooden-clean-kitchen.png',
-      designName: 'Wooden Clean Kitchen',
-      prodSize: "18' x 21'",
-    },
-  ];
+  kitchenDesigns: any = [];
+  
+  addImage !: FormGroup;
+  constructor(private fb: FormBuilder, private api: ApiService) { }
+
+  ngOnInit(): void {
+    this.addImage = this.fb.group({
+      description: [''],
+      category: [''],
+      dimensions: [''],
+      price: [''],
+      image: ['']
+    })
+    this.getImage();
+  }
+
+  getImage(){
+    this.api.getImage()
+    .subscribe(res=>{
+      for (let i = 0; i < res.length; i++) {
+        if(res[i].category == "kitchen"){
+          this.kitchenDesigns.push(res[i]);
+        }
+    }
+    })
+
+  }
+
+
   bedroomDesigns: any = [
     {
       imgUrl: '../../../../assets/images/explore_main-images/bedroom Design/spring-inspired design.png',
@@ -49,6 +73,9 @@ export class ExploreGalleryComponent implements OnInit {
       prodSize: "18' x 21'",
     },
   ];
+
+
+  
   // ** custom options for the carousel, don't touch.
   designList: OwlOptions = {
     loop: true,
@@ -75,7 +102,4 @@ export class ExploreGalleryComponent implements OnInit {
     },
     nav: true,
   };
-  constructor() {}
-
-  ngOnInit(): void {}
 }
