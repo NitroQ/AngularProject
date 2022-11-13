@@ -6,10 +6,19 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PublicModule } from './public/public.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, ReactiveFormsModule, PublicModule, RouterModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    PublicModule,
+    RouterModule,
+    AppRoutingModule,
+    AuthModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
