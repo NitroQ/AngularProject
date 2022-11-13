@@ -7,6 +7,7 @@ import { PublicModule } from './public/public.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { AuthModule } from './auth/auth.module';
     RouterModule,
     AppRoutingModule,
     AuthModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

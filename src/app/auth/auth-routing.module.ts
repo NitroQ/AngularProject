@@ -8,6 +8,7 @@ const routes: Routes = [
     path: 'auth',
     component: AuthComponent,
     children: [
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
       {
         path: 'login',
         component: LoginComponent,
@@ -19,5 +20,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [],
   imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule],
 })
 export class AuthRoutingModule {}
