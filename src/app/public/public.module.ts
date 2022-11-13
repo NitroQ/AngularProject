@@ -10,9 +10,31 @@ import { ExploreGalleryComponent } from './components/explore-gallery/explore-ga
 import { ExploreComponent } from './components/explore/explore.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ExploreModule } from './explore/explore.module';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
-  declarations: [PublicComponent, HomeComponent, ConsultComponent, ContactComponent, ExploreGalleryComponent, ExploreComponent],
-  imports: [CommonModule, RouterModule, SharedModule, FormsModule, ReactiveFormsModule, HttpClientModule]
+  declarations: [
+    PublicComponent,
+    HomeComponent,
+    ConsultComponent,
+    ContactComponent,
+    ExploreGalleryComponent,
+    ExploreComponent,
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule, 
+    HttpClientModule,
+    ExploreModule,
+    CarouselModule,
+    BrowserAnimationsModule,
+    BrowserModule,
+  ],
 })
 export class PublicModule {}

@@ -2,5 +2,7 @@
   "bladeFormatter.format.wrapLineLength": 200,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.printWidth": 80
+  "prettier.printWidth": 80,
+  "typescript.suggest.paths": false,
+  "javascript.suggest.paths": false
 }
