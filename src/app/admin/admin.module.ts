@@ -10,9 +10,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { NavListComponent } from './components/nav-list/nav-list.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [DashboardComponent, AdminComponent],
+  declarations: [DashboardComponent, AdminComponent, NavListComponent, SidenavComponent, HeaderComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -23,6 +29,9 @@ import { MatListModule } from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
   ],
 })
 export class AdminModule {}
