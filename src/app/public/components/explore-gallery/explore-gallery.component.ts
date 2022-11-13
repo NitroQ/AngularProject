@@ -10,6 +10,12 @@ import { ApiService } from '../../../api.service';
 export class ExploreGalleryComponent implements OnInit {
   // ** array for the loop of Kitchen Designs
   kitchenDesigns: any = [];
+  bedroomDesigns: any = [];
+  livingRoomDesigns: any = [];
+  bathroomDesigns: any = [];
+  spaceSavingDesigns: any = [];
+  homeOfficeDesigns: any = [];
+
   
   addImage !: FormGroup;
   constructor(private fb: FormBuilder, private api: ApiService) { }
@@ -31,6 +37,16 @@ export class ExploreGalleryComponent implements OnInit {
       for (let i = 0; i < res.length; i++) {
         if(res[i].category == "kitchen"){
           this.kitchenDesigns.push(res[i]);
+        }else if(res[i].category == "bedroom"){
+          this.bedroomDesigns.push(res[i]);
+        }else if(res[i].category == "livingroom"){
+          this.livingRoomDesigns.push(res[i]);
+        }else if(res[i].category == "bathroom"){
+          this.bathroomDesigns.push(res[i]);
+        }else if(res[i].category == "spacesaving"){
+          this.spaceSavingDesigns.push(res[i]);
+        }else if(res[i].category == "homeoffice"){
+          this.homeOfficeDesigns.push(res[i]);
         }
     }
     })
@@ -38,41 +54,7 @@ export class ExploreGalleryComponent implements OnInit {
   }
 
 
-  bedroomDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/explore_main-images/bedroom Design/spring-inspired design.png',
-      designName: 'Spring-Inspired Design',
-      prodSize: "18' x 21'",
-    },
-  ];
-  livingRoomDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/explore_main-images/Living Room Designs/organic-living-room.png',
-      designName: 'Organic Living Room',
-      prodSize: "18' x 21'",
-    },
-  ];
-  bathroomDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/explore_main-images/Bathroom Designs/white-space-bathroom.png',
-      designName: 'White Space Bathroom',
-      prodSize: "18' x 21'",
-    },
-  ];
-  spaceSavingDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/explore_main-images/Space_saving-Designs/wooden-room.png',
-      designName: 'Wooden Room',
-      prodSize: "18' x 21'",
-    },
-  ];
-  homeOfficeDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/explore_main-images/Home_office-Designs/gray-toned-office.png',
-      designName: 'Gray Toned Office',
-      prodSize: "18' x 21'",
-    },
-  ];
+
 
 
   

@@ -48,6 +48,7 @@ export class ConsultComponent implements OnInit {
     .subscribe(res=>{
       console.log(res);
       this.btnBook();
+      this.bookingForm.reset();
     },
     err=>{
       alert("Something went wrong");
