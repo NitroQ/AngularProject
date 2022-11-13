@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ConsultModel } from './consult.model';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ApiService } from '../../../book.service';
+import { ApiService } from '../../../api.service';
 import Swal from 'sweetalert2';
 
 @Component({

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { ApiService } from '../../../book.service';
+import { ApiService } from '../../../api.service';
 @Component({
   selector: 'app-explore-gallery',
   templateUrl: './explore-gallery.component.html',
