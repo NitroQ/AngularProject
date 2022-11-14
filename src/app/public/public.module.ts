@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ExploreGalleryComponent } from './components/explore-gallery/explore-gallery.component';
 import { ExploreComponent } from './components/explore/explore.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ExploreModule } from './explore/explore.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,6 +20,7 @@ import { ExploreLivingRoomComponent } from './components/explore-living-room/exp
 import { ExploreBathroomComponent } from './components/explore-bathroom/explore-bathroom.component';
 import { ExploreSpaceSavingComponent } from './components/explore-space-saving/explore-space-saving.component';
 import { ExploreHomeOfficeComponent } from './components/explore-home-office/explore-home-office.component';
+
 @NgModule({
   declarations: [
     PublicComponent,
@@ -37,6 +40,9 @@ import { ExploreHomeOfficeComponent } from './components/explore-home-office/exp
     CommonModule,
     RouterModule,
     SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     ExploreModule,
     CarouselModule,
     BrowserAnimationsModule,
