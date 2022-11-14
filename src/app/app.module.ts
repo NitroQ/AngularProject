@@ -32,6 +32,7 @@ import { ExplorelivingroomComponent } from './pages/explorelivingroom/exploreliv
 import { ExplorebathroomComponent } from './pages/explorebathroom/explorebathroom.component';
 import { ExplorespacesavingComponent } from './pages/explorespacesaving/explorespacesaving.component';
 import { ExplorehomeoffComponent } from './pages/explorehomeoff/explorehomeoff.component';
+import { NgChartsModule } from 'ng2-charts';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -62,7 +63,8 @@ const appRoutes: Routes = [
     BsDatepickerModule.forRoot(),
     TimepickerModule.forRoot(),
     ReactiveFormsModule,
-    CarouselModule
+    CarouselModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
