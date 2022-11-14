@@ -53,3 +53,16 @@ button {
    border-radius: 4px !important;
    border: none !important;
 }
+// view
+.btn-cancel{
+   font-family: 'Barlow Regular', sans-serif;
+   background-color: $cancelBtn;
+   color: $orange !important;
+   border-radius: 3.87701px;
+   border: none;
+}
+.btn-create{
+   @extend .btn-cancel;
+   background-color: $orange;
+   color: $white !important;
+}
