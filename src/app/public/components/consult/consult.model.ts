@@ -9,5 +9,5 @@ export class ConsultModel{
     company: string = '';
     consultationDate: string = '';
     timeAppointment: string = '';
-
+    status : string = '';
 }

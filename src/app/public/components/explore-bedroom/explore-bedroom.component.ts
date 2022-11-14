@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-explore-bedroom',
@@ -6,15 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore-bedroom.component.scss'],
 })
 export class ExploreBedroomComponent implements OnInit {
-  bedroomDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/bedroom-images/faux-fur-bedroom-design.png',
-      designName: 'Faux Fur Bedroom',
-      prodSize: "18' x 21'",
-    },
-  ];
+  bedroomDesigns: any = [];
+  addImage !: FormGroup;
+  imageData !: any;
+  constructor(private fb: FormBuilder, private api: ApiService) { }
 
-  constructor() {}
+  ngOnInit(): void {
+    this.addImage = this.fb.group({
+      description: [''],
+      category: [''],
+      dimensions: [''],
+      price: [''],
+      image: ['']
+    })
+    this.getImage();
+  }
 
-  ngOnInit(): void {}
+  getImage(){
+    this.api.getImage()
+    .subscribe(res=>{
+      for (let i = 0; i < res.length; i++) {
+         if(res[i].category == "bedroom"){
+          this.bedroomDesigns.push(res[i]);
+        }
+    }
+    })
+
+  }
 }
