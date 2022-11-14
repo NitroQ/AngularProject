@@ -9,18 +9,9 @@ import { ApiService } from '../../../api.service';
 })
 export class ExploreHomeOfficeComponent implements OnInit {
   homeOfficeDesigns: any = [];
-  addImage !: FormGroup;
-  imageData !: any;
-  constructor(private fb: FormBuilder, private api: ApiService) { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    this.addImage = this.fb.group({
-      description: [''],
-      category: [''],
-      dimensions: [''],
-      price: [''],
-      image: ['']
-    })
     this.getImage();
   }
 

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../../api.service';
 
 
@@ -10,18 +9,9 @@ import { ApiService } from '../../../api.service';
 })
 export class ExploreLivingRoomComponent implements OnInit {
   livingRoomDesigns: any = [ ];
-  addImage !: FormGroup;
-  imageData !: any;
-  constructor(private fb: FormBuilder, private api: ApiService) { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    this.addImage = this.fb.group({
-      description: [''],
-      category: [''],
-      dimensions: [''],
-      price: [''],
-      image: ['']
-    })
     this.getImage();
   }
 
