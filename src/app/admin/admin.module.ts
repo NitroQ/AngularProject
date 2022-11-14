@@ -28,7 +28,23 @@ import { ApplicationSettingsComponent } from './components/application-settings/
 import { UserManagementComponent } from './components/user-management/user-management.component';
 
 @NgModule({
-  declarations: [DashboardComponent, AdminComponent, NavListComponent, SidenavComponent, HeaderComponent, ConsultanciesComponent, ContactUsComponent, DesignKitchenComponent, DesignBedroomComponent, DesignLivingRoomComponent, DesignBathroomComponent, DesignSpaceSavingComponent, DesignHomeOfficeComponent, ApplicationSettingsComponent, UserManagementComponent],
+  declarations: [
+    DashboardComponent,
+    AdminComponent,
+    NavListComponent,
+    SidenavComponent,
+    HeaderComponent,
+    ConsultanciesComponent,
+    ContactUsComponent,
+    DesignKitchenComponent,
+    DesignBedroomComponent,
+    DesignLivingRoomComponent,
+    DesignBathroomComponent,
+    DesignSpaceSavingComponent,
+    DesignHomeOfficeComponent,
+    ApplicationSettingsComponent,
+    UserManagementComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,

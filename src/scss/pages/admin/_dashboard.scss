@@ -1,0 +1,32 @@
+@use "../../../scss/abstracts/" as *;
+
+.dashboard-card {
+   max-width: 661px;
+
+   .dashboard-card-title {
+      font-family: 'BarlowBold', sans-serif;
+      color: $orange;
+      line-height: 20px;
+   }
+
+   .dashboard-card-subheader {
+      @extend .dashboard-card-title;
+      color: $subheader;
+   }
+
+   .statistics {
+
+      .statistics-title {
+         font-family: 'BarlowExtraBold', sans-serif;
+         @extend .dashboard-card-title;
+         line-height: 31px !important;
+      }
+
+      .statistics-subheader {
+         @extend .statistics-title;
+         color: $statsTitle !important;
+         font-size: 15px !important;
+      }
+   }
+
+}
