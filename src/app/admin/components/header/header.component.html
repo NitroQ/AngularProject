@@ -1,4 +1,4 @@
-<mat-toolbar class="py-3">
+<mat-toolbar class="py-3 px-1">
   <mat-toolbar-row class="justify-content-between align-items-center">
     <button class="btn-toggle" (click)="toggleSidebar()"><i class="fa-solid fa-bars fs-4"></i></button>
     <div class="dropdown d-flex gap-3">
@@ -9,17 +9,11 @@
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <img
-          src="../../../../assets/images/admin-images/user.png"
-          alt=""
-          width="32"
-          height="32"
-          class="rounded-circle me-2"
-        />
+        <img src="../../../../assets/images/admin-images/user.png" alt="" class="rounded-circle" />
       </a>
 
       <ul class="dropdown-menu text-small shadow">
-        <li><a class="dropdown-item admin-user" href="#">Sign out</a></li>
+        <li><a class="dropdown-item admin-user" href="#">Logout</a></li>
       </ul>
     </div>
   </mat-toolbar-row>
