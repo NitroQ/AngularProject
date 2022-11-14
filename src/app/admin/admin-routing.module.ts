@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
-import { ApplicationSettingsComponent } from './components/application-settings/application-settings.component';
 import { ConsultanciesComponent } from './components/consultancies/consultancies.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -54,10 +53,6 @@ const routes: Routes = [
       {
         path: 'home-office',
         component: DesignHomeOfficeComponent,
-      },
-      {
-        path: 'settings',
-        component: ApplicationSettingsComponent,
       },
       {
         path: 'management',

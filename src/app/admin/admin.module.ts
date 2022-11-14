@@ -24,8 +24,8 @@ import { DesignLivingRoomComponent } from './components/design-living-room/desig
 import { DesignBathroomComponent } from './components/design-bathroom/design-bathroom.component';
 import { DesignSpaceSavingComponent } from './components/design-space-saving/design-space-saving.component';
 import { DesignHomeOfficeComponent } from './components/design-home-office/design-home-office.component';
-import { ApplicationSettingsComponent } from './components/application-settings/application-settings.component';
 import { UserManagementComponent } from './components/user-management/user-management.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -42,7 +42,6 @@ import { UserManagementComponent } from './components/user-management/user-manag
     DesignBathroomComponent,
     DesignSpaceSavingComponent,
     DesignHomeOfficeComponent,
-    ApplicationSettingsComponent,
     UserManagementComponent,
   ],
   imports: [
@@ -58,6 +57,7 @@ import { UserManagementComponent } from './components/user-management/user-manag
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
+    NgChartsModule,
   ],
 })
 export class AdminModule {}
