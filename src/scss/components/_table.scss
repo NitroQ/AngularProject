@@ -1,0 +1,22 @@
+@use "../../scss/abstracts/" as *;
+
+.admin-table {
+   border: 1px solid #E2E8F0 !important;
+   border-radius: 3.53px;
+
+   .admin-table-caption {
+      font-family: 'Inter SemiBold', sans-serif;
+      color: $orange !important;
+   }
+
+   .admin-table-head {
+      color: $orange !important;
+      background-color: $tableHead;
+   }
+
+   td {
+      @extend .admin-table-caption;
+      color: $tableData !important;
+      font-weight: 400;
+   }
+}

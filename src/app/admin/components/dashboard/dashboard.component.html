@@ -81,12 +81,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-8 col dashboard-table h-100">
+    <div class="col-md-8 col admin-table h-100">
       <table class="table table-responsive table-hover caption-top">
-        <caption class="fs-3 dashboard-table-caption">
+        <caption class="fs-3 admin-table-caption">
           Pending Consultations
         </caption>
-        <thead class="dashboard-table-head table-light">
+        <thead class="admin-table-head table-light">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -95,11 +95,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let consultationDatas of consultationData">
-            <td>{{ consultationDatas.name }}</td>
-            <td>{{ consultationDatas.email }}</td>
-            <td>{{ consultationDatas.type }}</td>
-            <td>{{ consultationDatas.date }}</td>
+          <tr *ngFor="let pendingConsultation of pendingConsultations">
+            <td>{{ pendingConsultation.name }}</td>
+            <td>{{ pendingConsultation.email }}</td>
+            <td>{{ pendingConsultation.type }}</td>
+            <td>{{ pendingConsultation.date }}</td>
           </tr>
         </tbody>
       </table>

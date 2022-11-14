@@ -26,6 +26,11 @@ import { DesignSpaceSavingComponent } from './components/design-space-saving/des
 import { DesignHomeOfficeComponent } from './components/design-home-office/design-home-office.component';
 import { UserManagementComponent } from './components/user-management/user-management.component';
 import { NgChartsModule } from 'ng2-charts';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { ViewConsultComponent } from './components/view/view-consult/view-consult.component';
+import { ViewContactComponent } from './components/view/view-contact/view-contact.component';
+import { ViewDesignComponent } from './components/view/view-design/view-design.component';
+import { AddDesignComponent } from './components/add/add-design/add-design.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +48,10 @@ import { NgChartsModule } from 'ng2-charts';
     DesignSpaceSavingComponent,
     DesignHomeOfficeComponent,
     UserManagementComponent,
+    ViewConsultComponent,
+    ViewContactComponent,
+    ViewDesignComponent,
+    AddDesignComponent,
   ],
   imports: [
     CommonModule,
@@ -58,6 +67,7 @@ import { NgChartsModule } from 'ng2-charts';
     MatCardModule,
     MatMenuModule,
     NgChartsModule,
+    ModalModule,
   ],
 })
 export class AdminModule {}

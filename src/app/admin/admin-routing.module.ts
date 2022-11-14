@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
+import { AddDesignComponent } from './components/add/add-design/add-design.component';
 import { ConsultanciesComponent } from './components/consultancies/consultancies.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -11,6 +12,9 @@ import { DesignKitchenComponent } from './components/design-kitchen/design-kitch
 import { DesignLivingRoomComponent } from './components/design-living-room/design-living-room.component';
 import { DesignSpaceSavingComponent } from './components/design-space-saving/design-space-saving.component';
 import { UserManagementComponent } from './components/user-management/user-management.component';
+import { ViewConsultComponent } from './components/view/view-consult/view-consult.component';
+import { ViewContactComponent } from './components/view/view-contact/view-contact.component';
+import { ViewDesignComponent } from './components/view/view-design/view-design.component';
 
 const routes: Routes = [
   {
@@ -57,6 +61,22 @@ const routes: Routes = [
       {
         path: 'management',
         component: UserManagementComponent,
+      },
+      {
+        path: 'view/consultation',
+        component: ViewConsultComponent,
+      },
+      {
+        path: 'view/contact',
+        component: ViewContactComponent,
+      },
+      {
+        path: 'view/design',
+        component: ViewDesignComponent,
+      },
+      {
+        path: 'add/design',
+        component: AddDesignComponent,
       },
     ],
   },

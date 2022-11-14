@@ -30,27 +30,6 @@
    }
 }
 
-.dashboard-table {
-   border: 1px solid #E2E8F0 !important;
-   border-radius: 3.53px;
-
-   .dashboard-table-caption {
-      font-family: 'Inter SemiBold', sans-serif;
-      color: $orange !important;
-   }
-
-   .dashboard-table-head {
-      color: $orange !important;
-      background-color: $tableHead;
-   }
-
-   td {
-      @extend .dashboard-table-caption;
-      color: $tableData !important;
-      font-weight: 400;
-   }
-}
-
 .dashboard-details-container {
    font-family: 'BarlowBold', sans-serif;
    background-color: $orange;
