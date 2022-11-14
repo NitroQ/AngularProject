@@ -31,6 +31,7 @@ import { ViewConsultComponent } from './components/view/view-consult/view-consul
 import { ViewContactComponent } from './components/view/view-contact/view-contact.component';
 import { ViewDesignComponent } from './components/view/view-design/view-design.component';
 import { AddDesignComponent } from './components/add/add-design/add-design.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -68,6 +69,7 @@ import { AddDesignComponent } from './components/add/add-design/add-design.compo
     MatMenuModule,
     NgChartsModule,
     ModalModule,
+    NgxDropzoneModule
   ],
 })
 export class AdminModule {}
