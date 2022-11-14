@@ -4,7 +4,6 @@
     background-color: $secondary !important;
  }
 
- .form-control,
  .form-select {
     background-color: $primary !important;
     font-family: Inter, sans-serif !important;
@@ -15,9 +14,10 @@
  }
 
  textarea {
-    @extend input;
+    border-radius: 3.53px !important;
+    border: 3px solid $white !important;
     resize: none !important;
-    background-color: transparent;
+    background-color: transparent !important;
  }
 
  textarea:focus {
@@ -30,8 +30,20 @@
     border: 3px solid $white !important;
  }
 
+ input[type=text],
+ input[type=email] {
+    background-color: $primary !important;
+    font-family: Inter, sans-serif !important;
+ }
+
+ input[type=search] {
+    border: 1px solid #C6C6C6 !important;
+    border-radius: 4px !important;
+ }
+
  input[type=text]:focus,
- input[type=password]:focus {
+ input[type=password]:focus,
+ input[type=email]:focus {
     background-color: $white !important;
  }
 
