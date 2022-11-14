@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { AdminModule } from './admin/admin.module';
     AppRoutingModule,
     AuthModule,
     AdminModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
