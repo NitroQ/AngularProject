@@ -4,3 +4,7 @@ body {
    background-color: $white !important;
    color: $admin !important;
 }
+
+::placeholder {
+   color: #717171 !important;
+}

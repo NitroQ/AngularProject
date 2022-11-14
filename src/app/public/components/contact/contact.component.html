@@ -11,27 +11,27 @@
       </div>
       <form class="row g-3 mt-4">
         <div class="col-md-5 mb-3">
-          <label for="inputFullName" class="form-label">Full Name</label>
-          <input type="text" class="form-control" placeholder="Full Name" />
+          <label for="inputFullName" class="form-label user-label">Full Name</label>
+          <input type="text" class="form-control user-input" placeholder="Full Name" />
         </div>
         <div class="col-md-5 mb-3">
-          <label for="Budget" class="form-label">Organization/Company</label>
-          <input type="text" class="form-control" placeholder="Indicate 'None' if NO AFFILIATIONS" />
+          <label for="Budget" class="form-label user-label">Organization/Company</label>
+          <input type="text" class="form-control user-input" placeholder="Indicate 'None' if NO AFFILIATIONS" />
         </div>
         <div class="col-md-5 mb-3">
-          <label for="inputEmailAddress" class="form-label">Email Address</label>
-          <input type="text" class="form-control" placeholder="Email Address" />
+          <label for="inputEmailAddress" class="form-label user-label">Email Address</label>
+          <input type="text" class="form-control user-input" placeholder="Email Address" />
         </div>
         <div class="col-md-5 mb-3">
-          <label for="inputSubjectConcern" class="form-label">Subject of Concern</label>
+          <label for="inputSubjectConcern" class="form-label user-label">Subject of Concern</label>
           <select id="inputSubjectConcern" class="form-select">
             <option value="null">Select a Subject</option>
             <option>...</option>
           </select>
         </div>
         <div class="col-12 mb-3">
-          <label for="clientMessage" class="form-label SoraBold">Message</label>
-          <textarea class="form-control" placeholder="Write your message here..." rows="5"></textarea>
+          <label for="clientMessage" class="form-label SoraBold user-label">Message</label>
+          <textarea class="form-control user-textarea" placeholder="Write your message here..." rows="5"></textarea>
         </div>
         <div class="col-12">
           <button class="btn fs-6 rounded-pill px-md-5 px-4 py-2 text-uppercase mx-md-0 d-flex align-items-center me-md-2" type="button" (click)="btnSubmit()">SUBMIT MESSAGE</button>

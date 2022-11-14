@@ -47,7 +47,7 @@ export class DashboardComponent {
     console.log(event, active);
   }
   // table data
-  consultationData: any = [
+  pendingConsultations: any = [
     {
       name: 'Sample Notice',
       email: 'sample@email.com',
