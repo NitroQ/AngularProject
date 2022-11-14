@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { AddDesignComponent } from './components/add/add-design/add-design.component';
+import { AddUserComponent } from './components/add/add-user/add-user.component';
 import { ConsultanciesComponent } from './components/consultancies/consultancies.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -11,6 +12,7 @@ import { DesignHomeOfficeComponent } from './components/design-home-office/desig
 import { DesignKitchenComponent } from './components/design-kitchen/design-kitchen.component';
 import { DesignLivingRoomComponent } from './components/design-living-room/design-living-room.component';
 import { DesignSpaceSavingComponent } from './components/design-space-saving/design-space-saving.component';
+import { UpdateUserComponent } from './components/update/update-user/update-user.component';
 import { UserManagementComponent } from './components/user-management/user-management.component';
 import { ViewConsultComponent } from './components/view/view-consult/view-consult.component';
 import { ViewContactComponent } from './components/view/view-contact/view-contact.component';
@@ -77,6 +79,18 @@ const routes: Routes = [
       {
         path: 'add/design',
         component: AddDesignComponent,
+      },
+      {
+        path: 'user/user-management',
+        component: UserManagementComponent,
+      },
+      {
+        path: 'user/add-user',
+        component: AddUserComponent,
+      },
+      {
+        path: 'user/update-user',
+        component: UpdateUserComponent,
       },
     ],
   },

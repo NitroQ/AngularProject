@@ -32,6 +32,9 @@ import { ViewContactComponent } from './components/view/view-contact/view-contac
 import { ViewDesignComponent } from './components/view/view-design/view-design.component';
 import { AddDesignComponent } from './components/add/add-design/add-design.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { AddUserComponent } from './components/add/add-user/add-user.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { UpdateUserComponent } from './components/update/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     ViewContactComponent,
     ViewDesignComponent,
     AddDesignComponent,
+    AddUserComponent,
+    UpdateUserComponent,
   ],
   imports: [
     CommonModule,
@@ -69,7 +74,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     MatMenuModule,
     NgChartsModule,
     ModalModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    MatSlideToggleModule,
   ],
 })
 export class AdminModule {}
