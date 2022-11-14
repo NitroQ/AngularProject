@@ -1,0 +1,23 @@
+@use "../../scss/abstracts/" as *;
+
+mat-toolbar {
+   position: sticky !important;
+   top: 0 !important;
+   z-index: 100 !important;
+   background-color: $white !important;
+   color: $admin !important;
+   border-bottom: 5px solid #F5F5F5 !important;
+}
+
+.btn-toggle {
+   background-color: transparent !important;
+   color: $admin !important;
+   border-color: transparent;
+   cursor: pointer;
+}
+
+.dropdown-menu {
+   .admin-user {
+      color: $secondary !important;
+   }
+}

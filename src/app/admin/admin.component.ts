@@ -1,7 +1,4 @@
-import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
-import { map, shareReplay } from 'rxjs/operators';
+import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-admin',
@@ -9,20 +6,13 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./admin.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class AdminComponent {
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map((result) => result.matches),
-    shareReplay()
-  );
-  @Output() toggleSidebarForMe: EventEmitter<any> = new EventEmitter();
-  toggleSidebar() {
-    this.toggleSidebarForMe.emit();
-  }
+export class AdminComponent implements OnInit {
   sideBarOpen = true;
 
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor() {}
+  ngOnInit(): void {}
 }

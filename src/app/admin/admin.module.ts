@@ -16,9 +16,19 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatCardModule } from '@angular/material/card';
 import { MatMenuModule } from '@angular/material/menu';
 import { HeaderComponent } from './components/header/header.component';
+import { ConsultanciesComponent } from './components/consultancies/consultancies.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { DesignKitchenComponent } from './components/design-kitchen/design-kitchen.component';
+import { DesignBedroomComponent } from './components/design-bedroom/design-bedroom.component';
+import { DesignLivingRoomComponent } from './components/design-living-room/design-living-room.component';
+import { DesignBathroomComponent } from './components/design-bathroom/design-bathroom.component';
+import { DesignSpaceSavingComponent } from './components/design-space-saving/design-space-saving.component';
+import { DesignHomeOfficeComponent } from './components/design-home-office/design-home-office.component';
+import { ApplicationSettingsComponent } from './components/application-settings/application-settings.component';
+import { UserManagementComponent } from './components/user-management/user-management.component';
 
 @NgModule({
-  declarations: [DashboardComponent, AdminComponent, NavListComponent, SidenavComponent, HeaderComponent],
+  declarations: [DashboardComponent, AdminComponent, NavListComponent, SidenavComponent, HeaderComponent, ConsultanciesComponent, ContactUsComponent, DesignKitchenComponent, DesignBedroomComponent, DesignLivingRoomComponent, DesignBathroomComponent, DesignSpaceSavingComponent, DesignHomeOfficeComponent, ApplicationSettingsComponent, UserManagementComponent],
   imports: [
     CommonModule,
     RouterModule,

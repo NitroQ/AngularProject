@@ -1,42 +1,5 @@
-<!-- <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav
-    #drawer
-    class="sidenav"
-    fixedInViewport
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-    [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="(isHandset$ | async) === false"
-  >
-    <app-sidenav></app-sidenav>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar>
-      <mat-toolbar-row class="justify-content-between">
-        <button mat-icon-button (click)="toggleSidebar()"></button>
-        <div class="row me-2 ms-auto">
-          <ul class="row m-0 align-items-center">
-            <li>
-              <button mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center">
-                User Name
-              </button>
-              <mat-menu #menu="matMenu">
-                <button mat-menu-item>
-                  <mat-icon>exit_to_app</mat-icon>
-                  Logout
-                </button>
-              </mat-menu>
-            </li>
-          </ul>
-        </div>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container> -->
-
 <mat-drawer-container>
   <mat-drawer mode="side" [opened]="sideBarOpen">
-    <!-- <mat-drawer mode="side" opened="true"> -->
     <app-sidenav></app-sidenav>
   </mat-drawer>
   <mat-drawer-content>
