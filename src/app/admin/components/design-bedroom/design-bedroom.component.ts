@@ -36,7 +36,7 @@ export class DesignBedroomComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Deleted!', 'This consultation has been deleted.', 'success');
+        Swal.fire('Deleted!', 'This design has been deleted.', 'success');
       }
     });
   }

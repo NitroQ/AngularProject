@@ -19,13 +19,10 @@ export class DesignKitchenComponent implements OnInit {
   addDesignDetails(): void {
     this.router.navigate(['/admin/add/design']);
   }
-  btnView(): void {
-    this.router.navigate(['/admin/view/design']);
-  }
   updateDesignDetails(): void {
     this.router.navigate(['/admin/view/design']);
   }
-  btnDelete() {
+  deleteDesignDetails() {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -36,7 +33,7 @@ export class DesignKitchenComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Deleted!', 'This consultation has been deleted.', 'success');
+        Swal.fire('Deleted!', 'This design has been deleted.', 'success');
       }
     });
   }
