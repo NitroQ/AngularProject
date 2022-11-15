@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { AdminRoutingModule } from './admin-routing.module';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
@@ -26,7 +26,6 @@ import { DesignSpaceSavingComponent } from './components/design-space-saving/des
 import { DesignHomeOfficeComponent } from './components/design-home-office/design-home-office.component';
 import { UserManagementComponent } from './components/user-management/user-management.component';
 import { NgChartsModule } from 'ng2-charts';
-import { ModalModule } from 'ngx-bootstrap/modal';
 import { ViewConsultComponent } from './components/view/view-consult/view-consult.component';
 import { ViewContactComponent } from './components/view/view-contact/view-contact.component';
 import { ViewDesignComponent } from './components/view/view-design/view-design.component';
@@ -75,7 +74,6 @@ import { AuthModule } from '../auth/auth.module';
     MatCardModule,
     MatMenuModule,
     NgChartsModule,
-    ModalModule,
     NgxDropzoneModule,
     MatSlideToggleModule,
     SharedModule,
