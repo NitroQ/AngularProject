@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-explore-space-saving',
@@ -6,14 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore-space-saving.component.scss'],
 })
 export class ExploreSpaceSavingComponent implements OnInit {
-  spaceSavingDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/space-saving-imaegs/all-in-one-room-design.png',
-      designName: 'All in One Room',
-      prodSize: "18' x 21'",
-    },
-  ];
-  constructor() {}
+  spaceSavingDesigns: any = [ ];  
+  constructor(private api: ApiService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getImage();
+  }
+
+  getImage(){
+    this.api.getImage()
+    .subscribe(res=>{
+      for (let i = 0; i < res.length; i++) {
+         if(res[i].category == "spacesaving"){
+          this.spaceSavingDesigns.push(res[i]);
+        }
+    }
+    })
+
+  }
 }

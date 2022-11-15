@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from '../../../../api.service';
 
 @Component({
   selector: 'app-view-consult',
@@ -22,8 +24,19 @@ export class ViewConsultComponent implements OnInit {
       }
     });
   }
+  consultValue: any;
+  constructor(private route: ActivatedRoute, private api: ApiService) {}
 
-  constructor() {}
+  ngOnInit(): void {
+    const id = this.route.snapshot.queryParamMap.get('id');
 
-  ngOnInit(): void {}
+    this.api.getBooking().subscribe((res) => {
+      for (let i = 0; i < res.length; i++) {
+        if (res[i].id == id) {
+          this.consultValue = res[i];
+          console.log(this.consultValue);
+        }
+      }
+    });
+  }
 }

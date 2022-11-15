@@ -3,7 +3,7 @@
   <form class="mt-4">
     <div class="row mb-3">
       <label class="col-sm-2 col-md col admin-label col-form-label">Design Photo:</label>
-      <ngx-dropzone class="col-sm-9 col-12" (change)="onSelect($event)">
+      <ngx-dropzone class="col-sm-9 col-12"  [multiple]="false" (change)="onSelect($event)">
         <ngx-dropzone-label
           ><span class="drag-drop-img"
             ><i class="fa-solid fa-cloud-arrow-up pe-2"></i>Drag and Drop Here</span
@@ -26,12 +26,7 @@
         <input type="text" class="form-control admin-input" />
       </div>
     </div>
-    <div class="row mb-3">
-      <label class="col-sm-3 col-md col-form-label admin-label">Category:</label>
-      <div class="col-sm-9 col">
-        <input type="text" class="form-control admin-input" />
-      </div>
-    </div>
+
   </form>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
     <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">CANCEL</button>

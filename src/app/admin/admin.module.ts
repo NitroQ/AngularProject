@@ -37,6 +37,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { UpdateUserComponent } from './components/update/update-user/update-user.component';
 import { SharedModule } from '../shared/shared.module';
 import { AuthModule } from '../auth/auth.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { AuthModule } from '../auth/auth.module';
     MatSlideToggleModule,
     SharedModule,
     AuthModule,
+    ReactiveFormsModule,
   ],
 })
 export class AdminModule {}

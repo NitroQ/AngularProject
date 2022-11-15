@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Observable, Subscriber } from 'rxjs';
+import { ApiService } from '../../../../api.service';
+import { ImageModel } from './add-design.model';
+import { Location } from '@angular/common';
+
 import Swal from 'sweetalert2';
 
 @Component({
@@ -10,6 +17,29 @@ import Swal from 'sweetalert2';
 export class AddDesignComponent implements OnInit {
   // NGX DROPZONE OPTIONS
   files: File[] = [];
+  myImage: any;
+  base64code !: any;
+  addImage !: FormGroup;
+  imageModelObj : ImageModel = new ImageModel();
+  imageData !: any;
+
+  constructor(private router: Router, private fb: FormBuilder, private route: ActivatedRoute, private location: Location) {}
+
+  ngOnInit(): void {
+    const category = this.route.snapshot.queryParamMap.get('category');
+    if(category == null || category == undefined){
+      this.location.back();
+    }
+
+    this.addImage = this.fb.group({
+      description: [''],
+      category: [''],
+      dimensions: [''],
+      price: [''],
+      image: ['']
+    })
+  }
+
 
   onSelect(event: { addedFiles: any }) {
     console.log(event);
@@ -37,8 +67,33 @@ export class AddDesignComponent implements OnInit {
       }
     });
   }
+  convertToBase64(file: File) {
+  
+    const observable = new Observable((subscriber: any) => {
+      this.readFile(file, subscriber);
+    })
 
-  constructor(private router: Router) {}
+    observable.subscribe((d) => {
+      console.log(d)
+     this.myImage = d
+     this.base64code  = d
+    })
+  }
 
-  ngOnInit(): void {}
+  readFile(file: File, subscriber: Subscriber<any>) {
+    const filereader = new FileReader();
+    filereader.readAsDataURL(file);
+
+    filereader.onload = () => {
+      subscriber.next(filereader.result);
+      subscriber.complete();
+    };
+
+    filereader.onerror = (error) => {
+      subscriber.error(error);
+      subscriber.complete();
+    };
+  }
+
+
 }

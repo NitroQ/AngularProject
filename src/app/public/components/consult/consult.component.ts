@@ -11,11 +11,8 @@ import Swal from 'sweetalert2';
 })
 export class ConsultComponent implements OnInit {
   // * * when book button is click, confirmation message will appear
-
-
   bookingForm !: FormGroup;
   bookingModelObj : ConsultModel = new ConsultModel();
-  bookingData !: any;
   constructor(private fb: FormBuilder, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -24,13 +21,14 @@ export class ConsultComponent implements OnInit {
       budget: [''],
       plan: [''],
       clientName: [''],
+      designerNote: [''],
       email: [''],
       mobile: [''],
       company: [''],
       consultationDate: [''],
-      timeAppointment: ['']
+      timeAppointment: [''],
+      status : ['']
     })
-    this.getBookingDetails();
   }
 
   postBookingDetails(){
@@ -43,6 +41,7 @@ export class ConsultComponent implements OnInit {
     this.bookingModelObj.company = this.bookingForm.value.company;
     this.bookingModelObj.consultationDate = this.bookingForm.value.consultationDate;
     this.bookingModelObj.timeAppointment = this.bookingForm.value.timeAppointment;
+    this.bookingModelObj.status = 'pending';
 
     this.api.postBooking(this.bookingModelObj)
     .subscribe(res=>{
@@ -55,12 +54,6 @@ export class ConsultComponent implements OnInit {
 
   });
 
-  }
-  getBookingDetails(){
-    this.api.getBooking()
-    .subscribe(res=>{
-      this.bookingData = res;
-    })
   }
 
   btnBook() {

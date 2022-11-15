@@ -16,10 +16,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let consultationData of consultationDatas">
-          <td>{{ consultationData.name }}</td>
+          <td>{{ consultationData.clientName }}</td>
           <td>{{ consultationData.email }}</td>
-          <td>{{ consultationData.type }}</td>
-          <td>{{ consultationData.date }}</td>
+          <td>{{ consultationData.propertyType }}</td>
+          <td>{{ consultationData.consultationDate }}</td>
           <td>
             <div class="d-grid gap-2 d-md-block">
               <button
@@ -27,11 +27,11 @@
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                (click)="btnView()"
+                (click)="btnView(consultationData)"
               >
                 <span> <i class="fa-solid fa-eye"></i> View</span>
               </button>
-              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="btnDelete()">
+              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="btnDelete(consultationData)">
                 <span>
                   <i class="fa-solid fa-trash-can"></i>
                   Delete

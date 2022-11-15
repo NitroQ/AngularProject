@@ -1,5 +1,5 @@
 <div class="container-fluid p-lg-4">
-  <h1 class="display-5 SoraBold">User Manegement</h1>
+  <h1 class="display-5 SoraBold">User Management</h1>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
     <button class="btn-search me-md-2" type="button" (click)="createUser()">
       <span><i class="fa-solid fa-circle-plus me-2"></i>Add User</span>
@@ -8,7 +8,7 @@
   <div class="admin-table h-100 p-2">
     <table class="table table-responsive table-hover caption-top">
       <caption class="fs-3 admin-table-caption">
-        Consultations
+        Users
       </caption>
       <thead class="admin-table-head table-light">
         <tr>
@@ -23,10 +23,10 @@
       <tbody>
         <tr *ngFor="let userList of userLists">
           <td>{{ userList.id }}</td>
-          <td>{{ userList.name }}</td>
+          <td>{{ userList.firstname + userList.lastname }}</td>
           <td>{{ userList.contact }}</td>
           <td>{{ userList.email }}</td>
-          <td>{{ userList.type }}</td>
+          <td>{{ userList.usertype }}</td>
           <td>
             <div class="btn-group" role="group" aria-label="Basic example">
               <button type="button" class="btn-user-action" (click)="updateUserDetails()">
@@ -35,7 +35,7 @@
               <button type="button" class="btn-user-action">
                 <i class="fa-solid fa-toggle-off"></i>
               </button>
-              <button type="button" class="btn-user-action"><i class="fa-solid fa-trash"></i></button>
+              <button type="button" class="btn-user-action" (click)="deleteUser(userList)"><i class="fa-solid fa-trash"></i></button>
             </div>
           </td>
         </tr>

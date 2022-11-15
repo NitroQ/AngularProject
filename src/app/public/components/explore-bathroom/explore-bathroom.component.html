@@ -9,10 +9,10 @@
   <div class="row row-cols-md-3 row-cols-1 gx-3 gy-4">
     <div class="col" *ngFor="let bathroomDesign of bathroomDesigns">
       <div class="design-card border-0 mx-md-0 mx-auto d-block">
-        <img src="{{ bathroomDesign.imgUrl }}" class="card-img-top img-fluid" />
+        <img [src]="bathroomDesign.image" class="card-img-top img-fluid" />
         <div class="card-body mt-3">
-          <h5 class="card-title">{{ bathroomDesign.designName }}</h5>
-          <p class="card-text fs-6">{{ bathroomDesign.prodSize }}</p>
+          <h5 class="card-title">{{ bathroomDesign.description }}</h5>
+          <p class="card-text fs-6">{{ bathroomDesign.dimensions }}</p>
         </div>
       </div>
     </div>
