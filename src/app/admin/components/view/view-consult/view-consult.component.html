@@ -6,37 +6,37 @@
         <div class="row mb-3">
           <label class="col-sm-2 col-md col-form-label admin-label">Name:</label>
           <div class="col-sm-9 col">
-            <input type="text" class="form-control admin-input" />
+            <input type="text" class="form-control admin-input" value="{{ consultValue.clientName }}" readonly />
           </div>
         </div>
         <div class="row mb-3">
           <label class="col-sm-2 col-md col-form-label admin-label">Email:</label>
           <div class="col-sm-9 col">
-            <input type="email" class="form-control admin-input" />
+            <input type="email" class="form-control admin-input" value="{{ consultValue.email }}" readonly />
           </div>
         </div>
         <div class="row mb-3">
           <label class="col-sm-3 col-md col-form-label admin-label">Company:</label>
           <div class="col-sm-9 col">
-            <input type="text" class="form-control admin-input" />
+            <input type="text" class="form-control admin-input" value="{{ consultValue.company }}" readonly />
           </div>
         </div>
         <div class="row mb-3">
           <label class="col-sm-3 col-md col-form-label admin-label">Phone Number:</label>
           <div class="col-sm-9 col">
-            <input type="text" class="form-control admin-input" />
+            <input type="text" class="form-control admin-input" value="{{ consultValue.mobile }}" readonly />
           </div>
         </div>
         <div class="row mb-3">
           <label class="col-sm-3 col-md col-form-label admin-label">Budget:</label>
           <div class="col-sm-9 col">
-            <input type="text" class="form-control admin-input" />
+            <input type="text" class="form-control admin-input" value="{{ consultValue.budget }}" readonly />
           </div>
         </div>
         <div class="row mb-3">
           <label class="col-sm-3 col-md col-form-label admin-label">Property Type:</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control admin-input" />
+            <input type="text" class="form-control admin-input" value="{{ consultValue.propertyType }}" readonly/>
           </div>
         </div>
       </form>
@@ -46,26 +46,26 @@
         <div class="row mb-3">
           <label for="" class="col-sm-3 col-md col-form-label admin-label">Notes:</label>
           <div class="col-sm-9">
-            <textarea class="admin-input" cols="50" rows="10"></textarea>
+            <textarea class="admin-input" cols="50" rows="10" readonly>{{ consultValue.designerNote }}</textarea>
           </div>
         </div>
         <div class="row mb-3">
           <label class="col-sm-3 col-md col-form-label admin-label">Available Date:</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control admin-input" />
+            <input type="text" class="form-control admin-input" value="{{ consultValue.consultationDate }}" readonly />
           </div>
         </div>
         <div class="row mb-3">
           <label class="col-sm-3 col-md col-form-label admin-label">Available Time:</label>
           <div class="col-sm-9">
-            <input type="text" class="form-control admin-input" />
+            <input type="text" class="form-control admin-input" value="{{ consultValue.timeAppointment }}" readonly />
           </div>
         </div>
       </form>
     </div>
   </div>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-    <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">CANCEL</button>
-    <button class="btn-create text-uppercase px-3 py-2" type="button">CREATE EMAIL</button>
+    <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">BACK</button>
+   <a href="mailto:{{ consultValue.email }}"> <button class="btn-create text-uppercase px-3 py-2" type="button">CREATE EMAIL</button></a>
   </div>
 </div>

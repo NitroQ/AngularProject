@@ -1,24 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { ApiService } from '../../../api.service';
 @Component({
   selector: 'app-consultancies',
   templateUrl: './consultancies.component.html',
   styleUrls: ['./consultancies.component.scss'],
 })
 export class ConsultanciesComponent implements OnInit {
-  consultationDatas: any = [
-    {
-      name: 'Sample Notice',
-      email: 'sample@email.com',
-      type: 'Property Type',
-      date: 'Date',
-    },
-  ];
-  btnView(): void {
-    this.router.navigate(['/admin/view/consultation']);
+  consultationDatas: any;
+  btnView(row : any): void {
+    this.router.navigate(['/admin/view/consultation/'], { queryParams: { id: row.id } });
   }
-  btnDelete() {
+  btnDelete(row: any) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -29,12 +23,29 @@ export class ConsultanciesComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
+        this.deleteBooking(row);
         Swal.fire('Deleted!', 'This consultation has been deleted.', 'success');
       }
     });
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private api: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getBookingDetails();
+  }
+
+  getBookingDetails(){
+    this.api.getBooking()
+    .subscribe(res=>{
+      this.consultationDatas = res;
+    })
+  }
+  deleteBooking(row : any){
+    this.api.deleteBooking(row.id)
+    .subscribe(res=>{
+     this.getBookingDetails();
+    })
+  }
+
 }

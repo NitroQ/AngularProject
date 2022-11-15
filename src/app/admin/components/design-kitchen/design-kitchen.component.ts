@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,16 +9,10 @@ import Swal from 'sweetalert2';
   styleUrls: ['./design-kitchen.component.scss'],
 })
 export class DesignKitchenComponent implements OnInit {
-  kitchenDesigns: any = [
-    {
-      name: 'Sample Notice',
-      email: 'sample@email.com',
-      type: 'Property Type',
-      date: 'Date',
-    },
-  ];
+  kitchenDesigns: any = [];
+
   addDesignDetails(): void {
-    this.router.navigate(['/admin/add/design']);
+    this.router.navigate(['/admin/add/design/'], { queryParams: { category: "kitchen"} });
   }
   btnView(): void {
     this.router.navigate(['/admin/view/design']);
@@ -36,11 +31,25 @@ export class DesignKitchenComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Deleted!', 'This consultation has been deleted.', 'success');
+        Swal.fire('Deleted!', 'This image has been deleted.', 'success');
       }
     });
   }
-  constructor(private router: Router) {}
+  constructor(private router: Router, private api: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getImage();
+  }
+
+  getImage(){
+    this.api.getImage()
+    .subscribe(res=>{
+      for (let i = 0; i < res.length; i++) {
+         if(res[i].category == "kitchen"){
+          this.kitchenDesigns.push(res[i]);
+        }
+    }
+    })
+
+  }
 }

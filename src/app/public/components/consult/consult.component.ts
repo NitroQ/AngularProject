@@ -21,6 +21,7 @@ export class ConsultComponent implements OnInit {
       budget: [''],
       plan: [''],
       clientName: [''],
+      designerNote: [''],
       email: [''],
       mobile: [''],
       company: [''],

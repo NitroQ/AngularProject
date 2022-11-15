@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { ApiService } from 'src/app/api.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,15 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./user-management.component.scss'],
 })
 export class UserManagementComponent implements OnInit {
-  userLists: any = [
-    {
-      id: 1,
-      name: 'Timothy Joshua Melchor',
-      contact: '+639123456789',
-      email: 'gabrielsabater@gmail.com',
-      type: 'admin',
-    },
-  ];
+  userLists: any = [ ];
   createUser(): void {
     this.router.navigate(['/admin/user/add-user']);
   }
@@ -39,7 +33,24 @@ export class UserManagementComponent implements OnInit {
     });
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private api : ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getUserDetails();
+  }
+
+  getUserDetails(){
+    this.api.getUser()
+    .subscribe(res=>{
+      this.userLists = res;
+    })
+  }
+
+  deleteUser(row : any){
+    this.api.deleteUser(row.id)
+    .subscribe(res=>{
+      alert("User deleted successfully");
+      this.getUserDetails();
+    })
+  }
 }

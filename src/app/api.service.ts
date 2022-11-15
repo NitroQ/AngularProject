@@ -99,6 +99,12 @@ export class ApiService {
       return res;
     }))
   }
+  deleteContact(id : number){
+    return this.http.delete<any>("http://localhost:3000/contact/" + id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
 
 
 }

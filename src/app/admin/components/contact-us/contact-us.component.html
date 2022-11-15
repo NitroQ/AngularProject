@@ -9,17 +9,19 @@
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Email</th>
-          <th scope="col">Property Type</th>
-          <th scope="col">Consultation Date</th>
+          <th scope="col">Concern</th>
+          <th scope="col">Message</th>
+          <th scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let contactsData of contactsDatas">
+        <tr *ngFor="let contactsData of contactData">
           <td>{{ contactsData.name }}</td>
           <td>{{ contactsData.email }}</td>
-          <td>{{ contactsData.type }}</td>
-          <td>{{ contactsData.date }}</td>
+          <td>{{ contactsData.concern }}</td>
+          <td>{{ contactsData.message | slice:0:20 }}{{contactsData.message.length > 20 ? '...' : ''}}</td>
+          <td>{{ contactsData.status }}</td>
           <td>
             <div class="d-grid gap-2 d-md-block">
               <button
@@ -27,11 +29,11 @@
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                (click)="btnView()"
+                (click)="btnView(contactsData)"
               >
                 <span> <i class="fa-solid fa-eye"></i> View</span>
               </button>
-              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="btnDelete()">
+              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="btnDelete(contactsData)">
                 <span>
                   <i class="fa-solid fa-trash-can"></i>
                   Delete

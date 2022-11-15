@@ -36,6 +36,7 @@ import { AddUserComponent } from './components/add/add-user/add-user.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { UpdateUserComponent } from './components/update/update-user/update-user.component';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -78,6 +79,7 @@ import { SharedModule } from '../shared/shared.module';
     NgxDropzoneModule,
     MatSlideToggleModule,
     SharedModule,
+    ReactiveFormsModule,
   ],
 })
 export class AdminModule {}
