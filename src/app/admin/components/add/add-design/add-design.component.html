@@ -1,34 +1,17 @@
 <div class="container-fluid p-lg-4">
   <h1 class="display-5 SoraBold mb-4">Add a Design</h1>
   <form class="mt-4">
+    <label class="col-sm-2 col-md col admin-label col-form-label">Design Photo:</label>
+    <input class="form-control" type="file" id="formFile" />
     <div class="row mb-3">
-      <label class="col-sm-2 col-md col admin-label col-form-label">Design Photo:</label>
-      <ngx-dropzone class="col-sm-9 col-12" (change)="onSelect($event)">
-        <ngx-dropzone-label
-          ><span class="drag-drop-img"
-            ><i class="fa-solid fa-cloud-arrow-up pe-2"></i>Drag and Drop Here</span
-          ></ngx-dropzone-label
-        >
-        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
-          <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-        </ngx-dropzone-image-preview>
-      </ngx-dropzone>
-    </div>
-    <div class="row mb-3">
-      <label class="col-sm-3 col-md col-form-label admin-label">Design Name:</label>
-      <div class="col-sm-9 col">
+      <label class="col-sm-2 col-form-label admin-label">Design Name:</label>
+      <div class="col-sm-5 col">
         <input type="text" class="form-control admin-input" />
       </div>
     </div>
     <div class="row mb-3">
-      <label class="col-sm-3 col-md col-form-label admin-label">Dimension:</label>
-      <div class="col-sm-9 col">
-        <input type="text" class="form-control admin-input" />
-      </div>
-    </div>
-    <div class="row mb-3">
-      <label class="col-sm-3 col-md col-form-label admin-label">Category:</label>
-      <div class="col-sm-9 col">
+      <label class="col-sm-2 col-form-label admin-label">Dimension:</label>
+      <div class="col-sm-5 col">
         <input type="text" class="form-control admin-input" />
       </div>
     </div>
