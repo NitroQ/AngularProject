@@ -17,7 +17,7 @@ export class DesignKitchenComponent implements OnInit {
   updateDesignDetails(): void {
     this.router.navigate(['/admin/view/design']);
   }
-  deleteDesignDetails() {
+  deleteDesignDetails(row:any) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -28,6 +28,7 @@ export class DesignKitchenComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
+        this.deleteImage(row);
         Swal.fire('Deleted!', 'This image has been deleted.', 'success');
       }
     });
@@ -46,5 +47,12 @@ export class DesignKitchenComponent implements OnInit {
         }
       }
     });
+  }
+  deleteImage(row : any){
+    this.kitchenDesigns = [];
+    this.api.deleteImage(row.id)
+    .subscribe(res=>{
+      this.getImage();
+    })
   }
 }

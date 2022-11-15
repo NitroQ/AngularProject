@@ -28,7 +28,7 @@ export class UserManagementComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.api.deleteUser(row);
+        this.deleteUser(row);
         Swal.fire('Deleted!', 'User deleted successfully.', 'success');
       }
     });
@@ -37,12 +37,23 @@ export class UserManagementComponent implements OnInit {
   constructor(private router: Router, private api: ApiService) {}
 
   ngOnInit(): void {
+    let type = sessionStorage.getItem('usertype');
+
+    if (type == 'user') {
+      this.router.navigate(['/admin/dashboard']);
+    }
     this.getUserDetails();
   }
 
   getUserDetails() {
     this.api.getUser().subscribe((res) => {
       this.userLists = res;
+    });
+  }
+  deleteUser(row: any) {
+    this.api.deleteUser(row.id)
+    .subscribe((res) => {
+      this.getUserDetails();
     });
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
@@ -7,12 +8,22 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class AdminComponent implements OnInit {
+  adminaccess: boolean = false;
   sideBarOpen = true;
 
   sideBarToggler() {
     this.sideBarOpen = !this.sideBarOpen;
   }
 
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private router: Router) {}
+  ngOnInit(): void {
+    if (sessionStorage.getItem('isLoggedIn') == 'true' && sessionStorage.getItem('username') != null) {
+      this.adminaccess = true;
+    } else {
+      this.redirectLogin();
+    }
+  }
+  redirectLogin() {
+    this.router.navigate(['/auth/login']);
+  }
 }

@@ -2,7 +2,7 @@
   <mat-toolbar-row class="justify-content-between align-items-center">
     <button class="btn-toggle" (click)="toggleSidebar()"><i class="fa-solid fa-bars fs-4"></i></button>
     <div class="dropdown d-flex gap-3">
-      <strong>user</strong>
+      <strong>{{ name }}</strong>
       <a
         href="#"
         class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
@@ -13,7 +13,7 @@
       </a>
 
       <ul class="dropdown-menu text-small shadow">
-        <li><a class="dropdown-item admin-user" [routerLink]="['/auth/login']">Logout</a></li>
+        <li><a class="dropdown-item admin-user" (click)="logout()">Logout</a></li>
       </ul>
     </div>
   </mat-toolbar-row>
