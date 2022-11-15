@@ -21,7 +21,7 @@ export class AddUserComponent implements OnInit {
         Swal.fire('Successfully added!', '', 'success');
         this.router.navigate(['/admin/user/management']);
       } else if (result.isDenied) {
-        Swal.fire('No design added', '', 'info');
+        Swal.fire('No user added', '', 'info');
       }
     });
   }

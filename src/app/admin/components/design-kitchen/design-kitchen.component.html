@@ -32,7 +32,7 @@
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                (click)="btnView()"
+                (click)="updateDesignDetails()"
               >
                 <span> <i class="fa-solid fa-eye"></i> View</span>
               </button>
@@ -42,10 +42,10 @@
                   Edit
                 </span>
               </button>
-              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="btnDelete()">
+              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="deleteDesignDetails()">
                 <span>
                   <i class="fa-solid fa-trash-can"></i>
-                  Detele
+                  Delete
                 </span>
               </button>
             </div>

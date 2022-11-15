@@ -1,1 +1,57 @@
-<p>design-space-saving works!</p>
+<div class="container-fluid p-lg-4">
+  <h1 class="display-5 SoraBold mb-4">Space Saving Designs</h1>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
+    <button class="btn-search me-md-2" type="button" (click)="addDesignDetails()">
+      <span><i class="fa-solid fa-circle-plus me-2"></i>Add Design</span>
+    </button>
+  </div>
+  <div class="admin-table h-100 p-2">
+    <table class="table table-responsive table-hover caption-top">
+      <caption class="fs-3 admin-table-caption">
+        Space Saving Design
+      </caption>
+      <thead class="admin-table-head table-light">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Property Type</th>
+          <th scope="col">Consultation Date</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let spaceSavingDesign of spaceSavingDesigns">
+          <td>{{ spaceSavingDesign.name }}</td>
+          <td>{{ spaceSavingDesign.email }}</td>
+          <td>{{ spaceSavingDesign.type }}</td>
+          <td>{{ spaceSavingDesign.date }}</td>
+          <td>
+            <div class="d-grid gap-2 d-md-block">
+              <button
+                class="btn-action btn-primary me-2 py-1 px-3"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                (click)="updateDesignDetails()"
+              >
+                <span> <i class="fa-solid fa-eye"></i> View</span>
+              </button>
+              <button class="btn-action btn-primary py-1 px-3 me-2" type="button" (click)="updateDesignDetails()">
+                <span>
+                  <i class="fa-solid fa-trash-can"></i>
+                  Edit
+                </span>
+              </button>
+              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="deleteDesignDetails()">
+                <span>
+                  <i class="fa-solid fa-trash-can"></i>
+                  Delete
+                </span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
