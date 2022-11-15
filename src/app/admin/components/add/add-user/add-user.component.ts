@@ -3,24 +3,12 @@ import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-add-design',
-  templateUrl: './add-design.component.html',
-  styleUrls: ['./add-design.component.scss'],
+  selector: 'app-add-user',
+  templateUrl: './add-user.component.html',
+  styleUrls: ['./add-user.component.scss'],
 })
-export class AddDesignComponent implements OnInit {
-  // NGX DROPZONE OPTIONS
-  files: File[] = [];
-
-  onSelect(event: { addedFiles: any }) {
-    console.log(event);
-    this.files.push(...event.addedFiles);
-  }
-
-  onRemove(event: File) {
-    console.log(event);
-    this.files.splice(this.files.indexOf(event), 1);
-  }
-  createDesignDetails() {
+export class AddUserComponent implements OnInit {
+  createUser() {
     Swal.fire({
       title: 'Are you sure?',
       showDenyButton: true,
@@ -31,7 +19,7 @@ export class AddDesignComponent implements OnInit {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire('Successfully added!', '', 'success');
-        this.router.navigate(['/admin/kitchen']);
+        this.router.navigate(['/admin/user/management']);
       } else if (result.isDenied) {
         Swal.fire('No design added', '', 'info');
       }

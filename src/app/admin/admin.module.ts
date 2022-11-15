@@ -31,6 +31,11 @@ import { ViewConsultComponent } from './components/view/view-consult/view-consul
 import { ViewContactComponent } from './components/view/view-contact/view-contact.component';
 import { ViewDesignComponent } from './components/view/view-design/view-design.component';
 import { AddDesignComponent } from './components/add/add-design/add-design.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { AddUserComponent } from './components/add/add-user/add-user.component';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { UpdateUserComponent } from './components/update/update-user/update-user.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,8 @@ import { AddDesignComponent } from './components/add/add-design/add-design.compo
     ViewContactComponent,
     ViewDesignComponent,
     AddDesignComponent,
+    AddUserComponent,
+    UpdateUserComponent,
   ],
   imports: [
     CommonModule,
@@ -68,6 +75,9 @@ import { AddDesignComponent } from './components/add/add-design/add-design.compo
     MatMenuModule,
     NgChartsModule,
     ModalModule,
+    NgxDropzoneModule,
+    MatSlideToggleModule,
+    SharedModule,
   ],
 })
 export class AdminModule {}
