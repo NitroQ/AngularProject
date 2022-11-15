@@ -10,14 +10,14 @@ import Swal from 'sweetalert2';
   styleUrls: ['./user-management.component.scss'],
 })
 export class UserManagementComponent implements OnInit {
-  userLists: any = [ ];
+  userLists: any = [];
   createUser(): void {
     this.router.navigate(['/admin/user/add-user']);
   }
   updateUserDetails(): void {
     this.router.navigate(['/admin/user/update-user']);
   }
-  deleteUserDetails() {
+  deleteUserDetails(row: any) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -28,29 +28,21 @@ export class UserManagementComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Deleted!', 'This consultation has been deleted.', 'success');
+        this.api.deleteUser(row);
+        Swal.fire('Deleted!', 'User deleted successfully.', 'success');
       }
     });
   }
 
-  constructor(private router: Router, private api : ApiService) {}
+  constructor(private router: Router, private api: ApiService) {}
 
   ngOnInit(): void {
     this.getUserDetails();
   }
 
-  getUserDetails(){
-    this.api.getUser()
-    .subscribe(res=>{
+  getUserDetails() {
+    this.api.getUser().subscribe((res) => {
       this.userLists = res;
-    })
-  }
-
-  deleteUser(row : any){
-    this.api.deleteUser(row.id)
-    .subscribe(res=>{
-      alert("User deleted successfully");
-      this.getUserDetails();
-    })
+    });
   }
 }

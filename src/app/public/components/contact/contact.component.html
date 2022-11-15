@@ -16,15 +16,20 @@
         </div>
         <div class="col-md-5 mb-3">
           <label for="Budget" class="form-label user-label">Organization/Company</label>
-          <input type="text" class="form-control user-input" formControlName="company" placeholder="Indicate 'None' if NO AFFILIATIONS" />
+          <input
+            type="text"
+            class="form-control user-input"
+            formControlName="company"
+            placeholder="Indicate 'None' if NO AFFILIATIONS"
+          />
         </div>
         <div class="col-md-5 mb-3">
           <label for="inputEmailAddress" class="form-label user-label">Email Address</label>
-          <input type="text" class="form-control user-input" formControlName="email"  placeholder="Email Address" />
+          <input type="text" class="form-control user-input" formControlName="email" placeholder="Email Address" />
         </div>
         <div class="col-md-5 mb-3">
           <label for="inputSubjectConcern" class="form-label user-label">Subject of Concern</label>
-          <select id="inputSubjectConcern" formControlName="concern" class="form-select">
+          <select id="inputSubjectConcern" formControlName="concern" class="form-select user-select">
             <option value="Inquiry">Inquiry</option>
             <option value="Suggestions">Suggestions</option>
             <option value="Commendation">Commendation</option>
@@ -33,10 +38,21 @@
         </div>
         <div class="col-12 mb-3">
           <label for="clientMessage" class="form-label SoraBold user-label">Message</label>
-          <textarea class="form-control user-textarea" formControlName="message" placeholder="Write your message here..." rows="5"></textarea>
+          <textarea
+            class="form-control user-textarea"
+            formControlName="message"
+            placeholder="Write your message here..."
+            rows="5"
+          ></textarea>
         </div>
         <div class="col-12">
-          <button class="btn fs-6 rounded-pill px-md-5 px-4 py-2 text-uppercase mx-md-0 d-flex align-items-center me-md-2" type="button" (click)="postContactDetails()">SUBMIT MESSAGE</button>
+          <button
+            class="btn fs-6 rounded-pill px-md-5 px-4 py-2 text-uppercase mx-md-0 d-flex align-items-center me-md-2"
+            type="button"
+            (click)="postContactDetails()"
+          >
+            SUBMIT MESSAGE
+          </button>
         </div>
       </form>
     </div>

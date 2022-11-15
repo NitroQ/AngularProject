@@ -4,40 +4,43 @@
     background-color: $secondary !important;
  }
 
- .form-select {
+ //  .form-select {
+ //     background-color: $primary !important;
+ //     font-family: Inter, sans-serif !important;
+ //  }
+ textarea {
+    border-radius: 3.53px !important;
+    resize: none !important;
+ }
+
+ .user-label {
+    color: $orange !important;
+ }
+
+ .user-input {
     background-color: $primary !important;
     font-family: Inter, sans-serif !important;
  }
- textarea {
-    border-radius: 3.53px !important;
-    resize: none !important; 
+
+ .user-textarea {
+    border: 3px solid $white !important;
+    background-color: transparent !important;
  }
- .user-label{
-   color: $orange !important;
+
+ .user-textarea:focus {
+    background-color: $white !important;
  }
-.user-input{
-   background-color: $primary !important;
-   font-family: Inter, sans-serif !important;
-}
-.user-textarea{
- border: 3px solid $white !important;
- background-color: transparent !important;
-}
-.user-textarea:focus{
-   background-color: $white !important;
-}
+
+ .user-select {
+    background-color: $primary !important;
+    font-family: Inter, sans-serif !important;
+ }
 
  input,
  select {
     border-radius: 3.53px !important;
     border: 3px solid $white !important;
  }
-
-//  input[type=text],
-//  input[type=email] {
-//     background-color: $primary !important;
-//     font-family: Inter, sans-serif !important;
-//  }
 
  input[type=search] {
     border: 1px solid #C6C6C6 !important;
@@ -64,11 +67,18 @@
  .radio-label {
     color: $white !important;
  }
- .admin-input{
-   background-color: $white !important;
-   border: 1px solid $inputBorder !important;
+
+ .admin-input,
+ .admin-select {
+    background-color: $white !important;
+    border: 1px solid $inputBorder !important;
  }
- .admin-label{
-   font-family: 'Inter Bold', sans-serif;
-   color: $adminLabel !important;
+
+ .admin-select {
+    color: $userDetails !important;
+ }
+
+ .admin-label {
+    font-family: 'Inter Bold', sans-serif;
+    color: $adminLabel !important;
  }
