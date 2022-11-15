@@ -64,10 +64,6 @@ export class AddUserComponent implements OnInit {
 
       this.api.postUser(this.userModelObj).subscribe(
         (res) => {
-          console.log(res);
-          alert('User added successfully');
-          let ref = document.getElementById('cancel');
-          ref?.click();
           this.userForm.reset();
         },
         (err) => {

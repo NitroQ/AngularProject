@@ -28,7 +28,7 @@ export class UserManagementComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.api.deleteUser(row);
+        this.deleteUser(row);
         Swal.fire('Deleted!', 'User deleted successfully.', 'success');
       }
     });
@@ -43,6 +43,12 @@ export class UserManagementComponent implements OnInit {
   getUserDetails() {
     this.api.getUser().subscribe((res) => {
       this.userLists = res;
+    });
+  }
+  deleteUser(row: any) {
+    this.api.deleteUser(row.id)
+    .subscribe((res) => {
+      this.getUserDetails();
     });
   }
 }

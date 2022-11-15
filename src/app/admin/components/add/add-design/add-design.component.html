@@ -7,8 +7,7 @@
         <ngx-dropzone-label
           ><span class="drag-drop-img"
             ><i class="fa-solid fa-cloud-arrow-up pe-2"></i>Drag and Drop Here</span
-          ></ngx-dropzone-label
-        >
+          ></ngx-dropzone-label>
         <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
           <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
         </ngx-dropzone-image-preview>
