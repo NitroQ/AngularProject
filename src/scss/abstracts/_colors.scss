@@ -14,6 +14,12 @@ $inputBorder: #b1c2de;
 $adminLabel: #343434;
 $userActionBorder: #e2e8f0;
 $userActionColor: #717d92;
+$userDetails: #091E42;
+
+.account-bg {
+  background-color: $userActionBorder !important;
+  color: $userDetails;
+}
 
 .white {
   color: $white !important;
