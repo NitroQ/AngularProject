@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -7,6 +8,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-design.component.scss'],
 })
 export class AddDesignComponent implements OnInit {
+  // NGX DROPZONE OPTIONS
   files: File[] = [];
 
   onSelect(event: { addedFiles: any }) {
@@ -18,7 +20,7 @@ export class AddDesignComponent implements OnInit {
     console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
   }
-  addDesignDetails() {
+  createDesignDetails() {
     Swal.fire({
       title: 'Are you sure?',
       showDenyButton: true,
@@ -29,13 +31,14 @@ export class AddDesignComponent implements OnInit {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire('Successfully added!', '', 'success');
+        this.router.navigate(['/admin/kitchen']);
       } else if (result.isDenied) {
         Swal.fire('No design added', '', 'info');
       }
     });
   }
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 }

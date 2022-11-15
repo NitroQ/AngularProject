@@ -35,6 +35,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { AddUserComponent } from './components/add/add-user/add-user.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { UpdateUserComponent } from './components/update/update-user/update-user.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { UpdateUserComponent } from './components/update/update-user/update-user
     ModalModule,
     NgxDropzoneModule,
     MatSlideToggleModule,
+    SharedModule,
   ],
 })
 export class AdminModule {}

@@ -81,7 +81,7 @@ const routes: Routes = [
         component: AddDesignComponent,
       },
       {
-        path: 'user/user-management',
+        path: 'user/management',
         component: UserManagementComponent,
       },
       {
