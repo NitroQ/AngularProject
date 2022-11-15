@@ -24,7 +24,7 @@
         </div>
         <div class="col-md-5 mb-3">
           <label for="inputSubjectConcern" class="form-label user-label">Subject of Concern</label>
-          <select id="inputSubjectConcern" class="form-select">
+          <select id="inputSubjectConcern" class="form-select user-select">
             <option value="null">Select a Subject</option>
             <option>...</option>
           </select>
@@ -34,7 +34,13 @@
           <textarea class="form-control user-textarea" placeholder="Write your message here..." rows="5"></textarea>
         </div>
         <div class="col-12">
-          <button class="btn fs-6 rounded-pill px-md-5 px-4 py-2 text-uppercase mx-md-0 d-flex align-items-center me-md-2" type="button" (click)="btnSubmit()">SUBMIT MESSAGE</button>
+          <button
+            class="btn fs-6 rounded-pill px-md-5 px-4 py-2 text-uppercase mx-md-0 d-flex align-items-center me-md-2"
+            type="button"
+            (click)="btnSubmit()"
+          >
+            SUBMIT MESSAGE
+          </button>
         </div>
       </form>
     </div>
