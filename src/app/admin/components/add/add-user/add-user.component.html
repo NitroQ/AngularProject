@@ -1,0 +1,86 @@
+<div class="container-fluid p-lg-4">
+  <h1 class="display-5 SoraBold mb-4">Add User</h1>
+  <div class="row">
+    <div class="col-12">
+      <p class="fs-5 account-bg p-2">Account Details</p>
+    </div>
+  </div>
+  <div class="row my-4">
+    <div class="col-md-5 col">
+      <form class="row g-3">
+        <div class="col-md-6 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">User Type</label>
+          <input type="text" class="form-control admin-input" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">User Role</label>
+          <input type="text" class="form-control admin-input" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md col">
+      <form class="row g-3">
+        <div class="col-md-4 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">First Name</label>
+          <input type="text" class="form-control admin-input" />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">Middle Name</label>
+          <input type="text" class="form-control admin-input" />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">Last Name</label>
+          <input type="text" class="form-control admin-input" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md col">
+      <form class="row g-3">
+        <div class="col-md-4 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">Username</label>
+          <input type="text" class="form-control admin-input" />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">Email</label>
+          <input type="email" class="form-control admin-input" />
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">Contact Number</label>
+          <input type="text" class="form-control admin-input" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row mb-4">
+    <div class="col-md-6 col">
+      <form class="row g-3">
+        <div class="col-12 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label text-uppercase">PIN</label>
+          <input type="text" class="form-control admin-input" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-5 col">
+      <form action="" class="row g-3">
+        <div class="col-md-6 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">Password</label>
+          <input type="password" class="form-control admin-input" />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">Repeat Password</label>
+          <input type="password" class="form-control admin-input" />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+    <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">CANCEL</button>
+    <button class="btn-create text-uppercase px-3 py-2" type="button" (click)="createUser()">SUBMIT NEW USER</button>
+  </div>
+</div>

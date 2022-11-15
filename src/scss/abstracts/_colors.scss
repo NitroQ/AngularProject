@@ -1,22 +1,30 @@
-$primary: #1A1A1A;
+$primary: #1a1a1a;
 $secondary: #111111;
-$white: #FFFFFF;
-$orange: #FF5E15;
+$white: #ffffff;
+$orange: #ff5e15;
 $admin: #222222;
 $subheader: #747474;
-$statsTitle: #ABABAB;
-$tableHead: #F5F5F5;
-$cancelBtn: #F5F5F5;
-$tableData: #091E42;
-$tableBGButton: #EAEAEA;
+$statsTitle: #ababab;
+$tableHead: #f5f5f5;
+$cancelBtn: #f5f5f5;
+$tableData: #091e42;
+$tableBGButton: #eaeaea;
 $tableColorButton: #343434;
-$inputBorder: #B1C2DE;
+$inputBorder: #b1c2de;
+$adminLabel: #343434;
+$userActionBorder: #e2e8f0;
+$userActionColor: #717d92;
+$userDetails: #091E42;
 
+.account-bg {
+  background-color: $userActionBorder !important;
+  color: $userDetails;
+}
 
 .white {
-   color: $white !important;
+  color: $white !important;
 }
 
 .orange {
-   color: $orange !important;
+  color: $orange !important;
 }

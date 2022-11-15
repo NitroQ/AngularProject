@@ -1,1 +1,45 @@
-<p>user-management works!</p>
+<div class="container-fluid p-lg-4">
+  <h1 class="display-5 SoraBold">User Manegement</h1>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
+    <button class="btn-search me-md-2" type="button" (click)="createUser()">
+      <span><i class="fa-solid fa-circle-plus me-2"></i>Add User</span>
+    </button>
+  </div>
+  <div class="admin-table h-100 p-2">
+    <table class="table table-responsive table-hover caption-top">
+      <caption class="fs-3 admin-table-caption">
+        Consultations
+      </caption>
+      <thead class="admin-table-head table-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Contact No</th>
+          <th scope="col">Email</th>
+          <th scope="col">Type</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let userList of userLists">
+          <td>{{ userList.id }}</td>
+          <td>{{ userList.name }}</td>
+          <td>{{ userList.contact }}</td>
+          <td>{{ userList.email }}</td>
+          <td>{{ userList.type }}</td>
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic example">
+              <button type="button" class="btn-user-action" (click)="updateUserDetails()">
+                <i class="fa-solid fa-pen"></i>
+              </button>
+              <button type="button" class="btn-user-action">
+                <i class="fa-solid fa-toggle-off"></i>
+              </button>
+              <button type="button" class="btn-user-action"><i class="fa-solid fa-trash"></i></button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
