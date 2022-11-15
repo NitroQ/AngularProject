@@ -34,7 +34,7 @@ export class UserManagementComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Deleted!', 'This consultation has been deleted.', 'success');
+        Swal.fire('Deleted!', 'This user has been deleted.', 'success');
       }
     });
   }
