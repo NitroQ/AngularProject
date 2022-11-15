@@ -25,27 +25,25 @@ export class ContactUsComponent implements OnInit {
     }).then((result) => {
       if (result.isConfirmed) {
         this.deleteContactDetails(row);
-        Swal.fire('Deleted!', 'This consultation has been deleted.', 'success');
+        Swal.fire('Deleted!', 'This contact has been deleted.', 'success');
       }
     });
   }
 
-  constructor(private router: Router, private api : ApiService) {}
+  constructor(private router: Router, private api: ApiService) {}
 
   ngOnInit(): void {
     this.getContactDetails();
   }
 
-  getContactDetails(){
-    this.api.getContact()
-    .subscribe(res=>{
+  getContactDetails() {
+    this.api.getContact().subscribe((res) => {
       this.contactData = res;
-    })
+    });
   }
-  deleteContactDetails(row : any){
-    this.api.deleteContact(row.id)
-    .subscribe(res=>{
-     this.getContactDetails();
-    })
+  deleteContactDetails(row: any) {
+    this.api.deleteContact(row.id).subscribe((res) => {
+      this.getContactDetails();
+    });
   }
 }
