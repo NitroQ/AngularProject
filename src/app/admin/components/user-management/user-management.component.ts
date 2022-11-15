@@ -37,6 +37,11 @@ export class UserManagementComponent implements OnInit {
   constructor(private router: Router, private api: ApiService) {}
 
   ngOnInit(): void {
+    let type = sessionStorage.getItem('usertype');
+
+    if (type == 'user') {
+      this.router.navigate(['/admin/dashboard']);
+    }
     this.getUserDetails();
   }
 
