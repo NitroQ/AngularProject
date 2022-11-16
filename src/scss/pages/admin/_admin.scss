@@ -1,0 +1,10 @@
+@use "../../../scss/abstracts/" as *;
+
+.admin-body {
+   background-color: $white !important;
+   color: $admin !important;
+}
+
+::placeholder {
+   color: #717171 !important;
+}
