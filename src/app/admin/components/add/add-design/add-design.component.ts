@@ -22,12 +22,12 @@ export class AddDesignComponent implements OnInit {
   addImage !: FormGroup;
   imageModelObj : ImageModel = new ImageModel();
   imageData !: any;
+  category : any = this.route.snapshot.queryParamMap.get('category');
 
-  constructor(private router: Router, private fb: FormBuilder, private route: ActivatedRoute, private location: Location) {}
+  constructor(private router: Router, private fb: FormBuilder, private route: ActivatedRoute, private location: Location, private api: ApiService) {}
 
   ngOnInit(): void {
-    const category = this.route.snapshot.queryParamMap.get('category');
-    if(category == null || category == undefined){
+    if(this.category == null || this.category == undefined){
       this.location.back();
     }
 
@@ -41,15 +41,30 @@ export class AddDesignComponent implements OnInit {
   }
 
 
-  onSelect(event: { addedFiles: any }) {
-    console.log(event);
-    this.files.push(...event.addedFiles);
+  onChange($event: Event) {
+    const target = $event.target as HTMLInputElement;
+    const file: File = (target.files as FileList)[0];
+    this.convertToBase64(file);
   }
 
-  onRemove(event: File) {
-    console.log(event);
-    this.files.splice(this.files.indexOf(event), 1);
+  postImage(){
+    this.imageModelObj.description = this.addImage.value.description;
+    this.imageModelObj.category = this.category;
+    this.imageModelObj.dimensions = this.addImage.value.dimensions;
+    this.imageModelObj.price = this.addImage.value.price;
+    this.imageModelObj.image = this.base64code;
+
+    this.api.postImage(this.imageModelObj)
+    .subscribe(res=>{
+      this.addImage.reset();
+    },
+    err=>{
+      alert("Something went wrong");
+
+  });
+
   }
+
   createDesignDetails() {
     Swal.fire({
       title: 'Are you sure?',
@@ -60,8 +75,9 @@ export class AddDesignComponent implements OnInit {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
+        this.postImage();
         Swal.fire('Successfully added!', '', 'success');
-        this.router.navigate(['/admin/kitchen']);
+        this.router.navigate(['admin/' + this.category]);
       } else if (result.isDenied) {
         Swal.fire('No design added', '', 'info');
       }
