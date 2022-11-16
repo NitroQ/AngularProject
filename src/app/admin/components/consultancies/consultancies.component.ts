@@ -13,6 +13,7 @@ export class ConsultanciesComponent implements OnInit {
       email: 'sample@email.com',
       type: 'Property Type',
       date: 'Date',
+      status: 'Pending',
     },
   ];
   btnView(): void {

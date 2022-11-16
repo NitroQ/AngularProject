@@ -11,6 +11,7 @@
           <th scope="col">Email</th>
           <th scope="col">Property Type</th>
           <th scope="col">Consultation Date</th>
+          <th scope="col">Status</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -20,10 +21,11 @@
           <td>{{ contactsData.email }}</td>
           <td>{{ contactsData.type }}</td>
           <td>{{ contactsData.date }}</td>
+          <td>Replied</td>
           <td>
             <div class="d-grid gap-2 d-md-block">
               <button
-                class="btn-action btn-primary me-2 py-1 px-3"
+                class="btn-action btn-primary py-1 px-3"
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
@@ -31,12 +33,25 @@
               >
                 <span> <i class="fa-solid fa-eye"></i> View</span>
               </button>
-              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="btnDelete()">
+              <button class="btn-action btn-primary py-1 px-3 mx-2" type="button" (click)="btnDelete()">
                 <span>
                   <i class="fa-solid fa-trash-can"></i>
                   Delete
                 </span>
               </button>
+              <div class="btn-group">
+                <button
+                  class="btn-action btn-primary py-1 px-3 me-2"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <span>Status <i class="fa-solid fa-caret-down"></i> </span>
+                </button>
+                <ul class="dropdown-menu admin-dropdown-menu">
+                  <li><a class="dropdown-item">Replied</a></li>
+                </ul>
+              </div>
             </div>
           </td>
         </tr>
