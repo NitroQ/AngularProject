@@ -2,30 +2,30 @@
   <h1 class="display-5 SoraBold mb-4">Add a Design</h1>
   <form class="mt-4" [formGroup]="addImage">
     <label class="col-sm-2 col-md col admin-label col-form-label">Design Photo:</label>
-    <input class="form-control"  (change)="onChange($event)" type="file" id="formFile" />
+    <input class="form-control" (change)="onChange($event)" type="file" id="formFile" />
     <div class="row mb-3">
       <label class="col-sm-2 col-form-label admin-label">Design Name:</label>
       <div class="col-sm-5 col">
-        <input type="text" class="form-control admin-input" formControlName="description"/>
+        <input type="text" class="form-control admin-input" formControlName="description" />
       </div>
     </div>
     <div class="row mb-3">
       <label class="col-sm-2 col-form-label admin-label">Dimension:</label>
       <div class="col-sm-5 col">
-        <input type="text" class="form-control admin-input" formControlName="dimensions"/>
+        <input type="text" class="form-control admin-input" formControlName="dimensions" />
       </div>
     </div>
     <div class="row mb-3">
       <label class="col-sm-2 col-form-label admin-label">Price:</label>
       <div class="col-sm-5 col">
-        <input type="text" class="form-control admin-input" formControlName="price"/>
+        <input type="text" class="form-control admin-input" formControlName="price" />
       </div>
     </div>
-  <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-    <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">CANCEL</button>
-    <button class="btn-create text-uppercase px-3 py-2" type="button" (click)="createDesignDetails()">
-      ADD DESIGN
-    </button>
-  </div>
-</form>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+      <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">CANCEL</button>
+      <button class="btn-create text-uppercase px-3 py-2" type="button" (click)="createDesignDetails()">
+        ADD DESIGN
+      </button>
+    </div>
+  </form>
 </div>
