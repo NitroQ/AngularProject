@@ -43,7 +43,7 @@ export class AddUserComponent implements OnInit {
       if (result.isConfirmed) {
         this.postUserDetails();
         Swal.fire('Successfully added!', '', 'success');
-        this.router.navigate(['/admin/user/management']);
+        this.router.navigate(['admin/user/management']);
       } else if (result.isDenied) {
         Swal.fire('No user added', '', 'info');
         this.userForm.reset();
