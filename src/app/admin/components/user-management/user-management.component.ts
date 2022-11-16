@@ -14,8 +14,8 @@ export class UserManagementComponent implements OnInit {
   createUser(): void {
     this.router.navigate(['/admin/user/add-user']);
   }
-  updateUserDetails(): void {
-    this.router.navigate(['/admin/user/update-user']);
+  updateUserDetails(row:any): void {
+    this.router.navigate(['/admin/user/update-user/'], { queryParams: { id: row.id  } });
   }
   deleteUserDetails(row: any) {
     Swal.fire({
