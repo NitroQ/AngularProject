@@ -39,7 +39,15 @@ export class AddDesignComponent implements OnInit {
     })
   }
   addCancel(){
-   this.router.navigate(['admin/' + this.category]);
+    if(this.category=='livingroom'){
+      this.router.navigate(['admin/living-room']);
+    }else if(this.category=='homeoffice'){
+        this.router.navigate(['admin/home-office']);
+    }else if(this.category=='spacesaving'){
+      this.router.navigate(['admin/space-saving']);
+    }else{
+      this.router.navigate(['admin/' + this.category]);
+    }
   }
 
 
