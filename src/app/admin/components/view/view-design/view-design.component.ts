@@ -37,7 +37,7 @@ export class ViewDesignComponent implements OnInit {
           this.addImage = this.fb.group({
             description: [this.designValue.description, Validators.required],
             dimensions: [this.designValue.dimensions, Validators.required],
-            image: ['', Validators.required],
+            image: [''],
           })
         }
     }
