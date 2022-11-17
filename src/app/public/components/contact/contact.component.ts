@@ -19,17 +19,14 @@ export class ContactComponent implements OnInit {
   constructor(private fb: FormBuilder, private api: ApiService) {}
 
   ngOnInit(): void {
-    this.contactForm = this.fb.group(
-      {
-        name: this.fb.control('', Validators.required),
-        company: this.fb.control('', Validators.required),
-        email: this.fb.control('', Validators.required),
-        concern: this.fb.control('', Validators.required),
-        message: this.fb.control('', Validators.required),
-        status: this.fb.control('', Validators.required),
-      },
-      { updateOn: 'submit' }
-    );
+    this.contactForm = this.fb.group({
+      name: this.fb.control('', Validators.required),
+      company: this.fb.control('', Validators.required),
+      email: this.fb.control('', Validators.required),
+      concern: this.fb.control('', Validators.required),
+      message: this.fb.control('', Validators.required),
+      status: this.fb.control('', Validators.required),
+    });
   }
   get form() {
     return this.contactForm.controls;
