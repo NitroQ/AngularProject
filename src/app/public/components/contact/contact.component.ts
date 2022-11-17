@@ -25,7 +25,7 @@ export class ContactComponent implements OnInit {
       email: this.fb.control('', Validators.required),
       concern: this.fb.control('', Validators.required),
       message: this.fb.control('', Validators.required),
-      status: this.fb.control('', Validators.required),
+      status: this.fb.control(''),
     });
   }
   get form() {

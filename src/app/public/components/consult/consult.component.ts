@@ -29,7 +29,7 @@ export class ConsultComponent implements OnInit {
       company: ['', Validators.required],
       consultationDate: ['', Validators.required],
       timeAppointment: ['', Validators.required],
-      status: ['', Validators.required],
+      status: [''],
     });
   }
   get form() {
@@ -39,7 +39,7 @@ export class ConsultComponent implements OnInit {
     this.submitted = true;
     if (this.bookingForm.invalid) {
       return;
-    } 
+    } else{
       this.bookingModelObj.propertyType = this.bookingForm.value.propertyType;
       this.bookingModelObj.budget = this.bookingForm.value.budget;
       this.bookingModelObj.plan = this.bookingForm.value.plan;
@@ -61,6 +61,8 @@ export class ConsultComponent implements OnInit {
           alert('Something went wrong');
         }
       );
+    }
+     
 
   }
 
