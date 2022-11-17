@@ -35,7 +35,7 @@ export class UpdateUserComponent implements OnInit {
       usertype: ['', Validators.required],
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
-      middlename: ['', Validators.required],
+      middlename: [''],
       username: ['', Validators.required],
       email: ['', Validators.required],
       contact: ['', Validators.required],
