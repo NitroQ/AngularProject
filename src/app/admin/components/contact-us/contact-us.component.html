@@ -3,7 +3,7 @@
   <div class="admin-table h-100 p-2">
     <table class="table table-responsive table-hover caption-top">
       <caption class="fs-3 admin-table-caption">
-        Consultations
+        Contact Us
       </caption>
       <thead class="admin-table-head table-light">
         <tr>
@@ -20,12 +20,14 @@
           <td>{{ contactsData.name }}</td>
           <td>{{ contactsData.email }}</td>
           <td>{{ contactsData.concern }}</td>
-          <td>{{ contactsData.message | slice:0:20 }}{{contactsData.message.length > 20 ? '...' : ''}}</td>
+          <td>{{ contactsData.message | slice: 0:20 }}{{ contactsData.message.length > 20 ? "..." : "" }}</td>
           <td>{{ contactsData.status }}</td>
+          <!-- ** add status here on click -->
+          <!-- <td><img src="../../../../assets/images/admin-images/status/finished-replied.png" alt=""> Replied</td> -->
           <td>
             <div class="d-grid gap-2 d-md-block">
               <button
-                class="btn-action btn-primary me-2 py-1 px-3"
+                class="btn-action btn-primary py-1 px-3"
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
@@ -33,12 +35,24 @@
               >
                 <span> <i class="fa-solid fa-eye"></i> View</span>
               </button>
-              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="btnDelete(contactsData)">
+              <button class="btn-action btn-primary py-1 px-3 mx-2" type="button" (click)="btnDelete(contactsData)">
                 <span>
                   <i class="fa-solid fa-trash-can"></i>
                   Delete
                 </span>
               </button>
+              <div class="btn-group">
+                <button class="btn-action btn-primary py-1 px-3 me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span>Status <i class="fa-solid fa-caret-down"></i> </span>
+                </button>
+                <ul class="dropdown-menu admin-dropdown-menu">
+                  <li>
+                    <a class="dropdown-item"
+                      ><img src="../../../../assets/images/admin-images/status/finished-replied.png" alt="" class="me-2" /> Replied</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </td>
         </tr>

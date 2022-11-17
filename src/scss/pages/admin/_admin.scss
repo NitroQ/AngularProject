@@ -8,3 +8,10 @@
 ::placeholder {
    color: #717171 !important;
 }
+
+.admin-dropdown-menu {
+   .dropdown-item {
+      color: $admin !important;
+   }
+
+}

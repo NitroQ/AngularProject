@@ -9,7 +9,7 @@ import { ApiService } from '../../../api.service';
 })
 export class ConsultanciesComponent implements OnInit {
   consultationDatas: any;
-  btnView(row : any): void {
+  btnView(row: any): void {
     this.router.navigate(['/admin/view/consultation/'], { queryParams: { id: row.id } });
   }
   btnDelete(row: any) {
@@ -35,17 +35,14 @@ export class ConsultanciesComponent implements OnInit {
     this.getBookingDetails();
   }
 
-  getBookingDetails(){
-    this.api.getBooking()
-    .subscribe(res=>{
+  getBookingDetails() {
+    this.api.getBooking().subscribe((res) => {
       this.consultationDatas = res;
-    })
+    });
   }
-  deleteBooking(row : any){
-    this.api.deleteBooking(row.id)
-    .subscribe(res=>{
-     this.getBookingDetails();
-    })
+  deleteBooking(row: any) {
+    this.api.deleteBooking(row.id).subscribe((res) => {
+      this.getBookingDetails();
+    });
   }
-
 }
