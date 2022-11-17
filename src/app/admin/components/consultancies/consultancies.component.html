@@ -23,7 +23,7 @@
           <td>{{ consultationData.date }}</td>
 
           <!-- ** add status here on click -->
-          <td>Pending</td>
+          <td><img src="../../../../assets/images/admin-images/status/pending.png" alt="" /> Pending</td>
           <td>
             <div class="d-grid gap-2 d-md-block">
               <button
@@ -42,24 +42,26 @@
                 </span>
               </button>
               <div class="btn-group">
-                <button
-                  class="btn-action btn-primary py-1 px-3 me-2"
-                  type="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
+                <button class="btn-action btn-primary py-1 px-3 me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   <span>Status <i class="fa-solid fa-caret-down"></i> </span>
                 </button>
                 <ul class="dropdown-menu admin-dropdown-menu">
-                  <li><a class="dropdown-item">Pending</a></li>
                   <li>
-                    <a class="dropdown-item"
-                      ><img src="../../../../assets/images/admin-images/status/active.png" alt="" /> Confirmed</a
+                    <a class="dropdown-item"> <img src="../../../../assets/images/admin-images/status/pending.png" class="me-2" alt="" />Pending</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item">
+                      <img src="../../../../assets/images/admin-images/status/confirmed.png" class="me-2" alt="" />Confirmed</a
                     >
                   </li>
-                  <li><a class="dropdown-item">Ongoing</a></li>
-                  <li><a class="dropdown-item">Production</a></li>
-                  <li><a class="dropdown-item">Finished</a></li>
+                  <li>
+                    <a class="dropdown-item"><img src="../../../../assets/images/admin-images/status/ongoing.png" class="me-2" alt="" />Ongoing</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item"
+                      ><img src="../../../../assets/images/admin-images/status/finished-replied.png" class="me-2" alt="" />Finished</a
+                    >
+                  </li>
                 </ul>
               </div>
             </div>
