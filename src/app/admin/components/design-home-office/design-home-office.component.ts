@@ -13,9 +13,10 @@ export class DesignHomeOfficeComponent implements OnInit {
   addDesignDetails(): void {
     this.router.navigate(['/admin/add/design'], { queryParams: { category: 'homeoffice' } });
   }
-  updateDesignDetails(): void {
-    this.router.navigate(['/admin/view/design']);
+  updateDesignDetails(row : any): void {
+    this.router.navigate(['/admin/view/design'],  { queryParams: {  id: row.id, category: 'homeoffice' } } );
   }
+
   deleteDesignDetails(row: any) {
     Swal.fire({
       title: 'Are you sure?',

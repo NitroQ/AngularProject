@@ -52,6 +52,12 @@ export class ApiService {
       return res;
     }))
   }
+  updateImage(data : any, id : number){
+    return this.http.put<any>('http://localhost:3000/images/' + id, data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
   getImage(){
     return this.http.get<any>("http://localhost:3000/images")
     .pipe(map((res:any)=>{

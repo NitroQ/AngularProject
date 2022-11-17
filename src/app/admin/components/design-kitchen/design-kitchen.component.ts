@@ -14,8 +14,8 @@ export class DesignKitchenComponent implements OnInit {
   addDesignDetails(): void {
     this.router.navigate(['/admin/add/design/'], { queryParams: { category: 'kitchen' } });
   }
-  updateDesignDetails(): void {
-    this.router.navigate(['/admin/view/design']);
+  updateDesignDetails(row : any): void {
+    this.router.navigate(['/admin/view/design'],  { queryParams: {  id: row.id, category: 'kitchen' } } );
   }
   deleteDesignDetails(row: any) {
     Swal.fire({

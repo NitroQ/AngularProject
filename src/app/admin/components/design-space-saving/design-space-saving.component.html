@@ -30,15 +30,8 @@
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                (click)="updateDesignDetails()"
-              >
-                <span> <i class="fa-solid fa-eye"></i> View</span>
-              </button>
-              <button class="btn-action btn-primary py-1 px-3 me-2" type="button" (click)="updateDesignDetails()">
-                <span>
-                  <i class="fa-solid fa-trash-can"></i>
-                  Edit
-                </span>
+                (click)="updateDesignDetails(spaceSavingDesign)">
+                <span> <i class="fa-solid fa-eye"></i> View/Edit</span>
               </button>
               <button class="btn-action btn-primary py-1 px-3" type="button" (click)="deleteDesignDetails(spaceSavingDesign)">
                 <span>

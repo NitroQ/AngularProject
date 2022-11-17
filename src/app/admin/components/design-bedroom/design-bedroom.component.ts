@@ -17,8 +17,8 @@ export class DesignBedroomComponent implements OnInit {
   btnView(): void {
     this.router.navigate(['/admin/view/design']);
   }
-  updateDesignDetails(): void {
-    this.router.navigate(['/admin/view/design']);
+  updateDesignDetails(row : any): void {
+    this.router.navigate(['/admin/view/design'],  { queryParams: {  id: row.id, category: 'bedroom' } } );
   }
   deleteDesignDetails(row: any) {
     Swal.fire({

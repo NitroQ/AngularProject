@@ -15,8 +15,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./add-design.component.scss'],
 })
 export class AddDesignComponent implements OnInit {
-  // NGX DROPZONE OPTIONS
-  files: File[] = [];
   myImage: any;
   base64code !: any;
   addImage !: FormGroup;
