@@ -19,8 +19,8 @@
       </div>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
-      <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">CANCEL</button>
-      <button class="btn-create text-uppercase px-3 py-2" type="submit" [disabled]="!addImage.valid">ADD IMAGE</button>
+      <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button" (click)="addCancel()">CANCEL</button>
+      <button class="btn-create text-uppercase px-3 py-2" type="submit" [disabled]="addImage.invalid">ADD IMAGE</button>
     </div>
   </form>
 </div>

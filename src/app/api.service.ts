@@ -7,6 +7,19 @@ import { map } from 'rxjs/operators';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
+  getVisit(){
+    return this.http.get<any>("http://localhost:3000/visit")
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+ updateVisit(data : any, id: number){
+    return this.http.put<any>('http://localhost:3000/visit/'+ id, data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
   postBooking(data : any){
     return this.http.post<any>('http://localhost:3000/bookings', data)
     .pipe(map((res:any)=>{

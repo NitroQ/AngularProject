@@ -33,10 +33,13 @@ export class AddDesignComponent implements OnInit {
 
     this.addImage = this.fb.group({
       description: ['', Validators.required],
-      category: ['', Validators.required],
+      category: [''],
       dimensions: ['', Validators.required],
       image: ['', Validators.required],
     })
+  }
+  addCancel(){
+   this.router.navigate(['admin/' + this.category]);
   }
 
 

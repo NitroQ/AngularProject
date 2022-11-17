@@ -3,11 +3,11 @@
   <div class="row row-cols-md-2 row-cols-1 my-4 gy-4">
     <div class="col-md-6 col">
       <div class="dashboard-card card shadow py-2">
-        <div class="d-flex flex-column text-start align-items-start px-3 mt-3">
+        <div class="d-flex flex-column text-start align-items-start px-3 mt-3" >
           <p class="fs-3 card-title dashboard-card-title m-0">Consult Statistics</p>
           <p class="fs-6 card-title dashboard-card-subheader m-0">This Month</p>
         </div>
-        <div class="row row-cols-2 px-3 py-4 gy-2">
+        <div class="row row-cols-2 px-3 py-4 gy-2" style="height: 340px">
           <div class="col">
             <div class="card-body w-100 d-flex align-items-center gap-2">
               <img
@@ -65,19 +65,40 @@
     </div>
     <div class="col-md-6 col">
       <div class="dashboard-card card shadow py-2">
-        <div class="d-flex flex-column text-start align-items-start p-3">
-          <p class="fs-3 card-title dashboard-card-title m-0">Earnings</p>
+        <div class="d-flex flex-column text-start align-items-start p-3"  >
+          <p class="fs-3 card-title dashboard-card-title m-0">Consults</p>
         </div>
-        <div class="chart-wrapper px-4">
-          <canvas
-            height="125"
-            baseChart
-            [data]="barChartData"
-            [options]="barChartOptions"
-            [type]="barChartType"
-            (chartHover)="chartHovered($event)"
-          >
-          </canvas>
+        <div class="chart-wrapper px-4" style="height: 330px">
+          <table class="graph">
+            <thead>
+              <tr>
+                <th scope="col">Month</th>
+                <th scope="col">Number of Consult</th>
+              </tr>
+            </thead><tbody>
+              <tr style="height:0%">
+                <th scope="row">July</th>
+                <td><span>0</span></td>
+              </tr>
+              <tr style="height:0%">
+                <th scope="row">August</th>
+                <td><span>0</span></td>
+              </tr>
+              <tr style="height:0%">
+                <th scope="row">September</th>
+                <td><span>0</span></td>
+              </tr>
+              <tr style="height:0%">
+                <th scope="row">October</th>
+                <td><span>0%</span></td>
+              </tr>
+              <tr style="height:10%">
+                <th scope="row">November</th>
+                <td><span>{{ totalConsult }}</span></td>
+              </tr>
+            </tbody>
+          </table>
+          
         </div>
       </div>
     </div>
@@ -111,8 +132,8 @@
           <div class="row row-cols-1 g-3">
             <div class="col">
               <div class="card dashboard-details-card p-2">
-                <p class="fs-4 m-0">Number of Visits</p>
-                <p class="fs-4 m-0">11,203</p>
+                <p class="fs-4 m-0">Page Visits</p>
+                <p class="fs-4 m-0">{{ totalVisit }}</p>
               </div>
             </div>
             <div class="col">
@@ -123,8 +144,8 @@
             </div>
             <div class="col">
               <div class="card dashboard-details-card p-2">
-                <p class="fs-4 m-0">Pending Payment</p>
-                <p class="fs-4 m-0">43</p>
+                <p class="fs-4 m-0">Ongoing Projects</p>
+                <p class="fs-4 m-0">{{ ongoingConsult }}</p>
               </div>
             </div>
           </div>
