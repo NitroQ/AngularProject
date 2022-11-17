@@ -17,7 +17,12 @@ export class AddUserComponent implements OnInit {
 
   constructor(private router: Router, private fb: FormBuilder, private api: ApiService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
+  let type = sessionStorage.getItem('usertype');
+
+  if (type == 'user') {
+    this.router.navigate(['/admin/dashboard']);
+  }
     this.userForm = this.fb.group({
       usertype: [''],
       firstname: [''],

@@ -5,77 +5,73 @@
       <p class="fs-5 account-bg p-2">Account Details</p>
     </div>
   </div>
-  <div class="row my-4">
+  <form class="row my-4" [formGroup]="userForm">
     <div class="col-md-5 col">
-      <form class="row g-3">
+      <div class="row g-3">
         <div class="col-md-6 mb-3">
           <label for="exampleFormControlInput1" class="form-label admin-label">User Type</label>
-          <select class="form-select admin-select" aria-label="User Type">
+          <select class="form-select admin-select" formControlName="usertype" aria-label="User Type">
             <option value="admin">Admin</option>
             <option value="user">User</option>
           </select>
         </div>
-        <div class="col-md-6 mb-3">
-          <label for="exampleFormControlInput1" class="form-label admin-label">User Role</label>
-          <input type="text" class="form-control admin-input" />
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
-  <div class="row mb-4">
-    <div class="col-md col">
-      <form class="row g-3">
-        <div class="col-md-4 mb-3">
-          <label for="exampleFormControlInput1" class="form-label admin-label">First Name</label>
-          <input type="text" class="form-control admin-input" />
+
+    <div class="row mb-4">
+      <div class="col-md col">
+        <div class="row g-3">
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">First Name</label>
+            <input type="text" class="form-control admin-input" formControlName="firstname" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Middle Name</label>
+            <input type="text" class="form-control admin-input" formControlName="middlename" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Last Name</label>
+            <input type="text" class="form-control admin-input" formControlName="lastname" />
+          </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <label for="exampleFormControlInput1" class="form-label admin-label">Middle Name</label>
-          <input type="text" class="form-control admin-input" />
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="exampleFormControlInput1" class="form-label admin-label">Last Name</label>
-          <input type="text" class="form-control admin-input" />
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
-  <div class="row mb-4">
-    <div class="col-md col">
-      <form class="row g-3">
-        <div class="col-md-4 mb-3">
-          <label for="exampleFormControlInput1" class="form-label admin-label">Username</label>
-          <input type="text" class="form-control admin-input" />
+    <div class="row mb-4">
+      <div class="col-md col">
+        <div class="row g-3">
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Username</label>
+            <input type="text" class="form-control admin-input" formControlName="username" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Email</label>
+            <input type="email" class="form-control admin-input" formControlName="email" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Contact Number</label>
+            <input type="text" class="form-control admin-input" formControlName="contact" />
+          </div>
         </div>
-        <div class="col-md-4 mb-3">
-          <label for="exampleFormControlInput1" class="form-label admin-label">Email</label>
-          <input type="email" class="form-control admin-input" />
-        </div>
-        <div class="col-md-4 mb-3">
-          <label for="exampleFormControlInput1" class="form-label admin-label">Contact Number</label>
-          <input type="text" class="form-control admin-input" />
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-5 col">
-      <form action="" class="row g-3">
-        <div class="col-md-6 mb-3">
-          <label for="exampleFormControlInput1" class="form-label admin-label">Password</label>
-          <input type="password" class="form-control admin-input" />
+
+    <div class="row">
+      <div class="col-md-5 col">
+        <div class="row g-3">
+          <div class="col-md-6 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Password</label>
+            <input type="password" class="form-control admin-input" formControlName="password" />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Repeat Password</label>
+            <input type="password" class="form-control admin-input" formControlName="repeatpass" />
+          </div>
         </div>
-        <div class="col-md-6 mb-3">
-          <label for="exampleFormControlInput1" class="form-label admin-label">Repeat Password</label>
-          <input type="password" class="form-control admin-input" />
-        </div>
-      </form>
+      </div>
     </div>
-  </div>
-  <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
-    <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">CANCEL</button>
-    <button class="btn-create text-uppercase px-3 py-2" type="button" (click)="updateUserDetails()">
-      SAVE CHANGES
-    </button>
-  </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+      <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button" (click)="cancelUpdate()">CANCEL</button>
+      <button class="btn-create text-uppercase px-3 py-2" type="button" (click)="updateUserDetails()">UPDATE USER</button>
+    </div>
+  </form>
 </div>
