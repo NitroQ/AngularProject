@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./design-bedroom.component.scss'],
 })
 export class DesignBedroomComponent implements OnInit {
-  bedroomDesigns: any = [ ];
+  bedroomDesigns: any = [];
   addDesignDetails(): void {
     this.router.navigate(['/admin/add/design'], { queryParams: { category: 'bedroom' } });
   }
@@ -20,7 +20,7 @@ export class DesignBedroomComponent implements OnInit {
   updateDesignDetails(): void {
     this.router.navigate(['/admin/view/design']);
   }
-  deleteDesignDetails(row:any) {
+  deleteDesignDetails(row: any) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -51,11 +51,10 @@ export class DesignBedroomComponent implements OnInit {
       }
     });
   }
-  deleteImage(row : any){
+  deleteImage(row: any) {
     this.bedroomDesigns = [];
-    this.api.deleteImage(row.id)
-    .subscribe(res=>{
+    this.api.deleteImage(row.id).subscribe((res) => {
       this.getImage();
-    })
+    });
   }
 }

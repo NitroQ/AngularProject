@@ -14,7 +14,9 @@
             <option value="admin">Admin</option>
             <option value="user">User</option>
           </select>
-          <span class="text-danger" *ngIf="userForm.controls['usertype'].dirty && userForm.hasError('required', 'usertype')">User Type is Required.</span>
+          <span class="text-danger" *ngIf="userForm.controls['usertype'].dirty && userForm.hasError('required', 'usertype')"
+            >User Type is Required.</span
+          >
         </div>
       </div>
     </div>
@@ -25,7 +27,9 @@
           <div class="col-md-4 mb-3">
             <label for="exampleFormControlInput1" class="form-label admin-label">First Name</label>
             <input type="text" class="form-control admin-input" formControlName="firstname" />
-            <span class="text-danger" *ngIf="userForm.controls['firstname'].dirty && userForm.hasError('required', 'firstname')">First Name is Required.</span>
+            <span class="text-danger" *ngIf="userForm.controls['firstname'].dirty && userForm.hasError('required', 'firstname')"
+              >First Name is Required.</span
+            >
           </div>
           <div class="col-md-4 mb-3">
             <label for="exampleFormControlInput1" class="form-label admin-label">Middle Name</label>
@@ -34,7 +38,9 @@
           <div class="col-md-4 mb-3">
             <label for="exampleFormControlInput1" class="form-label admin-label">Last Name</label>
             <input type="text" class="form-control admin-input" formControlName="lastname" />
-            <span class="text-danger" *ngIf="userForm.controls['lastname'].dirty && userForm.hasError('required', 'lastname')">Last Name is Required.</span>
+            <span class="text-danger" *ngIf="userForm.controls['lastname'].dirty && userForm.hasError('required', 'lastname')"
+              >Last Name is Required.</span
+            >
           </div>
         </div>
       </div>
@@ -45,7 +51,9 @@
           <div class="col-md-4 mb-3">
             <label for="exampleFormControlInput1" class="form-label admin-label">Username</label>
             <input type="text" class="form-control admin-input" formControlName="username" />
-            <span class="text-danger" *ngIf="userForm.controls['username'].dirty && userForm.hasError('required', 'username')">Username is Required.</span>
+            <span class="text-danger" *ngIf="userForm.controls['username'].dirty && userForm.hasError('required', 'username')"
+              >Username is Required.</span
+            >
           </div>
           <div class="col-md-4 mb-3">
             <label for="exampleFormControlInput1" class="form-label admin-label">Email</label>
@@ -55,7 +63,9 @@
           <div class="col-md-4 mb-3">
             <label for="exampleFormControlInput1" class="form-label admin-label">Contact Number</label>
             <input type="text" class="form-control admin-input" formControlName="contact" />
-            <span class="text-danger" *ngIf="userForm.controls['contact'].dirty && userForm.hasError('required', 'contact')">Contact Number is Required.</span>
+            <span class="text-danger" *ngIf="userForm.controls['contact'].dirty && userForm.hasError('required', 'contact')"
+              >Contact Number is Required.</span
+            >
           </div>
         </div>
       </div>
@@ -77,7 +87,7 @@
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
       <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button" (click)="cancelUpdate()">CANCEL</button>
-      <button class="btn-create text-uppercase px-3 py-2" type="submit" [disabled]="!userForm.valid" >UPDATE USER</button>
+      <button class="btn-create text-uppercase px-3 py-2" type="submit" [disabled]="!userForm.valid">UPDATE USER</button>
     </div>
   </form>
 </div>

@@ -18,7 +18,7 @@ export class DesignBathroomComponent implements OnInit {
   updateDesignDetails(): void {
     this.router.navigate(['/admin/view/design']);
   }
-  deleteDesignDetails(row:any) {
+  deleteDesignDetails(row: any) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -49,11 +49,10 @@ export class DesignBathroomComponent implements OnInit {
       }
     });
   }
-  deleteImage(row : any){
+  deleteImage(row: any) {
     this.bathroomDesigns = [];
-    this.api.deleteImage(row.id)
-    .subscribe(res=>{
+    this.api.deleteImage(row.id).subscribe((res) => {
       this.getImage();
-    })
+    });
   }
 }

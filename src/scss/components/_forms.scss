@@ -4,10 +4,6 @@
     background-color: $secondary !important;
  }
 
- //  .form-select {
- //     background-color: $primary !important;
- //     font-family: Inter, sans-serif !important;
- //  }
  textarea {
     border-radius: 3.53px !important;
     resize: none !important;
@@ -20,16 +16,23 @@
  .user-input {
     background-color: $primary !important;
     font-family: Inter, sans-serif !important;
+    color: $white !important;
+ }
+
+ .user-number {
+    @extend .user-input;
+    color: $white !important;
  }
 
  .user-textarea {
     border: 3px solid $white !important;
     background-color: transparent !important;
+    color: $white !important;
  }
 
- .user-textarea:focus {
-    background-color: $white !important;
- }
+ //  .user-textarea:focus {
+ //     background-color: $white !important;
+ //  }
 
  .user-select {
     background-color: $primary !important;
@@ -51,6 +54,7 @@
  input[type=password]:focus,
  input[type=email]:focus {
     background-color: $white !important;
+    color: $primary !important;
  }
 
  ::placeholder,
