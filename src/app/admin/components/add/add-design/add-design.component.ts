@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, Subscriber } from 'rxjs';
 import { ApiService } from '../../../../api.service';
 import { ImageModel } from './add-design.model';
@@ -32,11 +32,10 @@ export class AddDesignComponent implements OnInit {
     }
 
     this.addImage = this.fb.group({
-      description: [''],
-      category: [''],
-      dimensions: [''],
-      price: [''],
-      image: ['']
+      description: ['', Validators.required],
+      category: ['', Validators.required],
+      dimensions: ['', Validators.required],
+      image: ['', Validators.required],
     })
   }
 
@@ -51,7 +50,6 @@ export class AddDesignComponent implements OnInit {
     this.imageModelObj.description = this.addImage.value.description;
     this.imageModelObj.category = this.category;
     this.imageModelObj.dimensions = this.addImage.value.dimensions;
-    this.imageModelObj.price = this.addImage.value.price;
     this.imageModelObj.image = this.base64code;
 
     this.api.postImage(this.imageModelObj)
