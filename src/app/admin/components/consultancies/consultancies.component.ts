@@ -9,6 +9,7 @@ import { ApiService } from '../../../api.service';
 })
 export class ConsultanciesComponent implements OnInit {
   consultationDatas: any;
+  bookingModelObj : any = [];
   btnView(row: any): void {
     this.router.navigate(['/admin/view/consultation/'], { queryParams: { id: row.id } });
   }
@@ -44,5 +45,19 @@ export class ConsultanciesComponent implements OnInit {
     this.api.deleteBooking(row.id).subscribe((res) => {
       this.getBookingDetails();
     });
+  }
+
+  updateBooking(row:any, status:string){
+     row.status = status;
+
+    this.api.updateBooking(row, row.id).subscribe(res=>{ 
+      Swal.fire('Updated!', 'This consultation has been updated.', 'success');
+      this.getBookingDetails();
+    },
+    err=>{
+      alert("Something went wrong");
+
+  });
+
   }
 }

@@ -21,7 +21,9 @@
           <td>{{ contactsData.email }}</td>
           <td>{{ contactsData.concern }}</td>
           <td>{{ contactsData.message | slice: 0:20 }}{{ contactsData.message.length > 20 ? "..." : "" }}</td>
-          <td>{{ contactsData.status }}</td>
+          <td *ngIf="contactsData.status == 'pending'"><img src="../../../../assets/images/admin-images/status/pending.png" alt="" /> Pending</td>
+          <td *ngIf="contactsData.status == 'replied'"><img src="../../../../assets/images/admin-images/status/finished-replied.png" alt="" /> Replied</td>
+          
           <!-- ** add status here on click -->
           <!-- <td><img src="../../../../assets/images/admin-images/status/finished-replied.png" alt=""> Replied</td> -->
           <td>
@@ -41,18 +43,7 @@
                   Delete
                 </span>
               </button>
-              <div class="btn-group">
-                <button class="btn-action btn-primary py-1 px-3 me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <span>Status <i class="fa-solid fa-caret-down"></i> </span>
-                </button>
-                <ul class="dropdown-menu admin-dropdown-menu">
-                  <li>
-                    <a class="dropdown-item"
-                      ><img src="../../../../assets/images/admin-images/status/finished-replied.png" alt="" class="me-2" /> Replied</a
-                    >
-                  </li>
-                </ul>
-              </div>
+              <button class="btn-action btn-primary py-1 px-3" *ngIf="contactsData.status == 'pending'" type="button" (click)="updateContact(contactsData)">Set Replied</button>
             </div>
           </td>
         </tr>

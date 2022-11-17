@@ -13,6 +13,7 @@ export class ConsultComponent implements OnInit {
   // * * when book button is click, confirmation message will appear
   bookingForm !: FormGroup;
   bookingModelObj : ConsultModel = new ConsultModel();
+  bookingDates : any = [];
   constructor(private fb: FormBuilder, private api: ApiService) { }
 
   ngOnInit(): void {
@@ -74,4 +75,16 @@ export class ConsultComponent implements OnInit {
       },
     });
   }
+
+  // getDates(){
+  //   this.api.getImage()
+  //   .subscribe(res=>{
+  //     for (let i = 0; i < res.length; i++) {
+  //       if(res[i].status == "pending" || res[i].status == "confirmed"){
+  //        this.bookingDates.push(res[i]);
+  //      }
+  //  }
+  //   })
+
+  // }
 }

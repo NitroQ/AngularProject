@@ -46,4 +46,17 @@ export class ContactUsComponent implements OnInit {
       this.getContactDetails();
     });
   }
+  updateContact(row:any){
+    row.status = 'replied';
+
+   this.api.updateContact(row, row.id).subscribe(res=>{ 
+     Swal.fire('Updated!', 'This contact has been updated.', 'success');
+     this.getContactDetails();
+   },
+   err=>{
+     alert("Something went wrong");
+
+ });
+
+ }
 }

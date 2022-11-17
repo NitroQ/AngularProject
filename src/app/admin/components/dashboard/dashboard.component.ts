@@ -66,12 +66,12 @@ export class DashboardComponent {
     .subscribe(res=>{
       for(let i = 0; i < res.length; i++){
         this.totalConsult++;
-        if(res[i].status === 'pending'){
-          this.pendingConsultations = res;
+        if(res[i].status == 'pending'){
+          this.pendingConsultations.push(res[i]);
           this.pendingConsult = this.pendingConsult + 1;
-        }else if (res[i].status === 'cancelled'){
+        }else if (res[i].status == 'cancelled'){
           this.cancelConsult = this.cancelConsult + 1;
-        }else if (res[i].status === 'completed'){
+        }else if (res[i].status == 'finished'){
           this.completedConsult = this.completedConsult + 1;
         }
       }
