@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../../../../api.service';
 import { UserModel } from './add-user.model';
 
@@ -24,15 +24,15 @@ export class AddUserComponent implements OnInit {
     this.router.navigate(['/admin/dashboard']);
   }
     this.userForm = this.fb.group({
-      usertype: [''],
-      firstname: [''],
-      lastname: [''],
-      middlename: [''],
-      username: [''],
-      email: [''],
-      contact: [''],
-      password: [''],
-      repeatpass: [''],
+      usertype: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      middlename: ['', Validators.required],
+      username: ['', Validators.required],
+      email: ['', Validators.required],
+      contact: ['', Validators.required],
+      password: ['', Validators.required],
+      repeatpass: ['', Validators.required],
     });
   }
 
