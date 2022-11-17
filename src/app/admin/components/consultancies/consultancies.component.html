@@ -1,1 +1,73 @@
-<p>consultancies works!</p>
+<div class="container-fluid p-lg-4">
+  <h1 class="display-5 SoraBold mb-4">Consultancies</h1>
+  <div class="admin-table h-100 p-2">
+    <table class="table table-responsive table-hover caption-top">
+      <caption class="fs-3 admin-table-caption">
+        Consultations
+      </caption>
+      <thead class="admin-table-head table-light">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Property Type</th>
+          <th scope="col">Consultation Date</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let consultationData of consultationDatas">
+          <td>{{ consultationData.clientName }}</td>
+          <td>{{ consultationData.email }}</td>
+          <td>{{ consultationData.propertyType }}</td>
+          <td>{{ consultationData.consultationDate }}</td>
+          <!-- ** add status here on click -->
+          <td *ngIf="consultationData.status == 'pending'"><img src="../../../../assets/images/admin-images/status/pending.png" alt="" /> Pending</td>
+          <td *ngIf="consultationData.status == 'confirmed'"><img src="../../../../assets/images/admin-images/status/confirmed.png" alt="" /> Confirmed</td>
+          <td *ngIf="consultationData.status == 'ongoing'"><img src="../../../../assets/images/admin-images/status/ongoing.png" alt="" /> Ongoing</td>
+          <td *ngIf="consultationData.status == 'finished'"><img src="../../../../assets/images/admin-images/status/finished-replied.png" alt="" /> Finished</td>
+          <td *ngIf="consultationData.status == 'cancelled'"><img src="../../../../assets/images/admin-images/status/pending.png" alt="" /> Cancelled</td>
+          <td>
+            <div class="d-grid gap-2 d-md-block">
+              <button
+                class="btn-action btn-primary py-1 px-3"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                (click)="btnView(consultationData)"
+              >
+                <span> <i class="fa-solid fa-eye"></i> View</span>
+              </button>
+              <button class="btn-action btn-primary py-1 px-3 mx-2" type="button" (click)="btnDelete(consultationData)">
+                <span>
+                  <i class="fa-solid fa-trash-can"></i>
+                  Delete
+                </span>
+              </button>
+              <div class="btn-group">
+                <button class="btn-action btn-primary py-1 px-3 me-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span>Status <i class="fa-solid fa-caret-down"></i> </span>
+                </button>
+                
+                <ul class="dropdown-menu admin-dropdown-menu" >
+                  <li  *ngIf="consultationData.status == 'pending' && consultationData.status != 'cancelled'">
+                    <button class="dropdown-item" type="button" (click)="updateBooking(consultationData, 'confirmed')">Set Confirmed</button>
+                  </li>
+                  <li *ngIf="consultationData.status == 'confirmed' && consultationData.status != 'cancelled'">
+                    <button class="dropdown-item" type="button" (click)="updateBooking(consultationData, 'ongoing')">Set Ongoing</button>
+                  </li>
+                  <li *ngIf="consultationData.status == 'ongoing' && consultationData.status != 'cancelled'">
+                    <button class="dropdown-item" type="button" (click)="updateBooking(consultationData, 'finished')">Set Finished</button>
+                  </li>
+                  <li *ngIf="consultationData.status != 'cancelled' && consultationData.status != 'finished' ">
+                    <button class="dropdown-item" type="button" (click)="updateBooking(consultationData, 'cancelled')">Set Cancelled</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

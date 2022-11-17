@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../../api.service';
 @Component({
   selector: 'app-explore-gallery',
@@ -16,18 +15,9 @@ export class ExploreGalleryComponent implements OnInit {
   spaceSavingDesigns: any = [];
   homeOfficeDesigns: any = [];
 
-  
-  addImage !: FormGroup;
-  constructor(private fb: FormBuilder, private api: ApiService) { }
+  constructor(private api: ApiService) { }
 
   ngOnInit(): void {
-    this.addImage = this.fb.group({
-      description: [''],
-      category: [''],
-      dimensions: [''],
-      price: [''],
-      image: ['']
-    })
     this.getImage();
   }
 

@@ -1,0 +1,48 @@
+<div class="container-fluid p-5">
+    <h1 class="display-5 SoraBold">View Contact</h1>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <form>
+                <div class="row mb-3">
+                    <label  class="col-sm-2 col-md col-form-label admin-label">Name:</label>
+                    <div class="col-sm-9 col">
+                      <input type="text" class="form-control admin-input" value="{{ contactValue.name }}" readonly>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label  class="col-sm-2 col-md col-form-label admin-label">Email:</label>
+                    <div class="col-sm-9 col">
+                      <input type="email" class="form-control admin-input" value="{{ contactValue.email }}" readon>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label  class="col-sm-3 col-md col-form-label admin-label">Company:</label>
+                    <div class="col-sm-9 col">
+                      <input type="text" class="form-control admin-input" value="{{ contactValue.company }}" readon>
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label  class="col-sm-3 col-md col-form-label admin-label">Concern:</label>
+                    <div class="col-sm-9 col">
+                      <input type="text" class="form-control admin-input" value="{{ contactValue.concern }}" readon>
+                    </div>
+                  </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form>
+                <div class="row mb-3">
+                    <label for="" class="col-sm-3 col-md col-form-label admin-label">Message:</label>
+                    <div class="col-sm-9">
+                        <textarea class="admin-input" cols="50" rows="10">{{ contactValue.message }}</textarea>
+                    </div>
+                </div>
+            </form>     
+        </div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
+        <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">BACK</button>
+       <a href="mailto:{{ contactValue.email }}"> <button class="btn-create text-uppercase px-3 py-2" type="button">CREATE EMAIL</button></a>
+      </div>
+</div>
+

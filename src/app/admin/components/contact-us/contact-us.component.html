@@ -1,1 +1,53 @@
-<p>contact-us works!</p>
+<div class="container-fluid p-lg-4">
+  <h1 class="display-5 SoraBold mb-4">Contact Us</h1>
+  <div class="admin-table h-100 p-2">
+    <table class="table table-responsive table-hover caption-top">
+      <caption class="fs-3 admin-table-caption">
+        Contact Us
+      </caption>
+      <thead class="admin-table-head table-light">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Concern</th>
+          <th scope="col">Message</th>
+          <th scope="col">Status</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let contactsData of contactData">
+          <td>{{ contactsData.name }}</td>
+          <td>{{ contactsData.email }}</td>
+          <td>{{ contactsData.concern }}</td>
+          <td>{{ contactsData.message | slice: 0:20 }}{{ contactsData.message.length > 20 ? "..." : "" }}</td>
+          <td *ngIf="contactsData.status == 'pending'"><img src="../../../../assets/images/admin-images/status/pending.png" alt="" /> Pending</td>
+          <td *ngIf="contactsData.status == 'replied'"><img src="../../../../assets/images/admin-images/status/finished-replied.png" alt="" /> Replied</td>
+          
+          <!-- ** add status here on click -->
+          <!-- <td><img src="../../../../assets/images/admin-images/status/finished-replied.png" alt=""> Replied</td> -->
+          <td>
+            <div class="d-grid gap-2 d-md-block">
+              <button
+                class="btn-action btn-primary py-1 px-3"
+                type="button"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                (click)="btnView(contactsData)"
+              >
+                <span> <i class="fa-solid fa-eye"></i> View</span>
+              </button>
+              <button class="btn-action btn-primary py-1 px-3 mx-2" type="button" (click)="btnDelete(contactsData)">
+                <span>
+                  <i class="fa-solid fa-trash-can"></i>
+                  Delete
+                </span>
+              </button>
+              <button class="btn-action btn-primary py-1 px-3" *ngIf="contactsData.status == 'pending'" type="button" (click)="updateContact(contactsData)">Set Replied</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

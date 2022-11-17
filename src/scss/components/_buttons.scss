@@ -1,48 +1,47 @@
 @use "../../scss/abstracts/" as *;
 
 button {
-   color: $white !important;
+  color: $white !important;
 }
 
-<<<<<<< HEAD
-.mat-icon-button {
-   border-radius: 10% !important;
-}
-
-.mat-stroked-button,
-
-=======
->>>>>>> main
 .btn {
-   background-color: transparent !important;
-   border: 4.73847px solid $white !important;
-   transition-duration: 300ms;
+  background-color: transparent !important;
+  border: 4.73847px solid $white !important;
+  transition-duration: 300ms;
 }
 
 .btn:focus {
-   box-shadow: none !important;
+  box-shadow: none !important;
 }
 
 .btn:hover {
-   color: $orange !important;
-   border: 4.73847px solid $orange !important;
+  color: $orange !important;
+  border: 4.73847px solid $orange !important;
 }
 
-<<<<<<< HEAD
+
 .btn-explore{
    background-color: transparent !important;
    border:1px solid #BCBCBC !important;
-=======
-// explore page pagination
-.btn-explore {
-   background-color: transparent !important;
-   border: 1px solid #BCBCBC !important;
->>>>>>> main
-   width: 50px !important;
-   height: 50px !important;
 }
 
-<<<<<<< HEAD
+// explore page pagination
+.btn-explore {
+
+   background-color: transparent !important;
+   border: 1px solid #BCBCBC !important;
+
+   width: 50px !important;
+   height: 50px !important;
+
+  background-color: transparent !important;
+  border: 1px solid #bcbcbc !important;
+  width: 50px !important;
+  height: 50px !important;
+
+}
+
+
 .btn-explore:hover{
    background-color: #FF5E15 !important;
    border:1px solid #FF5E15 !important;
@@ -68,11 +67,52 @@ button {
  }
  
 
-=======
+
 .btn-explore:hover {
    background-color: #FF5E15 !important;
    border: 1px solid #FF5E15 !important;
    width: 50px !important;
    height: 50px !important;
+  background-color: $orange !important;
+  border: 1px solid $orange !important;
+  width: 50px !important;
+  height: 50px !important;
 }
->>>>>>> main
+
+// admin search
+.btn-search {
+  font-family: "Barlow Regular", sans-serif;
+  background-color: $orange !important;
+  border: 4.73847px solid $orange !important;
+}
+
+.btn-search:hover {
+  color: $white !important;
+  border: 4.73847px solid $orange !important;
+}
+
+// admin table
+.btn-action {
+  background-color: $tableBGButton !important;
+  color: $tableColorButton !important;
+  border-radius: 4px !important;
+  border: none !important;
+}
+// view
+.btn-cancel {
+  font-family: "Barlow Regular", sans-serif;
+  background-color: $cancelBtn;
+  color: $orange !important;
+  border-radius: 3.87701px;
+  border: none;
+}
+.btn-create {
+  @extend .btn-cancel;
+  background-color: $orange;
+  color: $white !important;
+}
+// user management
+.btn-user-action {
+  border: 1px solid $userActionBorder !important;
+  color: $userActionColor !important;
+}

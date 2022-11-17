@@ -1,8 +1,8 @@
-<mat-drawer-container>
+<mat-drawer-container *ngIf="adminaccess">
   <mat-drawer mode="side" [opened]="sideBarOpen">
     <app-sidenav></app-sidenav>
   </mat-drawer>
-  <mat-drawer-content>
+  <mat-drawer-content class="admin-body">
     <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
     <router-outlet></router-outlet>
   </mat-drawer-content>

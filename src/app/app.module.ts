@@ -6,7 +6,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PublicModule } from './public/public.module';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
-import { AuthModule } from './auth/auth.module';
 import { AdminModule } from './admin/admin.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgChartsModule } from 'ng2-charts';
@@ -18,8 +17,13 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    CarouselModule,
-    NgChartsModule
+    FormsModule,
+    HttpClientModule,
+    PublicModule,
+    RouterModule,
+    AppRoutingModule,
+    AdminModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

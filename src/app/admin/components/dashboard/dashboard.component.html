@@ -1,10 +1,10 @@
-<div class="container-fluid p-lg-5">
+<div class="container-fluid p-lg-4">
   <h1 class="display-5 SoraBold">Dashboard</h1>
   <div class="row row-cols-md-2 row-cols-1 my-4 gy-4">
     <div class="col-md-6 col">
       <div class="dashboard-card card shadow py-2">
         <div class="d-flex flex-column text-start align-items-start px-3 mt-3">
-          <p class="fs-3 card-title dashboard-card-title m-0">Statistics</p>
+          <p class="fs-3 card-title dashboard-card-title m-0">Consult Statistics</p>
           <p class="fs-6 card-title dashboard-card-subheader m-0">This Month</p>
         </div>
         <div class="row row-cols-2 px-3 py-4 gy-2">
@@ -16,7 +16,7 @@
                 alt="N&K Sales icon"
               />
               <div class="d-flex flex-column statistics">
-                <p class="display-6 statistics-title m-0">1031</p>
+                <p class="display-6 statistics-title m-0">{{ totalConsult }}</p>
                 <p class="text-small statistics-subheader m-0">Total Consultations</p>
               </div>
             </div>
@@ -29,7 +29,7 @@
                 alt="N&K Pending icon"
               />
               <div class="d-flex flex-column statistics">
-                <p class="display-6 statistics-title m-0">121</p>
+                <p class="display-6 statistics-title m-0">{{ pendingConsult }}</p>
                 <p class="text-small statistics-subheader m-0">Pending Consultations</p>
               </div>
             </div>
@@ -42,7 +42,7 @@
                 alt="N&K Unpaid icon"
               />
               <div class="d-flex flex-column statistics">
-                <p class="display-6 statistics-title m-0">2</p>
+                <p class="display-6 statistics-title m-0">{{ cancelConsult }}</p>
                 <p class="text-small statistics-subheader m-0">Cancelled Consultations</p>
               </div>
             </div>
@@ -55,7 +55,7 @@
                 alt="N&K Success icon"
               />
               <div class="d-flex flex-column statistics">
-                <p class="display-6 statistics-title m-0">908</p>
+                <p class="display-6 statistics-title m-0">{{ completedConsult }}</p>
                 <p class="text-small statistics-subheader m-0">Successful Consultations</p>
               </div>
             </div>
@@ -81,12 +81,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-8 col dashboard-table h-100">
+    <div class="col-md-8 col admin-table h-100">
       <table class="table table-responsive table-hover caption-top">
-        <caption class="fs-3 dashboard-table-caption">
+        <caption class="fs-3 admin-table-caption">
           Pending Consultations
         </caption>
-        <thead class="dashboard-table-head table-light">
+        <thead class="admin-table-head table-light">
           <tr>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -95,11 +95,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let consultationDatas of consultationData">
-            <td>{{ consultationDatas.name }}</td>
-            <td>{{ consultationDatas.email }}</td>
-            <td>{{ consultationDatas.type }}</td>
-            <td>{{ consultationDatas.date }}</td>
+          <tr *ngFor="let pendingConsultation of pendingConsultations">
+            <td>{{ pendingConsultation.clientName }}</td>
+            <td>{{ pendingConsultation.email }}</td>
+            <td>{{ pendingConsultation.propertyType }}</td>
+            <td>{{ pendingConsultation.consultationDate }}</td>
           </tr>
         </tbody>
       </table>
@@ -118,7 +118,7 @@
             <div class="col">
               <div class="card dashboard-details-card p-2">
                 <p class="fs-4 m-0">Messages/Inquiries</p>
-                <p class="fs-4 m-0">2,131</p>
+                <p class="fs-4 m-0">{{ totalContact }}</p>
               </div>
             </div>
             <div class="col">
