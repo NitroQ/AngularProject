@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 import { BaseChartDirective } from 'ng2-charts';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -47,19 +48,39 @@ export class DashboardComponent {
     console.log(event, active);
   }
   // table data
-  pendingConsultations: any = [
-    {
-      name: 'Sample Notice',
-      email: 'sample@email.com',
-      type: 'Property Type',
-      date: 'Date',
-    },
-    {
-      name: 'Sample Notice',
-      email: 'sample@email.com',
-      type: 'Property Type',
-      date: 'Date',
-    },
-  ];
-  constructor() {}
+  pendingConsultations: any = [];
+  pendingConsult : number = 0;
+  cancelConsult : number = 0;
+  completedConsult : number = 0;
+  totalConsult : number = 0;
+  totalContact : number = 0;
+  constructor(private api: ApiService) {  }
+
+  ngOnInit(): void {
+    this.getBookingDetails();
+    this.getContactDetails();
+  }
+
+  getBookingDetails(){
+    this.api.getBooking()
+    .subscribe(res=>{
+      for(let i = 0; i < res.length; i++){
+        this.totalConsult++;
+        if(res[i].status === 'pending'){
+          this.pendingConsultations = res;
+          this.pendingConsult = this.pendingConsult + 1;
+        }else if (res[i].status === 'cancelled'){
+          this.cancelConsult = this.cancelConsult + 1;
+        }else if (res[i].status === 'completed'){
+          this.completedConsult = this.completedConsult + 1;
+        }
+      }
+    })
+  }
+  getContactDetails(){
+    this.api.getContact()
+    .subscribe(res=>{
+      this.totalContact = res.length;
+    })
+  }
 }
