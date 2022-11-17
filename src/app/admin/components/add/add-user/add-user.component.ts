@@ -14,28 +14,76 @@ export class AddUserComponent implements OnInit {
   userForm!: FormGroup;
   userModelObj: UserModel = new UserModel();
   userData!: any;
+  submitted: boolean = false;
 
   constructor(private router: Router, private fb: FormBuilder, private api: ApiService) {}
 
-  ngOnInit(): void {    
-  let type = sessionStorage.getItem('usertype');
+  ngOnInit(): void {
+    let type = sessionStorage.getItem('usertype');
 
-  if (type == 'user') {
-    this.router.navigate(['/admin/dashboard']);
+    if (type == 'user') {
+      this.router.navigate(['/admin/dashboard']);
+    }
+    this.userForm = this.fb.group(
+      {
+        usertype: ['', Validators.required],
+        firstname: ['', Validators.required],
+        lastname: ['', Validators.required],
+        middlename: ['', Validators.required],
+        username: ['', Validators.required],
+        email: ['', Validators.required],
+        contact: ['', Validators.required],
+        password: ['', Validators.required],
+        repeatpass: ['', Validators.required],
+      },
+      {
+        validators: this.MustMatch('password', 'repeatpass'),
+      }
+    );
   }
-    this.userForm = this.fb.group({
-      usertype: ['', Validators.required],
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
-      middlename: ['', Validators.required],
-      username: ['', Validators.required],
-      email: ['', Validators.required],
-      contact: ['', Validators.required],
-      password: ['', Validators.required],
-      repeatpass: ['', Validators.required],
-    });
+  MustMatch(controlName: string, matchingControlName: string) {
+    return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const match = formGroup.controls[matchingControlName];
+      if (match.errors && !match.errors?.['MustMatch']) {
+        return;
+      }
+      if (control.value !== match.value) {
+        match.setErrors({ MustMatch: true });
+      } else {
+        match.setErrors(null);
+      }
+    };
+  }
+  get form() {
+    return this.userForm.controls;
   }
 
+  postUserDetails() {
+    this.submitted = true;
+    if (this.userForm.invalid) {
+      return;
+    } else {
+      this.userModelObj.usertype = this.userForm.value.usertype;
+      this.userModelObj.firstname = this.userForm.value.firstname;
+      this.userModelObj.lastname = this.userForm.value.lastname;
+      this.userModelObj.middlename = this.userForm.value.middlename;
+      this.userModelObj.username = this.userForm.value.username;
+      this.userModelObj.email = this.userForm.value.email;
+      this.userModelObj.contact = this.userForm.value.contact;
+      this.userModelObj.password = this.userForm.value.password;
+
+      this.api.postUser(this.userModelObj).subscribe(
+        (res) => {
+          this.userForm.reset();
+          this.createUser();
+        },
+        (err) => {
+          alert('Something went wrong');
+        }
+      );
+    }
+  }
   createUser() {
     Swal.fire({
       title: 'Are you sure?',
@@ -54,29 +102,5 @@ export class AddUserComponent implements OnInit {
         this.userForm.reset();
       }
     });
-  }
-
-  postUserDetails() {
-    if (this.userForm.value.password == this.userForm.value.repeatpass) {
-      this.userModelObj.usertype = this.userForm.value.usertype;
-      this.userModelObj.firstname = this.userForm.value.firstname;
-      this.userModelObj.lastname = this.userForm.value.lastname;
-      this.userModelObj.middlename = this.userForm.value.middlename;
-      this.userModelObj.username = this.userForm.value.username;
-      this.userModelObj.email = this.userForm.value.email;
-      this.userModelObj.contact = this.userForm.value.contact;
-      this.userModelObj.password = this.userForm.value.password;
-
-      this.api.postUser(this.userModelObj).subscribe(
-        (res) => {
-          this.userForm.reset();
-        },
-        (err) => {
-          alert('Something went wrong');
-        }
-      );
-    } else {
-      alert('Passwords does not match');
-    }
   }
 }

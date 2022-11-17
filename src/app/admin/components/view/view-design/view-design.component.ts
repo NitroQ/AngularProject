@@ -13,35 +13,31 @@ import Swal from 'sweetalert2';
   styleUrls: ['./view-design.component.scss'],
 })
 export class ViewDesignComponent implements OnInit {
-  constructor(private router: Router, private api : ApiService, private route: ActivatedRoute, private fb : FormBuilder) {}
-  myImage : boolean = false;
-  base64code !: any;
-  addImage !: FormGroup;
-  imageModelObj : ImageModel = new ImageModel();
-  id !: any;
-  imageData !: any;
-  category !: any;
-  designValue : any;
+  constructor(private router: Router, private api: ApiService, private route: ActivatedRoute, private fb: FormBuilder) {}
+  myImage: boolean = false;
+  base64code!: any;
+  addImage!: FormGroup;
+  imageModelObj: ImageModel = new ImageModel();
+  id!: any;
+  imageData!: any;
+  category!: any;
+  designValue: any;
+  submitted: boolean = false;
+
   ngOnInit(): void {
     this.id = this.route.snapshot.queryParamMap.get('id');
     this.category = this.route.snapshot.queryParamMap.get('category');
-
-
-
-
-    this.api.getImage()
-    .subscribe(res=>{
+    this.api.getImage().subscribe((res) => {
       for (let i = 0; i < res.length; i++) {
-        if(res[i].id == this.id){
+        if (res[i].id == this.id) {
           this.designValue = res[i];
           this.addImage = this.fb.group({
             description: [this.designValue.description, Validators.required],
             dimensions: [this.designValue.dimensions, Validators.required],
-            image: ['', Validators.required],
-          })
+            image: [''],
+          });
         }
-    }
-      
+      }
     });
 
     // this.addImage = this.fb.group({
@@ -53,30 +49,58 @@ export class ViewDesignComponent implements OnInit {
     // this.addImage.controls['dimensions'].setValue(this.designValue.dimensions);
   }
 
+  get form() {
+    return this.addImage.controls;
+  }
   updateImage() {
+    this.submitted = true;
+    if (this.addImage.invalid) {
+      return;
+    } else {
+      if (this.myImage) {
+        this.imageModelObj.image = this.base64code;
+      } else {
+        this.imageModelObj.image = this.designValue.image;
+      }
 
-     if(this.myImage){
-      this.imageModelObj.image = this.base64code;
-     }else{
-      this.imageModelObj.image = this.designValue.image;
-     }
+      this.imageModelObj.description = this.addImage.value.description;
+      this.imageModelObj.category = this.category;
+      this.imageModelObj.dimensions = this.addImage.value.dimensions;
 
-    this.imageModelObj.description = this.addImage.value.description;
-    this.imageModelObj.category = this.category;
-    this.imageModelObj.dimensions = this.addImage.value.dimensions;
-
-      this.api.updateImage(this.imageModelObj, this.id)
-        .subscribe(res=>{
-          Swal
+      this.api.updateImage(this.imageModelObj, this.id).subscribe(
+        (res) => {
+          this.addImage.reset();
+          this.updateImageDetails();
         },
-        err=>{
-          alert("Something went wrong");
-    
-      });
-  
-
+        (err) => {
+          alert('Something went wrong');
+        }
+      );
+    }
   }
 
+  // updateImage() {
+
+  //    if(this.myImage){
+  //     this.imageModelObj.image = this.base64code;
+  //    }else{
+  //     this.imageModelObj.image = this.designValue.image;
+  //    }
+
+  //   this.imageModelObj.description = this.addImage.value.description;
+  //   this.imageModelObj.category = this.category;
+  //   this.imageModelObj.dimensions = this.addImage.value.dimensions;
+
+  //     this.api.updateImage(this.imageModelObj, this.id)
+  //       .subscribe(res=>{
+  //         Swal
+  //       },
+  //       err=>{
+  //         alert("Something went wrong");
+
+  //     });
+
+  // }
 
   updateImageDetails() {
     Swal.fire({
@@ -88,26 +112,24 @@ export class ViewDesignComponent implements OnInit {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-          this.updateImage();
-            Swal.fire('Saved!', '', 'success');
-            this.addCancel();
+        this.updateImage();
+        Swal.fire('Saved!', '', 'success');
+        this.addCancel();
       } else if (result.isDenied) {
         Swal.fire('Changes are not saved', '', 'info');
         this.addCancel();
-
       }
     });
   }
 
-
-  addCancel(){
-    if(this.category=='livingroom'){
+  addCancel() {
+    if (this.category == 'livingroom') {
       this.router.navigate(['admin/living-room']);
-    }else if(this.category=='homeoffice'){
-        this.router.navigate(['admin/home-office']);
-    }else if(this.category=='spacesaving'){
+    } else if (this.category == 'homeoffice') {
+      this.router.navigate(['admin/home-office']);
+    } else if (this.category == 'spacesaving') {
       this.router.navigate(['admin/space-saving']);
-    }else{
+    } else {
       this.router.navigate(['admin/' + this.category]);
     }
   }
@@ -120,14 +142,13 @@ export class ViewDesignComponent implements OnInit {
   }
 
   convertToBase64(file: File) {
-  
     const observable = new Observable((subscriber: any) => {
       this.readFile(file, subscriber);
-    })
+    });
 
     observable.subscribe((d) => {
-     this.base64code  = d
-    })
+      this.base64code = d;
+    });
   }
 
   readFile(file: File, subscriber: Subscriber<any>) {

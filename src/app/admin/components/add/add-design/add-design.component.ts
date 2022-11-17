@@ -16,16 +16,17 @@ import Swal from 'sweetalert2';
 })
 export class AddDesignComponent implements OnInit {
   myImage: any;
-  base64code !: any;
-  addImage !: FormGroup;
-  imageModelObj : ImageModel = new ImageModel();
-  imageData !: any;
-  category : any = this.route.snapshot.queryParamMap.get('category');
+  base64code!: any;
+  addImage!: FormGroup;
+  imageModelObj: ImageModel = new ImageModel();
+  imageData!: any;
+  category: any = this.route.snapshot.queryParamMap.get('category');
+  submitted: boolean = false;
 
   constructor(private router: Router, private fb: FormBuilder, private route: ActivatedRoute, private location: Location, private api: ApiService) {}
 
   ngOnInit(): void {
-    if(this.category == null || this.category == undefined){
+    if (this.category == null || this.category == undefined) {
       this.location.back();
     }
 
@@ -34,20 +35,22 @@ export class AddDesignComponent implements OnInit {
       category: [''],
       dimensions: ['', Validators.required],
       image: ['', Validators.required],
-    })
+    });
   }
-  addCancel(){
-    if(this.category=='livingroom'){
+  get form() {
+    return this.addImage.controls;
+  }
+  addCancel() {
+    if (this.category == 'livingroom') {
       this.router.navigate(['admin/living-room']);
-    }else if(this.category=='homeoffice'){
-        this.router.navigate(['admin/home-office']);
-    }else if(this.category=='spacesaving'){
+    } else if (this.category == 'homeoffice') {
+      this.router.navigate(['admin/home-office']);
+    } else if (this.category == 'spacesaving') {
       this.router.navigate(['admin/space-saving']);
-    }else{
+    } else {
       this.router.navigate(['admin/' + this.category]);
     }
   }
-
 
   onChange($event: Event) {
     const target = $event.target as HTMLInputElement;
@@ -55,21 +58,26 @@ export class AddDesignComponent implements OnInit {
     this.convertToBase64(file);
   }
 
-  postImage(){
-    this.imageModelObj.description = this.addImage.value.description;
-    this.imageModelObj.category = this.category;
-    this.imageModelObj.dimensions = this.addImage.value.dimensions;
-    this.imageModelObj.image = this.base64code;
+  postImage() {
+    this.submitted = true;
+    if (this.addImage.invalid) {
+      return;
+    } else {
+      this.imageModelObj.description = this.addImage.value.description;
+      this.imageModelObj.category = this.category;
+      this.imageModelObj.dimensions = this.addImage.value.dimensions;
+      this.imageModelObj.image = this.base64code;
 
-    this.api.postImage(this.imageModelObj)
-    .subscribe(res=>{
-      this.addImage.reset();
-    },
-    err=>{
-      alert("Something went wrong");
-
-  });
-
+      this.api.postImage(this.imageModelObj).subscribe(
+        (res) => {
+          this.createDesignDetails();
+          this.addImage.reset();
+        },
+        (err) => {
+          alert('Something went wrong');
+        }
+      );
+    }
   }
 
   createDesignDetails() {
@@ -91,16 +99,15 @@ export class AddDesignComponent implements OnInit {
     });
   }
   convertToBase64(file: File) {
-  
     const observable = new Observable((subscriber: any) => {
       this.readFile(file, subscriber);
-    })
+    });
 
     observable.subscribe((d) => {
-      console.log(d)
-     this.myImage = d
-     this.base64code  = d
-    })
+      console.log(d);
+      this.myImage = d;
+      this.base64code = d;
+    });
   }
 
   readFile(file: File, subscriber: Subscriber<any>) {
@@ -117,6 +124,4 @@ export class AddDesignComponent implements OnInit {
       subscriber.complete();
     };
   }
-
-
 }
