@@ -1,10 +1,23 @@
 @use "../../scss/abstracts/" as *;
 
-.card {
+.services-card {
    background-color: transparent !important;
    border: 5px solid $white !important;
+   border-radius: 9.17493px;
 
    .card-body {
       padding: 0;
+   }
+}
+
+.gallery-card {
+   width: 18rem;
+}
+
+.design-card {
+   width: 26rem;
+
+   .card-text {
+      color: $orange !important;
    }
 }

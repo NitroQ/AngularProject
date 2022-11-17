@@ -1,0 +1,33 @@
+@use "../../scss/abstracts/" as *;
+
+.mat-subheader {
+   font-family: 'Barlow Semi Condensed', sans-serif;
+   font-weight: 100;
+   letter-spacing: 0.01em;
+   padding: 0 !important;
+}
+
+mat-nav-list {
+   ul li {
+      list-style: none !important;
+   }
+}
+
+mat-drawer-container {
+   height: 100vh !important;
+
+   mat-drawer {
+      width: 300px;
+      background-color: $secondary !important;
+      color: $white;
+   }
+}
+
+.mat-divider {
+   border-top-width: 2px;
+   border-color: $white;
+}
+
+.sidenav-footer {
+   height: 150px;
+}

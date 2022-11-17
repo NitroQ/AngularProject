@@ -1,22 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule, Routes } from '@angular/router';
-// angular material UI
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatStepperModule } from '@angular/material/stepper';
-// ngx-bootstrap UI
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-// Angular Components
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
-import { HomeComponent } from './pages/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+<<<<<<< HEAD
 import { ExploreComponent } from './pages/explore/explore.component';
 import { ConsultComponent } from './pages/consult/consult.component';
 import { ContactComponent } from './pages/contact/contact.component';
@@ -50,21 +36,36 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, NavbarComponent, HomeComponent, ExploreComponent, ConsultComponent, ContactComponent, HomeHeaderComponent, ExploreHeaderComponent, ConsultFormsComponent, ContactFormsComponent, ExplorekitchenComponent, ExplorebedroomComponent, ExplorelivingroomComponent, ExplorebathroomComponent, ExplorespacesavingComponent, ExplorehomeoffComponent],
+=======
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PublicModule } from './public/public.module';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
+import { AdminModule } from './admin/admin.module';
+import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule } from 'ng2-charts';
+
+@NgModule({
+  declarations: [AppComponent],
+>>>>>>> main
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes, { enableTracing: true }),
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatToolbarModule,
-    MatDividerModule,
-    MatIconModule,
-    BsDatepickerModule.forRoot(),
-    TimepickerModule.forRoot(),
     ReactiveFormsModule,
+<<<<<<< HEAD
     CarouselModule,
     NgChartsModule
+=======
+    FormsModule,
+    HttpClientModule,
+    PublicModule,
+    RouterModule,
+    AppRoutingModule,
+    AuthModule,
+    AdminModule,
+    NgChartsModule,
+>>>>>>> main
   ],
   providers: [],
   bootstrap: [AppComponent],
