@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from '../../../api.service';
 import { ContactModel } from './contact.model';
 
@@ -10,47 +10,71 @@ import { ContactModel } from './contact.model';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent implements OnInit {
+  contactForm!: FormGroup;
+  contactModelObj: ContactModel = new ContactModel();
+  contactData!: any;
+  submitted: boolean = false;
 
-  contactForm !: FormGroup;
-  contactModelObj : ContactModel = new ContactModel();
-  contactData !: any;
-
- 
   // constructor(private api: ApiService) { }
-  constructor(private fb: FormBuilder, private api: ApiService) { }
+  constructor(private fb: FormBuilder, private api: ApiService) {}
 
   ngOnInit(): void {
-    this.contactForm = this.fb.group({
-      name: [''],
-      company: [''],
-      email: [''],
-      concern: [''],
-      message: [''],
-      status: ['']
-    })
+    this.contactForm = this.fb.group(
+      {
+        name: this.fb.control('', Validators.required),
+        company: this.fb.control('', Validators.required),
+        email: this.fb.control('', Validators.required),
+        concern: this.fb.control('', Validators.required),
+        message: this.fb.control('', Validators.required),
+        status: this.fb.control('', Validators.required),
+      },
+      { updateOn: 'submit' }
+    );
   }
-
-  postContactDetails(){
-    this.contactModelObj.name = this.contactForm.value.name;
-    this.contactModelObj.company = this.contactForm.value.company;
-    this.contactModelObj.email = this.contactForm.value.email;
-    this.contactModelObj.concern = this.contactForm.value.concern;
-    this.contactModelObj.message = this.contactForm.value.message;
-    this.contactModelObj.status = 'pending';
-
-    this.api.postContact(this.contactModelObj)
-    .subscribe(res=>{
-      this.contactForm.reset();
-      this.btnSubmit();
-    },
-    err=>{
-      alert("Something went wrong");
-
-  });
-
+  get form() {
+    return this.contactForm.controls;
   }
+  postContactDetails() {
+    this.submitted = true;
+    if (this.contactForm.invalid) {
+      return;
+    } else {
+      this.contactModelObj.name = this.contactForm.value.name;
+      this.contactModelObj.company = this.contactForm.value.company;
+      this.contactModelObj.email = this.contactForm.value.email;
+      this.contactModelObj.concern = this.contactForm.value.concern;
+      this.contactModelObj.message = this.contactForm.value.message;
+      this.contactModelObj.status = 'pending';
 
+      this.api.postContact(this.contactModelObj).subscribe(
+        (res) => {
+          this.contactForm.reset();
+          this.btnSubmit();
+        },
+        (err) => {
+          alert('Something went wrong');
+        }
+      );
+    }
+  }
+  // postContactDetails() {
+  //     this.contactModelObj.name = this.contactForm.value.name;
+  //     this.contactModelObj.company = this.contactForm.value.company;
+  //     this.contactModelObj.email = this.contactForm.value.email;
+  //     this.contactModelObj.concern = this.contactForm.value.concern;
+  //     this.contactModelObj.message = this.contactForm.value.message;
+  //     this.contactModelObj.status = 'pending';
 
+  //   this.api.postContact(this.contactModelObj).subscribe(
+  //     (res) => {
+  //       this.contactForm.reset();
+  //       this.btnSubmit();
+  //     },
+  //     (err) => {
+  //       alert('Something went wrong');
+  //     }
+  //   );
+  // }
   btnSubmit() {
     Swal.fire({
       title: 'Message Sent! Thank you for contacting us.',
