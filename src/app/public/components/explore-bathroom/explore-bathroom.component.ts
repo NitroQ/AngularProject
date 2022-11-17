@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-explore-bathroom',
@@ -6,15 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore-bathroom.component.scss'],
 })
 export class ExploreBathroomComponent implements OnInit {
-  bathroomDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/bathroom-images/dark-bathroom-design.png',
-      designName: 'Dark Bathroom',
-      prodSize: "18' x 21'",
-    },
-  ];
+  bathroomDesigns: any = [];
+  addImage !: FormGroup;
+  imageData !: any;
+  constructor(private fb: FormBuilder, private api: ApiService) { }
 
-  constructor() {}
+  ngOnInit(): void {
+    this.addImage = this.fb.group({
+      description: [''],
+      category: [''],
+      dimensions: [''],
+      price: [''],
+      image: ['']
+    })
+    this.getImage();
+  }
 
-  ngOnInit(): void {}
+  getImage(){
+    this.api.getImage()
+    .subscribe(res=>{
+      for (let i = 0; i < res.length; i++) {
+         if(res[i].category == "bathroom"){
+          this.bathroomDesigns.push(res[i]);
+        }
+    }
+    })
+
+  }
 }

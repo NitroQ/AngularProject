@@ -1,0 +1,85 @@
+<div class="container-fluid p-lg-4">
+  <h1 class="display-5 SoraBold mb-4">Add User</h1>
+  <div class="row">
+    <div class="col-12">
+      <p class="fs-5 account-bg p-2">Account Details</p>
+    </div>
+  </div>
+  <form class="row my-4" [formGroup]="userForm" (ngSubmit)="createUser()">
+    <div class="col-md-5 col">
+      <div class="row g-3">
+        <div class="col-md-6 mb-3">
+          <label for="exampleFormControlInput1" class="form-label admin-label">User Type</label>
+          <select class="form-select admin-select" formControlName="usertype" aria-label="User Type">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+          </select>
+          <span class="text-danger" *ngIf="userForm.hasError('required', 'usertype')">User Type is Required.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col-md col">
+        <div class="row g-3">
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">First Name</label>
+            <input type="text" class="form-control admin-input" formControlName="firstname" />
+            <span class="text-danger" *ngIf="userForm.hasError('required', 'firstname')">First Name is Required.</span>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Middle Name</label>
+            <input type="text" class="form-control admin-input" formControlName="middlename" />
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Last Name</label>
+            <input type="text" class="form-control admin-input" formControlName="lastname" />
+            <span class="text-danger" *ngIf="userForm.hasError('required', 'lastname')">Last Name is Required.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-md col">
+        <div class="row g-3">
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Username</label>
+            <input type="text" class="form-control admin-input" formControlName="username" />
+            <span class="text-danger" *ngIf="userForm.hasError('required', 'username')">Username is Required.</span>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Email</label>
+            <input type="email" class="form-control admin-input" formControlName="email" />
+            <span class="text-danger" *ngIf="userForm.hasError('required', 'email')">Email is Required.</span>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Contact Number</label>
+            <input type="text" class="form-control admin-input" formControlName="contact" />
+            <span class="text-danger" *ngIf="userForm.hasError('required', 'contact')">Contact Number is Required.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 col">
+        <div class="row g-3">
+          <div class="col-md-6 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Password</label>
+            <input type="password" class="form-control admin-input" formControlName="password" />
+            <span class="text-danger" *ngIf="userForm.hasError('required', 'password')">Password is Required.</span>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="exampleFormControlInput1" class="form-label admin-label">Repeat Password</label>
+            <input type="password" class="form-control admin-input" formControlName="repeatpass" />
+            <span class="text-danger" *ngIf="userForm.hasError('required', 'repeatpass')">Repeat your Password.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start mt-4">
+      <button class="btn-cancel me-md-2 btn-cancel text-uppercase px-3 py-2" type="button">CANCEL</button>
+      <button class="btn-create text-uppercase px-3 py-2" type="submit" [disabled]="!userForm.valid" >SUBMIT NEW USER</button>
+    </div>
+  </form>
+</div>

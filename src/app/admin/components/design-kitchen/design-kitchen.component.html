@@ -1,4 +1,4 @@
-<div class="container-fluid p-lg-5">
+<div class="container-fluid p-lg-4">
   <h1 class="display-5 SoraBold mb-4">Kitchen Designs</h1>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
     <button class="btn-search me-md-2" type="button" (click)="addDesignDetails()">
@@ -12,19 +12,17 @@
       </caption>
       <thead class="admin-table-head table-light">
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Property Type</th>
-          <th scope="col">Consultation Date</th>
+          <th scope="col">Image</th>
+          <th scope="col">Description</th>
+          <th scope="col">Dimensions</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let kitchenDesign of kitchenDesigns">
-          <td>{{ kitchenDesign.name }}</td>
-          <td>{{ kitchenDesign.email }}</td>
-          <td>{{ kitchenDesign.type }}</td>
-          <td>{{ kitchenDesign.date }}</td>
+          <td><img [src]="kitchenDesign.image" height="30px" alt="" /></td>
+          <td>{{ kitchenDesign.description }}</td>
+          <td>{{ kitchenDesign.dimensions }}</td>
           <td>
             <div class="d-grid gap-2 d-md-block">
               <button
@@ -32,20 +30,13 @@
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                (click)="btnView()"
-              >
-                <span> <i class="fa-solid fa-eye"></i> View</span>
+                (click)="updateDesignDetails(kitchenDesign)">
+                <span> <i class="fa-solid fa-eye"></i> View/Edit</span>
               </button>
-              <button class="btn-action btn-primary py-1 px-3 me-2" type="button" (click)="updateDesignDetails()">
+              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="deleteDesignDetails(kitchenDesign)">
                 <span>
                   <i class="fa-solid fa-trash-can"></i>
-                  Edit
-                </span>
-              </button>
-              <button class="btn-action btn-primary py-1 px-3" type="button" (click)="btnDelete()">
-                <span>
-                  <i class="fa-solid fa-trash-can"></i>
-                  Detele
+                  Delete
                 </span>
               </button>
             </div>

@@ -4,10 +4,11 @@ export class ConsultModel{
     budget: string = '';
     plan : string = '';
     clientName: string = '';
+    designerNote: string = '';
     email: string = '';
     mobile: string = '';
     company: string = '';
     consultationDate: string = '';
     timeAppointment: string = '';
-
+    status : string = '';
 }

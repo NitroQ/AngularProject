@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../api.service';
+
 
 @Component({
   selector: 'app-explore-living-room',
@@ -6,15 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore-living-room.component.scss'],
 })
 export class ExploreLivingRoomComponent implements OnInit {
-  livingRoomDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/living-room-images/aussie-living-room-design.png',
-      designName: 'Aussie Living Room',
-      prodSize: "18' x 21'",
-    },
-  ];
+  livingRoomDesigns: any = [ ];
+  constructor(private api: ApiService) { }
 
-  constructor() {}
+  ngOnInit(): void {
+    this.getImage();
+  }
 
-  ngOnInit(): void {}
+  getImage(){
+    this.api.getImage()
+    .subscribe(res=>{
+      for (let i = 0; i < res.length; i++) {
+         if(res[i].category == "livingroom"){
+          this.livingRoomDesigns.push(res[i]);
+        }
+    }
+    })
+
+  }
 }

@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-list.component.scss']
 })
 export class NavListComponent implements OnInit {
-
+  type !: any;
+  show : boolean = false;
   constructor() { }
 
   ngOnInit(): void {
+    this.type = sessionStorage.getItem('usertype');
+
+    if(this.type == 'admin'){
+      this.show = true;
+    }
   }
 
 }

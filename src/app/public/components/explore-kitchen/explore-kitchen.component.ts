@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-explore-kitchen',
@@ -6,39 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore-kitchen.component.scss'],
 })
 export class ExploreKitchenComponent implements OnInit {
-  kitchenDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/kitchen-images/wooden-clean-kitchen-design.png',
-      designName: 'Wooden Clean Kitchen',
-      prodSize: "18' x 21'",
-    },
-    {
-      imgUrl: '../../../../assets/images/kitchen-images/wooden-clean-kitchen-design.png',
-      designName: 'Wooden Clean Kitchen',
-      prodSize: "18' x 21'",
-    },
-    {
-      imgUrl: '../../../../assets/images/kitchen-images/wooden-clean-kitchen-design.png',
-      designName: 'Wooden Clean Kitchen',
-      prodSize: "18' x 21'",
-    },
-    {
-      imgUrl: '../../../../assets/images/kitchen-images/wooden-clean-kitchen-design.png',
-      designName: 'Wooden Clean Kitchen',
-      prodSize: "18' x 21'",
-    },
-    {
-      imgUrl: '../../../../assets/images/kitchen-images/wooden-clean-kitchen-design.png',
-      designName: 'Wooden Clean Kitchen',
-      prodSize: "18' x 21'",
-    },
-    {
-      imgUrl: '../../../../assets/images/kitchen-images/wooden-clean-kitchen-design.png',
-      designName: 'Wooden Clean Kitchen',
-      prodSize: "18' x 21'",
-    },
-  ];
-  constructor() {}
+  kitchenDesigns: any = [];
+  constructor(private api: ApiService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getImage();
+  }
+
+  getImage(){
+    this.api.getImage()
+    .subscribe(res=>{
+      for (let i = 0; i < res.length; i++) {
+         if(res[i].category == "kitchen"){
+          this.kitchenDesigns.push(res[i]);
+        }
+    }
+    })
+
+  }
 }

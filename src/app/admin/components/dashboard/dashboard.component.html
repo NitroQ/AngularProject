@@ -1,13 +1,13 @@
-<div class="container-fluid p-lg-5">
+<div class="container-fluid p-lg-4">
   <h1 class="display-5 SoraBold">Dashboard</h1>
   <div class="row row-cols-md-2 row-cols-1 my-4 gy-4">
     <div class="col-md-6 col">
       <div class="dashboard-card card shadow py-2">
-        <div class="d-flex flex-column text-start align-items-start px-3 mt-3">
-          <p class="fs-3 card-title dashboard-card-title m-0">Statistics</p>
+        <div class="d-flex flex-column text-start align-items-start px-3 mt-3" >
+          <p class="fs-3 card-title dashboard-card-title m-0">Consult Statistics</p>
           <p class="fs-6 card-title dashboard-card-subheader m-0">This Month</p>
         </div>
-        <div class="row row-cols-2 px-3 py-4 gy-2">
+        <div class="row row-cols-2 px-3 py-4 gy-2" style="height: 340px">
           <div class="col">
             <div class="card-body w-100 d-flex align-items-center gap-2">
               <img
@@ -16,7 +16,7 @@
                 alt="N&K Sales icon"
               />
               <div class="d-flex flex-column statistics">
-                <p class="display-6 statistics-title m-0">1031</p>
+                <p class="display-6 statistics-title m-0">{{ totalConsult }}</p>
                 <p class="text-small statistics-subheader m-0">Total Consultations</p>
               </div>
             </div>
@@ -29,7 +29,7 @@
                 alt="N&K Pending icon"
               />
               <div class="d-flex flex-column statistics">
-                <p class="display-6 statistics-title m-0">121</p>
+                <p class="display-6 statistics-title m-0">{{ pendingConsult }}</p>
                 <p class="text-small statistics-subheader m-0">Pending Consultations</p>
               </div>
             </div>
@@ -42,7 +42,7 @@
                 alt="N&K Unpaid icon"
               />
               <div class="d-flex flex-column statistics">
-                <p class="display-6 statistics-title m-0">2</p>
+                <p class="display-6 statistics-title m-0">{{ cancelConsult }}</p>
                 <p class="text-small statistics-subheader m-0">Cancelled Consultations</p>
               </div>
             </div>
@@ -55,7 +55,7 @@
                 alt="N&K Success icon"
               />
               <div class="d-flex flex-column statistics">
-                <p class="display-6 statistics-title m-0">908</p>
+                <p class="display-6 statistics-title m-0">{{ completedConsult }}</p>
                 <p class="text-small statistics-subheader m-0">Successful Consultations</p>
               </div>
             </div>
@@ -65,19 +65,40 @@
     </div>
     <div class="col-md-6 col">
       <div class="dashboard-card card shadow py-2">
-        <div class="d-flex flex-column text-start align-items-start p-3">
-          <p class="fs-3 card-title dashboard-card-title m-0">Earnings</p>
+        <div class="d-flex flex-column text-start align-items-start p-3"  >
+          <p class="fs-3 card-title dashboard-card-title m-0">Consults</p>
         </div>
-        <div class="chart-wrapper px-4">
-          <canvas
-            height="125"
-            baseChart
-            [data]="barChartData"
-            [options]="barChartOptions"
-            [type]="barChartType"
-            (chartHover)="chartHovered($event)"
-          >
-          </canvas>
+        <div class="chart-wrapper px-4" style="height: 330px">
+          <table class="graph">
+            <thead>
+              <tr>
+                <th scope="col">Month</th>
+                <th scope="col">Number of Consult</th>
+              </tr>
+            </thead><tbody>
+              <tr style="height:0%">
+                <th scope="row">July</th>
+                <td><span>0</span></td>
+              </tr>
+              <tr style="height:0%">
+                <th scope="row">August</th>
+                <td><span>0</span></td>
+              </tr>
+              <tr style="height:0%">
+                <th scope="row">September</th>
+                <td><span>0</span></td>
+              </tr>
+              <tr style="height:0%">
+                <th scope="row">October</th>
+                <td><span>0%</span></td>
+              </tr>
+              <tr style="height:10%">
+                <th scope="row">November</th>
+                <td><span>{{ totalConsult }}</span></td>
+              </tr>
+            </tbody>
+          </table>
+          
         </div>
       </div>
     </div>
@@ -96,10 +117,10 @@
         </thead>
         <tbody>
           <tr *ngFor="let pendingConsultation of pendingConsultations">
-            <td>{{ pendingConsultation.name }}</td>
+            <td>{{ pendingConsultation.clientName }}</td>
             <td>{{ pendingConsultation.email }}</td>
-            <td>{{ pendingConsultation.type }}</td>
-            <td>{{ pendingConsultation.date }}</td>
+            <td>{{ pendingConsultation.propertyType }}</td>
+            <td>{{ pendingConsultation.consultationDate }}</td>
           </tr>
         </tbody>
       </table>
@@ -111,20 +132,20 @@
           <div class="row row-cols-1 g-3">
             <div class="col">
               <div class="card dashboard-details-card p-2">
-                <p class="fs-4 m-0">Number of Visits</p>
-                <p class="fs-4 m-0">11,203</p>
+                <p class="fs-4 m-0">Page Visits</p>
+                <p class="fs-4 m-0">{{ totalVisit }}</p>
               </div>
             </div>
             <div class="col">
               <div class="card dashboard-details-card p-2">
                 <p class="fs-4 m-0">Messages/Inquiries</p>
-                <p class="fs-4 m-0">2,131</p>
+                <p class="fs-4 m-0">{{ totalContact }}</p>
               </div>
             </div>
             <div class="col">
               <div class="card dashboard-details-card p-2">
-                <p class="fs-4 m-0">Pending Payment</p>
-                <p class="fs-4 m-0">43</p>
+                <p class="fs-4 m-0">Ongoing Projects</p>
+                <p class="fs-4 m-0">{{ ongoingConsult }}</p>
               </div>
             </div>
           </div>

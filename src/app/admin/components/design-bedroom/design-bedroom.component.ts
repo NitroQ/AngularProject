@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { ApiService } from 'src/app/api.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,24 +10,17 @@ import Swal from 'sweetalert2';
   styleUrls: ['./design-bedroom.component.scss'],
 })
 export class DesignBedroomComponent implements OnInit {
-  bedroomDesigns: any = [
-    {
-      name: 'Sample Notice',
-      email: 'sample@email.com',
-      type: 'Property Type',
-      date: 'Date',
-    },
-  ];
+  bedroomDesigns: any = [];
   addDesignDetails(): void {
-    this.router.navigate(['/admin/add/design']);
+    this.router.navigate(['/admin/add/design'], { queryParams: { category: 'bedroom' } });
   }
   btnView(): void {
     this.router.navigate(['/admin/view/design']);
   }
-  updateDesignDetails(): void {
-    this.router.navigate(['/admin/view/design']);
+  updateDesignDetails(row : any): void {
+    this.router.navigate(['/admin/view/design'],  { queryParams: {  id: row.id, category: 'bedroom' } } );
   }
-  btnDelete() {
+  deleteDesignDetails(row: any) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -36,11 +31,30 @@ export class DesignBedroomComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Deleted!', 'This consultation has been deleted.', 'success');
+        this.deleteImage(row);
+        Swal.fire('Deleted!', 'This image has been deleted.', 'success');
       }
     });
   }
-  constructor(private router: Router) {}
+  constructor(private router: Router, private api: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getImage();
+  }
+
+  getImage() {
+    this.api.getImage().subscribe((res) => {
+      for (let i = 0; i < res.length; i++) {
+        if (res[i].category == 'bedroom') {
+          this.bedroomDesigns.push(res[i]);
+        }
+      }
+    });
+  }
+  deleteImage(row: any) {
+    this.bedroomDesigns = [];
+    this.api.deleteImage(row.id).subscribe((res) => {
+      this.getImage();
+    });
+  }
 }

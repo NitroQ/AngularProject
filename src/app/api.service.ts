@@ -7,6 +7,19 @@ import { map } from 'rxjs/operators';
 export class ApiService {
 
   constructor(private http: HttpClient) { }
+  getVisit(){
+    return this.http.get<any>("http://localhost:3000/visit")
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+ updateVisit(data : any, id: number){
+    return this.http.put<any>('http://localhost:3000/visit/'+ id, data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
   postBooking(data : any){
     return this.http.post<any>('http://localhost:3000/bookings', data)
     .pipe(map((res:any)=>{
@@ -19,20 +32,28 @@ export class ApiService {
       return res;
     }))
   }
-  // updateBooking(data : any, id : number){
-  //   return this.http.put<any>('http://localhost:3000/bookings/' + id, data)
-  //   .pipe(map((res:any)=>{
-  //     return res;
-  //   }))
-  // }
-  // deleteBooking(id : number){
-  //   return this.http.delete<any>("http://localhost:3000/bookings/" + id)
-  //   .pipe(map((res:any)=>{
-  //     return res;
-  //   }))
-  // }
+  updateBooking(data : any, id : number){
+    return this.http.put<any>('http://localhost:3000/bookings/' + id, data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  deleteBooking(id : number){
+    return this.http.delete<any>("http://localhost:3000/bookings/" + id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  //image
   postImage(data : any){
     return this.http.post<any>('http://localhost:3000/images', data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  updateImage(data : any, id : number){
+    return this.http.put<any>('http://localhost:3000/images/' + id, data)
     .pipe(map((res:any)=>{
       return res;
     }))
@@ -43,5 +64,66 @@ export class ApiService {
       return res;
     }))
   }
+  deleteImage(id : number){
+    return this.http.delete<any>("http://localhost:3000/images/" + id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  //user
+
+  postUser(data : any){
+    return this.http.post<any>('http://localhost:3000/user', data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  getUser(){
+    return this.http.get<any>("http://localhost:3000/user")
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  updateUser(data : any, id : number){
+    return this.http.put<any>('http://localhost:3000/user/' + id, data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  deleteUser(id : number){
+    return this.http.delete<any>("http://localhost:3000/user/" + id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
+  //contact
+
+  postContact(data : any){
+    return this.http.post<any>('http://localhost:3000/contact', data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  getContact(){
+    return this.http.get<any>("http://localhost:3000/contact")
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  updateContact(data : any, id : number){
+    return this.http.put<any>('http://localhost:3000/contact/' + id, data)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+  deleteContact(id : number){
+    return this.http.delete<any>("http://localhost:3000/contact/" + id)
+    .pipe(map((res:any)=>{
+      return res;
+    }))
+  }
+
 
 }

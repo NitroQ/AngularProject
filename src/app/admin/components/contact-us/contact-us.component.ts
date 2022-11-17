@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -8,18 +9,11 @@ import Swal from 'sweetalert2';
   styleUrls: ['./contact-us.component.scss'],
 })
 export class ContactUsComponent implements OnInit {
-  contactsDatas: any = [
-    {
-      name: 'Sample Notice',
-      email: 'sample@email.com',
-      type: 'Property Type',
-      date: 'Date',
-    },
-  ];
-  btnView(): void {
-    this.router.navigate(['/admin/view/contact']);
+  contactData: any = [];
+  btnView(row: any): void {
+    this.router.navigate(['/admin/view/contact'], { queryParams: { id: row.id } });
   }
-  btnDelete() {
+  btnDelete(row: any) {
     Swal.fire({
       title: 'Are you sure?',
       text: "You won't be able to revert this!",
@@ -30,12 +24,39 @@ export class ContactUsComponent implements OnInit {
       confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire('Deleted!', 'This consultation has been deleted.', 'success');
+        this.deleteContactDetails(row);
+        Swal.fire('Deleted!', 'This contact has been deleted.', 'success');
       }
     });
   }
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private api: ApiService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getContactDetails();
+  }
+
+  getContactDetails() {
+    this.api.getContact().subscribe((res) => {
+      this.contactData = res;
+    });
+  }
+  deleteContactDetails(row: any) {
+    this.api.deleteContact(row.id).subscribe((res) => {
+      this.getContactDetails();
+    });
+  }
+  updateContact(row:any){
+    row.status = 'replied';
+
+   this.api.updateContact(row, row.id).subscribe(res=>{ 
+     Swal.fire('Updated!', 'This contact has been updated.', 'success');
+     this.getContactDetails();
+   },
+   err=>{
+     alert("Something went wrong");
+
+ });
+
+ }
 }

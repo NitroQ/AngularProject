@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { ApiService } from '../../../api.service';
 
 @Component({
   selector: 'app-explore-home-office',
@@ -6,15 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./explore-home-office.component.scss'],
 })
 export class ExploreHomeOfficeComponent implements OnInit {
-  homeOfficeDesigns: any = [
-    {
-      imgUrl: '../../../../assets/images/home-office-images/multi-office-design.png',
-      designName: 'Multi Office',
-      prodSize: "18' x 21'",
-    },
-  ];
+  homeOfficeDesigns: any = [];
+  constructor(private api: ApiService) { }
 
-  constructor() {}
+  ngOnInit(): void {
+    this.getImage();
+  }
 
-  ngOnInit(): void {}
+  getImage(){
+    this.api.getImage()
+    .subscribe(res=>{
+      for (let i = 0; i < res.length; i++) {
+         if(res[i].category == "homeoffice"){
+          this.homeOfficeDesigns.push(res[i]);
+        }
+    }
+    })
+
+  }
 }
