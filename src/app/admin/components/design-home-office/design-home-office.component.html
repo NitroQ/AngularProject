@@ -12,19 +12,19 @@
       </caption>
       <thead class="admin-table-head table-light">
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Property Type</th>
-          <th scope="col">Consultation Date</th>
+          <th scope="col">Image</th>
+          <th scope="col">Description</th>
+          <th scope="col">Dimensions</th>
+          <th scope="col">Price</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let homeOfficeDesign of homeOfficeDesigns">
-          <td>{{ homeOfficeDesign.name }}</td>
-          <td>{{ homeOfficeDesign.email }}</td>
-          <td>{{ homeOfficeDesign.type }}</td>
-          <td>{{ homeOfficeDesign.date }}</td>
+          <td>{{ homeOfficeDesign.image }}</td>
+          <td>{{ homeOfficeDesign.description }}</td>
+          <td>{{ homeOfficeDesign.dimension }}</td>
+          <td>{{ homeOfficeDesign.price }}</td>
           <td>
             <div class="d-grid gap-2 d-md-block">
               <button

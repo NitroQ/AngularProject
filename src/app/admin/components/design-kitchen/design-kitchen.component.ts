@@ -10,10 +10,10 @@ import Swal from 'sweetalert2';
 export class DesignKitchenComponent implements OnInit {
   kitchenDesigns: any = [
     {
-      name: 'Sample Notice',
-      email: 'sample@email.com',
-      type: 'Property Type',
-      date: 'Date',
+      image: 'Sample image',
+      description: 'design name',
+      dimension: 'dimension size',
+      price: 'price',
     },
   ];
   addDesignDetails(): void {

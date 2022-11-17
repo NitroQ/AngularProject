@@ -12,19 +12,19 @@
       </caption>
       <thead class="admin-table-head table-light">
         <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Property Type</th>
-          <th scope="col">Consultation Date</th>
+          <th scope="col">Image</th>
+          <th scope="col">Description</th>
+          <th scope="col">Dimensions</th>
+          <th scope="col">Price</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let spaceSavingDesign of spaceSavingDesigns">
-          <td>{{ spaceSavingDesign.name }}</td>
-          <td>{{ spaceSavingDesign.email }}</td>
-          <td>{{ spaceSavingDesign.type }}</td>
-          <td>{{ spaceSavingDesign.date }}</td>
+          <td>{{ spaceSavingDesign.image }}</td>
+          <td>{{ spaceSavingDesign.description }}</td>
+          <td>{{ spaceSavingDesign.dimension }}</td>
+          <td>{{ spaceSavingDesign.price }}</td>
           <td>
             <div class="d-grid gap-2 d-md-block">
               <button

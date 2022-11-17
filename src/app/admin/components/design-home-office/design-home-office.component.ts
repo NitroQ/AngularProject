@@ -10,10 +10,10 @@ import Swal from 'sweetalert2';
 export class DesignHomeOfficeComponent implements OnInit {
   homeOfficeDesigns: any = [
     {
-      name: 'Sample Notice',
-      email: 'sample@email.com',
-      type: 'Property Type',
-      date: 'Date',
+      image: 'sample image',
+      description: 'description',
+      dimension: 'dimension',
+      price: 'price',
     },
   ];
   addDesignDetails(): void {

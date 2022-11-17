@@ -10,10 +10,10 @@ import Swal from 'sweetalert2';
 export class DesignSpaceSavingComponent implements OnInit {
   spaceSavingDesigns: any = [
     {
-      name: 'Sample Notice',
-      email: 'sample@email.com',
-      type: 'Property Type',
-      date: 'Date',
+      image: 'sample image',
+      description: 'description',
+      dimension: 'dimension',
+      price: 'price',
     },
   ];
   addDesignDetails(): void {
