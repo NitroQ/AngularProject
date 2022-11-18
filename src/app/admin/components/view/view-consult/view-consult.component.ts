@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../../../api.service';
 
@@ -25,7 +26,7 @@ export class ViewConsultComponent implements OnInit {
     });
   }
   consultValue: any;
-  constructor(private route: ActivatedRoute, private api: ApiService) {}
+  constructor(private route: ActivatedRoute, private router : Router,  private api: ApiService) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.queryParamMap.get('id');
@@ -38,5 +39,9 @@ export class ViewConsultComponent implements OnInit {
         }
       }
     });
+  }
+
+  backConsult(){
+    this.router.navigate(['/admin/consultancies']);
   }
 }

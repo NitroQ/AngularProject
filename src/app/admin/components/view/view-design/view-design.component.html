@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-md-4 col">
         <div class="img-placeholder">
-          <img [src]="designValue.image" alt="" />
+          <img [src]="designValue.image" alt="" id="placeholder-img"/>
           <input class="form-control" (change)="onChange($event)" type="file" formControlName="image" id="formFile" />
           <div class="mt-3" *ngIf="submitted && form['image'].errors">
             <div class="text-danger" *ngIf="form['image'].errors?.['required']">Please enter a user type</div>

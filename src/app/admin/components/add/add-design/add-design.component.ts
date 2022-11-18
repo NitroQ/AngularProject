@@ -42,13 +42,13 @@ export class AddDesignComponent implements OnInit {
   }
   addCancel() {
     if (this.category == 'livingroom') {
-      this.router.navigate(['admin/living-room']);
+      this.router.navigate(['/admin/living-room']);
     } else if (this.category == 'homeoffice') {
-      this.router.navigate(['admin/home-office']);
+      this.router.navigate(['/admin/home-office']);
     } else if (this.category == 'spacesaving') {
-      this.router.navigate(['admin/space-saving']);
+      this.router.navigate(['/admin/space-saving']);
     } else {
-      this.router.navigate(['admin/' + this.category]);
+      this.router.navigate(['/admin/' + this.category]);
     }
   }
 
@@ -92,7 +92,7 @@ export class AddDesignComponent implements OnInit {
       if (result.isConfirmed) {
         this.postImage();
         Swal.fire('Successfully added!', '', 'success');
-        this.router.navigate(['admin/' + this.category]);
+        this.addCancel();
       } else if (result.isDenied) {
         Swal.fire('No design added', '', 'info');
       }
