@@ -47,6 +47,7 @@ export class ConsultComponent implements OnInit {
       this.bookingModelObj.email = this.bookingForm.value.email;
       this.bookingModelObj.mobile = this.bookingForm.value.mobile;
       this.bookingModelObj.company = this.bookingForm.value.company;
+      this.bookingModelObj.designerNote = this.bookingForm.value.designerNote;
       this.bookingModelObj.consultationDate = this.bookingForm.value.consultationDate;
       this.bookingModelObj.timeAppointment = this.bookingForm.value.timeAppointment;
       this.bookingModelObj.status = 'pending';
