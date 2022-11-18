@@ -121,4 +121,7 @@ export class AddUserComponent implements OnInit {
   //     }
   //   });
   // }
+  addCancel() {
+    this.router.navigate(['/admin/user/management']);
+  }
 }
