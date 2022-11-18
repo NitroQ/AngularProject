@@ -16,6 +16,10 @@
       background-color: $orange !important;
       transition-duration: 300ms;
    }
+
+   .navbar-toggler:focus {
+      border: none !important;
+   }
 }
 
 a {
