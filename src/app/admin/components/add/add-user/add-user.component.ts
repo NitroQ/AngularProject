@@ -76,7 +76,6 @@ export class AddUserComponent implements OnInit {
       this.api.postUser(this.userModelObj).subscribe(
         (res) => {
           this.userForm.reset();
-          this.createUser();
         },
         (err) => {
           alert('Something went wrong');
@@ -98,9 +97,11 @@ export class AddUserComponent implements OnInit {
         Swal.fire('Successfully added!', '', 'success');
         this.router.navigate(['/admin/user/management']);
       } else if (result.isDenied) {
+        this.router.navigate(['/admin/user/management']);
         Swal.fire('No user added', '', 'info');
         this.userForm.reset();
       }
     });
   }
+  
 }
