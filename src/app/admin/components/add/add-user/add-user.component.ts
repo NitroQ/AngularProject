@@ -75,6 +75,24 @@ export class AddUserComponent implements OnInit {
 
       this.api.postUser(this.userModelObj).subscribe(
         (res) => {
+          Swal.fire({
+            title: 'Are you sure?',
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Add',
+            denyButtonText: `Don't add`,
+          }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+              this.postUserDetails();
+              Swal.fire('Successfully added!', '', 'success');
+              this.router.navigate(['/admin/user/management']);
+            } else if (result.isDenied) {
+              this.router.navigate(['/admin/user/management']);
+              Swal.fire('No user added', '', 'info');
+              // this.userForm.reset();
+            }
+          });
           this.userForm.reset();
         },
         (err) => {
@@ -83,25 +101,27 @@ export class AddUserComponent implements OnInit {
       );
     }
   }
-  createUser() {
-    Swal.fire({
-      title: 'Are you sure?',
-      showDenyButton: true,
-      showCancelButton: true,
-      confirmButtonText: 'Add',
-      denyButtonText: `Don't add`,
-    }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
-      if (result.isConfirmed) {
-        this.postUserDetails();
-        Swal.fire('Successfully added!', '', 'success');
-        this.router.navigate(['/admin/user/management']);
-      } else if (result.isDenied) {
-        this.router.navigate(['/admin/user/management']);
-        Swal.fire('No user added', '', 'info');
-        this.userForm.reset();
-      }
-    });
+  // createUser() {
+  //   Swal.fire({
+  //     title: 'Are you sure?',
+  //     showDenyButton: true,
+  //     showCancelButton: true,
+  //     confirmButtonText: 'Add',
+  //     denyButtonText: `Don't add`,
+  //   }).then((result) => {
+  //     /* Read more about isConfirmed, isDenied below */
+  //     if (result.isConfirmed) {
+  //       this.postUserDetails();
+  //       Swal.fire('Successfully added!', '', 'success');
+  //       this.router.navigate(['/admin/user/management']);
+  //     } else if (result.isDenied) {
+  //       this.router.navigate(['/admin/user/management']);
+  //       Swal.fire('No user added', '', 'info');
+  //       this.userForm.reset();
+  //     }
+  //   });
+  // }
+  addCancel() {
+    this.router.navigate(['/admin/user/management']);
   }
-  
 }
