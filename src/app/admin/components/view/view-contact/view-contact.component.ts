@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ApiService } from '../../../../api.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ApiService } from '../../../../api.service';
 })
 export class ViewContactComponent implements OnInit {
   contactValue: any;
-  constructor(private route: ActivatedRoute, private api : ApiService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private api : ApiService) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.queryParamMap.get('id');
@@ -24,6 +24,9 @@ export class ViewContactComponent implements OnInit {
     }
       
     })
+  }
+  backContact(){
+    this.router.navigate(['/admin/contact']);
   }
 
 }
