@@ -96,6 +96,8 @@ export class UpdateUserComponent implements OnInit {
       this.userModelObjUpdate.username = this.userForm.value.username;
       this.userModelObjUpdate.email = this.userForm.value.email;
       this.userModelObjUpdate.contact = this.userForm.value.contact;
+      this.userModelObjUpdate.password = this.userData.password;
+
       this.api.updateUser(this.userModelObjUpdate, this.id).subscribe(
         (res) => {
           this.userForm.reset();
