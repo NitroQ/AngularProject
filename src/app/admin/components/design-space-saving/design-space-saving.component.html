@@ -1,5 +1,5 @@
 <div class="container-fluid p-lg-4">
-  <h1 class="display-5 SoraBold mb-4">Space Saving Designs</h1>
+  <h1 class="display-5 SoraBold mb-4 mt-md-0 mt-4">Space Saving Designs</h1>
   <div class="d-grid gap-2 d-md-flex justify-content-md-end mb-4">
     <button class="btn-search me-md-2" type="button" (click)="addDesignDetails()">
       <span><i class="fa-solid fa-circle-plus me-2"></i>Add Design</span>
@@ -30,7 +30,8 @@
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                (click)="updateDesignDetails(spaceSavingDesign)">
+                (click)="updateDesignDetails(spaceSavingDesign)"
+              >
                 <span> <i class="fa-solid fa-eye"></i> View/Edit</span>
               </button>
               <button class="btn-action btn-primary py-1 px-3" type="button" (click)="deleteDesignDetails(spaceSavingDesign)">
